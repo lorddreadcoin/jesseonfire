@@ -14,44 +14,44 @@ const realVideos: VideoData[] = [
   {
     id: 1,
     title: "Was Tyler Robinson SET UP by HIS BOYFRIEND??? NEW VIDEO of SUSPECT!",
-    thumbnail: "https://i.ytimg.com/vi/DiiXCi--ryI/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/i6h2VE7l4eE/maxresdefault.jpg",
     views: "152K views",
     duration: "28:35",
     uploadDate: "Today",
-    url: "https://youtube.com/watch?v=DiiXCi--ryI",
+    url: "https://www.youtube.com/watch?v=i6h2VE7l4eE",
     category: "TRUE CRIME",
     isNew: true
   },
   {
     id: 2,
     title: "Alex Jones Gives TERRIFYING UPDATE!! SHOCKING Epstein News has Elites SCRAMBLING to EXPLAIN!!",
-    thumbnail: "https://i.ytimg.com/vi/sFj-v4qu6xg/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/eIn0IUqoX-8/maxresdefault.jpg",
     views: "201K views",
     duration: "22:47",
     uploadDate: "Today",
-    url: "https://youtube.com/watch?v=sFj-v4qu6xg",
+    url: "https://www.youtube.com/watch?v=eIn0IUqoX-8",
     category: "CONSPIRACY",
     isNew: true
   },
   {
     id: 3,
     title: "NEW SUSPECTS in Charlie Kirk Assassination!! The SHOCKING VIDEO EVIDENCE!!",
-    thumbnail: "https://i.ytimg.com/vi/lWyWwZfKjpI/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/6q2CYqUPZ5c/maxresdefault.jpg",
     views: "178K views",
     duration: "24:18",
     uploadDate: "12 hours ago",
-    url: "https://youtube.com/watch?v=lWyWwZfKjpI",
+    url: "https://www.youtube.com/watch?v=6q2CYqUPZ5c",
     category: "POLITICS",
     isNew: true
   },
   {
     id: 4,
     title: "This VIDEO CLIP will BREAK THE WORLD!! Charlie SHOT Direction SOLVED!! IT WAS THEM!!",
-    thumbnail: "https://i.ytimg.com/vi/wWDdnpA6s-A/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/7NUp1k3DT4U/maxresdefault.jpg",
     views: "264K views",
     duration: "21:06",
     uploadDate: "1 day ago",
-    url: "https://youtube.com/watch?v=wWDdnpA6s-A",
+    url: "https://www.youtube.com/watch?v=7NUp1k3DT4U",
     category: "INVESTIGATION"
   },
   {
@@ -61,7 +61,7 @@ const realVideos: VideoData[] = [
     views: "193K views",
     duration: "23:12",
     uploadDate: "1 day ago",
-    url: "https://youtube.com/watch?v=VMglO8gJuqE",
+    url: "https://www.youtube.com/watch?v=VMglO8gJuqE",
     category: "COMMENTARY"
   },
   {
@@ -71,7 +71,7 @@ const realVideos: VideoData[] = [
     views: "221K views",
     duration: "25:04",
     uploadDate: "2 days ago",
-    url: "https://youtube.com/watch?v=PSf_e71tn24",
+    url: "https://www.youtube.com/watch?v=PSf_e71tn24",
     category: "POLITICS"
   }
 ];

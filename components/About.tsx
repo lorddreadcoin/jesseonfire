@@ -51,8 +51,8 @@ const About = () => {
             {/* Jesse's actual image */}
             <div className="aspect-[4/5] relative">
               <Image
-                src="/img/jesse-hero.png"
-                alt="Jesse ON FIRE"
+                src="https://i.imgur.com/H6z4r3t.png"
+                alt="Jesse ON FIRE - Purple Belt BJJ"
                 fill
                 className="object-cover"
                 priority

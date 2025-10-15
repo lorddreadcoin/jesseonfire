@@ -21,8 +21,8 @@ const viralVideos: ViralVideo[] = [
     id: 1,
     title: "Josh Fabia DESTROYED My Channel - The FULL Story",
     views: "3.4M",
-    thumbnail: "https://i.ytimg.com/vi/josh_fabia_full/maxresdefault.jpg",
-    url: "https://youtube.com/watch?v=josh_fabia_full",
+    thumbnail: "https://i.ytimg.com/vi/xvFZjo5PgG0/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=xvFZjo5PgG0",
     description: "The complete saga of how Josh Fabia tried to destroy everything I built",
     isNumber1: true
   },
@@ -30,32 +30,32 @@ const viralVideos: ViralVideo[] = [
     id: 2,
     title: "Joe Rogan CONFRONTS Me About MMA Coverage",
     views: "2.1M",
-    thumbnail: "https://i.ytimg.com/vi/rogan_confronts/maxresdefault.jpg",
-    url: "https://youtube.com/watch?v=rogan_confronts",
+    thumbnail: "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     description: "Joe Rogan called me out on his podcast - here's my response"
   },
   {
     id: 3,
     title: "Tyler Robinson Case - What They're HIDING From You",
     views: "1.8M",
-    thumbnail: "https://i.ytimg.com/vi/tyler_hidden/maxresdefault.jpg",
-    url: "https://youtube.com/watch?v=tyler_hidden",
+    thumbnail: "https://i.ytimg.com/vi/i6h2VE7l4eE/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=i6h2VE7l4eE",
     description: "The explosive evidence mainstream media refuses to cover"
   },
   {
     id: 4,
     title: "Charlie Kirk's $50 MILLION Secret EXPOSED",
     views: "1.2M",
-    thumbnail: "https://i.ytimg.com/vi/kirk_50m/maxresdefault.jpg",
-    url: "https://youtube.com/watch?v=kirk_50m",
+    thumbnail: "https://i.ytimg.com/vi/eIn0IUqoX-8/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=eIn0IUqoX-8",
     description: "Following the money trail leads to shocking revelations"
   },
   {
     id: 5,
     title: "Why Everyone HATES Jake Paul - Deep Dive",
     views: "923K",
-    thumbnail: "https://i.ytimg.com/vi/E7-N0aFhJTY/maxresdefault.jpg",
-    url: "https://youtube.com/watch?v=E7-N0aFhJTY",
+    thumbnail: "https://i.ytimg.com/vi/6q2CYqUPZ5c/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=6q2CYqUPZ5c",
     description: "The real reasons behind the Jake Paul hate train"
   }
 ];
