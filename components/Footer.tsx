@@ -59,6 +59,29 @@ const Footer = () => {
             <p className="text-ash-grey/60 text-sm">The Legendary Dankster Building Algorithm</p>
           </div>
 
+          {/* Community Links */}
+          <div>
+            <h3 className="font-heading text-lg text-white mb-4 uppercase">Community</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href={LINKS.discord} className="text-ash-grey hover:text-fire-orange transition-colors">
+                  Discord Server
+                </a>
+              </li>
+              <li>
+                <a href={LINKS.patreon} className="text-ash-grey hover:text-fire-orange transition-colors">
+                  Patreon
+                </a>
+              </li>
+              <li>
+                <a href="/youtube-members" className="text-ash-grey hover:text-fire-orange transition-colors flex items-center gap-1">
+                  YouTube Members
+                  <span className="text-xs bg-fire-orange/20 text-fire-orange px-2 py-0.5 rounded-full">New</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/* Legal Links */}
           <div className="flex justify-center items-center gap-6 text-sm">
             <a
