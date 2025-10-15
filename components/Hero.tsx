@@ -3,13 +3,26 @@
 import { motion } from "framer-motion";
 import { SITE_CONFIG, LINKS } from "@/lib/constants";
 import Button from "@/components/ui/Button";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 const Hero = () => {
   const [isLive, setIsLive] = useState(false);
   const [subscriberCount, setSubscriberCount] = useState(516000);
+  const [mounted, setMounted] = useState(false);
+  
+  // Generate stable particle positions
+  const particles = useMemo(() => {
+    return [...Array(20)].map((_, i) => ({
+      id: i,
+      initialX: `${(i * 5) % 100}%`,
+      animateX: `${((i * 7) + 30) % 100}%`,
+      duration: 10 + (i % 10) * 2,
+      delay: (i % 5) * 2
+    }));
+  }, []);
   
   useEffect(() => {
+    setMounted(true);
     // Animate subscriber count on mount
     const interval = setInterval(() => {
       setSubscriberCount((prev) => {
@@ -53,28 +66,30 @@ const Hero = () => {
       </div>
       
       {/* Animated Fire Particles */}
-      <div className="absolute inset-0 z-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-orange-500 rounded-full opacity-60"
-            initial={{ 
-              x: Math.random() * window.innerWidth,
-              y: window.innerHeight + 100
-            }}
-            animate={{ 
-              y: -100,
-              x: Math.random() * window.innerWidth
-            }}
-            transition={{
-              duration: 10 + Math.random() * 20,
-              repeat: Infinity,
-              ease: "linear",
-              delay: Math.random() * 10
-            }}
-          />
-        ))}
-      </div>
+      {mounted && (
+        <div className="absolute inset-0 z-0">
+          {particles.map((particle) => (
+            <motion.div
+              key={particle.id}
+              className="absolute w-2 h-2 bg-orange-500 rounded-full opacity-60"
+              initial={{ 
+                x: particle.initialX,
+                y: "110%"
+              }}
+              animate={{ 
+                y: "-10%",
+                x: particle.animateX
+              }}
+              transition={{
+                duration: particle.duration,
+                repeat: Infinity,
+                ease: "linear",
+                delay: particle.delay
+              }}
+            />
+          ))}
+        </div>
+      )}
       {/* Live Indicator & Subscriber Count */}
       <motion.div 
         className="absolute top-8 right-8 z-20 flex items-center gap-4"
