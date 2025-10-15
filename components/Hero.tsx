@@ -159,20 +159,6 @@ export default function Hero() {
             </span>
           </motion.a>
 
-          {/* Discord button */}
-          <motion.a
-            href={LINKS.discord}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative px-10 py-5 text-xl font-bold rounded-xl border-2 border-fire-orange hover:bg-fire-orange/10 transition-all group text-white"
-            whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(255,69,0,0.5)' }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <span className="flex items-center gap-3">
-              💬 ENTER DISCORD
-            </span>
-          </motion.a>
-
           {/* YouTube button */}
           <motion.a
             href={LINKS.youtube}

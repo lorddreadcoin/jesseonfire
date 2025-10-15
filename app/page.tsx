@@ -114,13 +114,6 @@ export default function Home() {
         <MostViral />
       </section>
       
-      {/* Discord CTA - After Viral Videos */}
-      <section className="bg-dark-surface">
-        <div className="max-w-7xl mx-auto px-4">
-          <InlineCTA variant="discord" />
-        </div>
-      </section>
-      
       {/* Sponsors Section - Dark Surface Background */}
       <section id="sponsors" className="bg-dark-surface">
         <Sponsors />
@@ -129,13 +122,6 @@ export default function Home() {
       {/* Channel Network Section */}
       <section id="channels" className="bg-dark-surface">
         <ChannelNetwork />
-      </section>
-      
-      {/* YouTube Member Bridge CTA */}
-      <section className="bg-dark-surface">
-        <div className="max-w-7xl mx-auto px-4">
-          <InlineCTA variant="member" />
-        </div>
       </section>
       
       {/* Patreon Membership Section */}

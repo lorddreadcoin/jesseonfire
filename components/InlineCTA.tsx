@@ -22,12 +22,12 @@ export default function InlineCTA({ variant = 'patreon', className = '' }: Inlin
     },
     discord: {
       icon: FaDiscord,
-      title: "Join 10K+ Warriors on Discord",
-      description: "Real-time discussions, exclusive channels, direct access to Jesse.",
-      buttonText: "Enter Discord",
-      buttonIcon: "💬",
-      link: LINKS.discord,
-      gradient: "from-[#5865F2] via-[#4752C4] to-[#5865F2]"
+      title: "Want Discord Access?",
+      description: "Join Patreon and get instant Discord access + exclusive content automatically.",
+      buttonText: "Join on Patreon",
+      buttonIcon: "🔥",
+      link: LINKS.patreon,
+      gradient: "from-fire-orange via-red-600 to-fire-orange"
     },
     youtube: {
       icon: FaYoutube,
