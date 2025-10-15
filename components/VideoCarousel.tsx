@@ -23,6 +23,7 @@ export interface VideoData {
   uploadDate?: string;
   url?: string;
   category?: 'MMA' | 'POLITICS' | 'CONSPIRACY' | 'ROAST';
+  isNew?: boolean;
 }
 
 interface VideoCarouselProps {
@@ -61,13 +62,21 @@ const VideoCarousel = ({ videos }: VideoCarouselProps) => {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-obsidian overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.h2 
-          className="font-display text-5xl lg:text-6xl text-center text-fire-orange mb-12 uppercase tracking-wider"
+          className="font-display text-5xl lg:text-6xl text-center text-fire-orange mb-4 uppercase tracking-wider"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Latest Fire Content
+          Most Recent Uploads
         </motion.h2>
+        <motion.p 
+          className="text-center text-ash-grey text-lg mb-8 font-heading uppercase tracking-wide"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          Updated Multiple Times Daily - New Videos Always on Top
+        </motion.p>
 
         <Swiper
           effect={'coverflow'}
@@ -111,7 +120,7 @@ const VideoCarousel = ({ videos }: VideoCarouselProps) => {
           {videos.map((video) => (
             <SwiperSlide key={video.id} className="max-w-[400px]">
               <div className="cursor-pointer group">
-                <div className="relative aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-2xl">
+                <div className={`relative w-full aspect-video bg-gray-800 rounded-lg overflow-hidden shadow-2xl group cursor-pointer ${video.isNew ? 'ring-4 ring-fire-orange ring-opacity-50 animate-pulse' : ''}`}>
                   {playingVideoId === video.id ? (
                     /* YouTube Player Embed */
                     <div className="relative w-full h-full bg-black">
@@ -208,9 +217,18 @@ const VideoCarousel = ({ videos }: VideoCarouselProps) => {
                       >
                         <FaYoutube className="w-4 h-4 text-white" />
                       </motion.button>
+                      {/* New Video Badge */}
+                      {video.isNew && (
+                        <div className="absolute top-2 left-2 bg-fire-gradient px-3 py-1 rounded-full animate-pulse shadow-fire-glow">
+                          <span className="text-xs font-bold text-white uppercase tracking-wider">
+                            NEW UPLOAD
+                          </span>
+                        </div>
+                      )}
+                      
                       {/* Category badge */}
                       {video.category && (
-                        <div className="absolute top-2 left-2 bg-black/70 backdrop-blur-sm px-3 py-1 rounded-full">
+                        <div className={`absolute ${video.isNew ? 'top-10' : 'top-2'} left-2 bg-black/70 backdrop-blur-sm px-3 py-1 rounded-full`}>
                           <span className="text-xs font-bold text-orange-500">
                             {video.category}
                           </span>

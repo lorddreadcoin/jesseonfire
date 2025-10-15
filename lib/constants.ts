@@ -21,7 +21,7 @@ export interface Links {
 }
 
 export const LINKS: Links = {
-  patreon: "https://patreon.com/jesseonfire",
+  patreon: "https://www.patreon.com/c/jesseonfire",
   discord: "https://discord.gg/jesseonfire",
   youtube: "https://youtube.com/@realjesseonfire",
   twitter: "https://twitter.com/realjesseonfire",
@@ -61,45 +61,34 @@ export interface Tier {
   price: number;
   benefits: string[];
   featured?: boolean;
+  description?: string;
 }
 
 export const TIERS: Tier[] = [
   {
-    id: "spark",
-    name: "Spark",
-    price: 5,
+    id: "member",
+    name: "Jesse ON FIRE Member",
+    price: 7.99,
     benefits: [
-      "Access to exclusive content",
-      "Early access to new videos",
-      "Member-only Discord channel",
-      "Monthly Q&A streams"
-    ]
-  },
-  {
-    id: "flame",
-    name: "Flame",
-    price: 15,
-    benefits: [
-      "Everything in Spark tier",
-      "Behind-the-scenes content",
-      "Priority response in Discord",
-      "Vote on future roast topics",
-      "Monthly exclusive podcast episode"
+      "ALL VIDEO ACCESS",
+      "At least 2 PATREON ONLY videos PER WEEK",
+      "Celebrity CRUSHES (like Josh Fabia)",
+      "Exclusive roast content"
     ],
-    featured: true
+    description: "When you join my Patreon, you get access to all my videos here, which will include at least 2 PATREON ONLY videos PER WEEK where I CRUSH celebrities who deserve it (just like Josh Fabia). Don't miss Bill Cosby..."
   },
   {
-    id: "inferno",
-    name: "Inferno",
-    price: 35,
+    id: "elite",
+    name: "Jesse ON FIRE ELITE",
+    price: 14.99,
     benefits: [
-      "Everything in Flame tier",
-      "Personal shoutout in videos",
-      "1-on-1 monthly video call",
-      "Custom roast video requests",
-      "Merch discounts (50% off)",
-      "VIP meet & greet at live shows"
-    ]
+      "ALL VIDEO ACCESS",
+      "EXCLUSIVE Elite Only Live Chat",
+      "Direct access to JOF",
+      "All Member tier benefits"
+    ],
+    featured: true,
+    description: "This tier will access exclusive live chats that no one else has access to. If you really want direct access to JOF, this is the way there."
   }
 ];
 
