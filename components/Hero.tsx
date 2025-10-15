@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { SITE_CONFIG, LINKS } from "@/lib/constants";
 import Button from "@/components/ui/Button";
+import SubscriberBeltProgress from "@/components/SubscriberBeltProgress";
 import { useEffect, useState, useMemo } from "react";
 
 const Hero = () => {
@@ -90,15 +91,18 @@ const Hero = () => {
           ))}
         </div>
       )}
-      {/* Live Indicator & Subscriber Count */}
-      <motion.div 
-        className="absolute top-8 right-8 z-20 flex items-center gap-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-      >
-        {isLive && (
-          <div className="flex items-center gap-2 bg-red-600 px-4 py-2 rounded-full">
+      {/* Subscriber Belt Progress */}
+      <SubscriberBeltProgress />
+      
+      {/* Live Indicator */}
+      {isLive && (
+        <motion.div 
+          className="absolute top-8 right-8 z-20"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, type: "spring" }}
+        >
+          <div className="flex items-center gap-2 bg-red-600 px-4 py-2 rounded-full shadow-2xl">
             <motion.div
               className="w-3 h-3 bg-white rounded-full"
               animate={{ opacity: [1, 0.5, 1] }}
@@ -106,13 +110,8 @@ const Hero = () => {
             />
             <span className="text-white font-bold text-sm">LIVE NOW</span>
           </div>
-        )}
-        <div className="bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500/30">
-          <span className="text-orange-500 font-bold">
-            {subscriberCount.toLocaleString()}+ Subscribers
-          </span>
-        </div>
-      </motion.div>
+        </motion.div>
+      )}
       
       <motion.div
         className="text-center max-w-5xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8"
@@ -133,8 +132,8 @@ const Hero = () => {
           <span className="relative">
             JESSE ON FIRE
             <motion.span
-              className="absolute inset-0 text-orange-500 blur-xl opacity-70"
-              animate={{ opacity: [0.5, 0.8, 0.5] }}
+              className="absolute inset-0 text-orange-500 blur-md opacity-50"
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
               transition={{ repeat: Infinity, duration: 2 }}
             >
               JESSE ON FIRE

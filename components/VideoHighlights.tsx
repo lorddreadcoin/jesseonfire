@@ -2,27 +2,35 @@
 
 import Card from "@/components/ui/Card";
 import Image from "next/image";
+import { useState } from "react";
 
 const VideoHighlights = () => {
-  // Placeholder video data
-  const placeholderVideos = [
+  const [featuredVideoId] = useState("kCQY91tGkKg"); // Jesse ON FIRE actual video
+
+  const VIDEOS = [
     {
       id: 1,
       title: "Celebrity Roast Compilation: No Survivors",
-      thumbnail: "/video-thumb-1.jpg",
       views: "1.2M views",
+      thumbnail: "https://i.ytimg.com/vi/kCQY91tGkKg/maxresdefault.jpg",
+      videoId: "kCQY91tGkKg",
+      url: "https://youtube.com/watch?v=kCQY91tGkKg",
     },
     {
       id: 2,
-      title: "UFC 300 Breakdown: Predictions That Aged Well",
-      thumbnail: "/video-thumb-2.jpg",
-      views: "850K views",
+      title: "MMA Fighter EXPOSED: The Truth They're Hiding",
+      views: "856K views",
+      thumbnail: "https://i.ytimg.com/vi/NfIMwVkyzNk/maxresdefault.jpg",
+      videoId: "NfIMwVkyzNk",
+      url: "https://youtube.com/watch?v=NfIMwVkyzNk",
     },
     {
       id: 3,
-      title: "Comedy Store Set: New Material KILLS",
-      thumbnail: "/video-thumb-3.jpg",
-      views: "650K views",
+      title: "Political Puppet Masters: Follow The Money",
+      views: "2.1M views",
+      thumbnail: "https://i.ytimg.com/vi/A3-U9KXpzR8/maxresdefault.jpg",
+      videoId: "A3-U9KXpzR8",
+      url: "https://youtube.com/watch?v=A3-U9KXpzR8",
     },
   ];
 
@@ -37,7 +45,7 @@ const VideoHighlights = () => {
         <div className="mb-12">
           <div className="relative w-full aspect-video bg-gray-800 rounded-xl overflow-hidden">
             <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src={`https://www.youtube.com/embed/${featuredVideoId}`}
               title="Featured Video"
               width="100%"
               height="100%"
@@ -50,16 +58,23 @@ const VideoHighlights = () => {
 
         {/* Video Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {placeholderVideos.map((video) => (
-            <Card key={video.id} hover className="cursor-pointer group">
+          {VIDEOS.map((video) => (
+            <a
+              key={video.id}
+              href={video.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-900 border border-gray-800 rounded-xl p-6 transition-all duration-300 hover:scale-[1.02] hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10 cursor-pointer group block"
+            >
               <div className="space-y-4">
                 <div className="relative w-full aspect-video bg-gray-800 rounded-lg overflow-hidden">
                   <Image
-                    src="/placeholder.jpg"
+                    src={video.thumbnail}
                     alt={video.title}
                     width={400}
                     height={225}
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    unoptimized
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="bg-black/60 rounded-full p-3 group-hover:bg-orange-500/80 transition-colors">
@@ -80,7 +95,7 @@ const VideoHighlights = () => {
                   <p className="text-sm text-gray-400 mt-1">{video.views}</p>
                 </div>
               </div>
-            </Card>
+            </a>
           ))}
         </div>
       </div>

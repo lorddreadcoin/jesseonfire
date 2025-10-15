@@ -1,10 +1,42 @@
 "use client";
 
-import { SPONSORS } from "@/lib/constants";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import CopyButton from "@/components/ui/CopyButton";
 import Image from "next/image";
+
+const SPONSORS = [
+  {
+    name: "PrizePicks",
+    description: "Daily fantasy sports made simple. Use code JESSEONFIRE for a deposit match up to $100",
+    logo: "/prizepicks-logo.png",
+    code: "JESSEONFIRE",
+    link: "https://prizepicks.onelink.me/ivHR/JESSEONFIRE",
+    bonus: "$100 Bonus",
+    fallbackColor: "bg-gradient-to-br from-green-500 to-green-700",
+    fallbackText: "PP"
+  },
+  {
+    name: "Magic Mind",
+    description: "The world's first productivity shot. Get 20% off your subscription",
+    logo: "/magicmind-logo.png",
+    code: "JESSEFIRE20",
+    link: "https://magicmind.co/jessefire",
+    bonus: "20% Off",
+    fallbackColor: "bg-gradient-to-br from-purple-500 to-blue-600",
+    fallbackText: "MM"
+  },
+  {
+    name: "YoKratom",
+    description: "Premium kratom products. Use code FIRE15 for 15% off your first order",
+    logo: "/yokratom-logo.png",
+    code: "FIRE15",
+    link: "https://yokratom.com/jesse",
+    bonus: "15% Off",
+    fallbackColor: "bg-gradient-to-br from-amber-500 to-orange-600",
+    fallbackText: "YK"
+  }
+];
 
 const Sponsors = () => {
   return (
@@ -14,82 +46,57 @@ const Sponsors = () => {
           Official Partners
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* PrizePicks Card */}
-          <Card hover className="flex flex-col space-y-6">
-            <div className="h-20 flex items-center justify-center">
-              <Image
-                src="/prizepicks-logo.png"
-                alt={SPONSORS.prizepicks.name}
-                width={200}
-                height={80}
-                className="object-contain"
-              />
-            </div>
-
-            <p className="text-lg text-gray-400">
-              {SPONSORS.prizepicks.description}
-            </p>
-
-            <div className="space-y-2">
-              <p className="text-sm text-gray-500">Promo Code:</p>
-              <div className="flex items-center gap-4">
-                <code className="font-mono text-2xl text-orange-500 font-bold">
-                  {SPONSORS.prizepicks.code}
-                </code>
-                <CopyButton text={SPONSORS.prizepicks.code} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {SPONSORS.map((sponsor) => (
+            <Card hover key={sponsor.name} className="flex flex-col space-y-6">
+              {/* Logo with Fallback */}
+              <div className="h-20 flex items-center justify-center">
+                <div className={`${sponsor.fallbackColor} w-full max-w-[200px] h-20 rounded-lg flex items-center justify-center relative overflow-hidden shadow-lg`}>
+                  <span className="text-3xl font-black text-white z-10">{sponsor.fallbackText}</span>
+                  <span className="absolute bottom-1 right-2 text-xs text-white/70 font-medium">{sponsor.name}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    width={200}
+                    height={80}
+                    className="object-contain absolute inset-0 w-full h-full"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                </div>
               </div>
-            </div>
 
-            <a
-              href={SPONSORS.prizepicks.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto"
-            >
-              <Button variant="primary" className="w-full">
-                Claim $50 Bonus →
-              </Button>
-            </a>
-          </Card>
+              {/* Description */}
+              <p className="text-lg text-gray-400">
+                {sponsor.description}
+              </p>
 
-          {/* YoKratom Card */}
-          <Card hover className="flex flex-col space-y-6">
-            <div className="h-20 flex items-center justify-center">
-              <Image
-                src="/yokratom-logo.png"
-                alt={SPONSORS.yokratom.name}
-                width={200}
-                height={80}
-                className="object-contain"
-              />
-            </div>
-
-            <p className="text-lg text-gray-400">
-              {SPONSORS.yokratom.description}
-            </p>
-
-            <div className="space-y-2">
-              <p className="text-sm text-gray-500">Promo Code:</p>
-              <div className="flex items-center gap-4">
-                <code className="font-mono text-2xl text-orange-500 font-bold">
-                  {SPONSORS.yokratom.code}
-                </code>
-                <CopyButton text={SPONSORS.yokratom.code} />
+              {/* Promo Code */}
+              <div className="space-y-2">
+                <p className="text-sm text-gray-500">Promo Code:</p>
+                <div className="flex items-center gap-4">
+                  <code className="font-mono text-2xl text-orange-500 font-bold">
+                    {sponsor.code}
+                  </code>
+                  <CopyButton text={sponsor.code} />
+                </div>
               </div>
-            </div>
 
-            <a
-              href={SPONSORS.yokratom.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto"
-            >
-              <Button variant="primary" className="w-full">
-                Shop YoKratom →
-              </Button>
-            </a>
-          </Card>
+              {/* CTA Button */}
+              <a
+                href={sponsor.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto"
+              >
+                <Button variant="primary" className="w-full">
+                  Claim {sponsor.bonus} →
+                </Button>
+              </a>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

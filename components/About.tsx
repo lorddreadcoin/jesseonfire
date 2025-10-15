@@ -41,13 +41,32 @@ const About = () => {
       >
         <motion.div variants={itemVariants}>
           <div className="relative w-full aspect-square max-w-[600px] mx-auto">
+            {/* Fallback gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-600 via-red-600 to-orange-500 rounded-2xl" />
+            
+            {/* Fire effect overlay */}
+            <div className="absolute inset-0 bg-black/40 rounded-2xl" />
+            
+            {/* Text overlay as image placeholder */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white rounded-2xl border-2 border-orange-500/20">
+              <span className="text-6xl mb-4">🔥</span>
+              <h3 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400">JESSE</h3>
+              <h4 className="text-3xl font-bold text-white/90">ON FIRE</h4>
+              <p className="text-sm text-white/70 mt-2">Black Belt on the Mat & Mic</p>
+            </div>
+            
+            {/* Try to load actual image with fallback */}
             <Image
-              src="/placeholder.jpg"
+              src="/images/jesse-portrait.jpg"
               alt="Jesse ON FIRE"
               width={600}
               height={600}
-              className="rounded-2xl border-2 border-orange-500/20 object-cover"
+              className="rounded-2xl border-2 border-orange-500/20 object-cover relative z-10"
               priority
+              onError={(e) => {
+                // Hide image on error to show fallback
+                e.currentTarget.style.display = 'none';
+              }}
             />
           </div>
         </motion.div>
