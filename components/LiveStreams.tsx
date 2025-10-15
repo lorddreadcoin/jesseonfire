@@ -16,52 +16,54 @@ export interface LiveStream {
   vph?: string;
 }
 
-// Jesse's HOTTEST Live Streams
+// Jesse's MOST VIRAL Live Streams - MILLIONS OF VIEWS
 const liveStreams: LiveStream[] = [
   {
     id: 1,
-    title: "Katie Porter is going to KILL SOMEONE! Clintons REFUSE to...",
+    title: "Trump SNIPER Makes SHOCKING Claim! WITNESS PROTECTION IMMEDIATELY!",
     thumbnail: "https://i.ytimg.com/vi/f-17aycj6vM/maxresdefault.jpg",
-    views: "63 VPH",
-    viewers: "1.4k",
+    views: "2.9M views",
+    viewers: "50k",
     url: "https://www.youtube.com/live/f-17aycj6vM",
-    timeAgo: "Streamed 5 hours ago"
+    timeAgo: "Streamed 1 year ago",
+    vph: "1 VPH"
   },
   {
     id: 2,
-    title: "DOJ Reveals 'PLOT TO ASSASSINATE CHARLIE KIRK'S FRIEND'",
+    title: "IRAN Behind Trump Assassination PLOT!!?? Secret Service KNEW IT WAS COMING!!!",
     thumbnail: "https://i.ytimg.com/vi/sJiLjQ9f0w4/maxresdefault.jpg",
-    views: "80K views",
-    viewers: "1.4k",
+    views: "369K views",
+    viewers: "8.7k",
     url: "https://www.youtube.com/live/sJiLjQ9f0w4",
-    timeAgo: "Streamed 4 days ago"
+    timeAgo: "Streamed 1 year ago"
   },
   {
     id: 3,
-    title: "DIDDY GETS A SHOCKING SENTENCE!! HE'S GOING TO PRISON...",
+    title: "Donald Trump's REVENGE & the SHOOTER was with BLACKROCK!!! WHAT??????????",
     thumbnail: "https://i.ytimg.com/vi/CQYNGiK5ZAQ/maxresdefault.jpg",
-    views: "71K views",
-    viewers: "1.2k",
+    views: "349K views",
+    viewers: "3.7k",
     url: "https://www.youtube.com/live/CQYNGiK5ZAQ",
-    timeAgo: "Streamed 11 days ago"
+    timeAgo: "Streamed 1 year ago",
+    vph: "1 VPH"
   },
   {
     id: 4,
-    title: "Cassie's INSANE Attempt to BURY DIDDY 2 Days Before Sentencing!! Thi...",
+    title: "Joe Biden DROPS OUT! Their Plan is in PLAIN SIGHT! Donald Trump Needs TRIPLE SECURITY!",
     thumbnail: "https://i.ytimg.com/vi/IkOW6mcNJmM/maxresdefault.jpg",
-    views: "Streamed",
-    viewers: "Members only",
+    views: "158K views",
+    viewers: "7.3k",
     url: "https://www.youtube.com/live/IkOW6mcNJmM",
-    timeAgo: "Streamed 13 days ago"
+    timeAgo: "Streamed 1 year ago"
   },
   {
     id: 5,
-    title: "RAY EPPS WAS UNDERCOVER FBI ALL ALONG!!! 275 FBI AGENTS AT JAN...",
+    title: "HULK HOGAN DEAD!! SHOCKING TRAGIC DETAILS HAVE ME TERRIFIED!!",
     thumbnail: "https://i.ytimg.com/vi/IpGdtysiyU0/maxresdefault.jpg",
-    views: "4 VPH",
-    viewers: "1k",
+    views: "149K views",
+    viewers: "1 VPH",
     url: "https://www.youtube.com/live/IpGdtysiyU0",
-    timeAgo: "Streamed 2 weeks ago"
+    timeAgo: "Streamed 2 months ago"
   }
 ];
 
@@ -83,10 +85,10 @@ const LiveStreams = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-display text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider">
-            🔴 LIVE STREAMS 🔴
+            🔴 MOST VIRAL LIVE STREAMS 🔴
           </h2>
           <p className="text-xl text-ash-grey font-heading uppercase">
-            Breaking News As It Happens - Unfiltered & Uncensored
+            The Explosive Streams That Got MILLIONS of Views
           </p>
         </motion.div>
 
