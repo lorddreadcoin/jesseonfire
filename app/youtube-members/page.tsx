@@ -205,6 +205,25 @@ export default function YouTubeMembersPage() {
                 If you cancel YouTube membership, Discord removes your role automatically
               </p>
             </div>
+            
+            {/* Tier Information */}
+            <div className="mt-6 space-y-3">
+              <p className="text-sm font-bold text-white">YouTube Tier = Discord Access:</p>
+              <div className="space-y-2 text-xs">
+                <div className="flex justify-between text-ash-grey">
+                  <span>Inner Circle ($4.99)</span>
+                  <span className="text-fire-orange">→ Basic</span>
+                </div>
+                <div className="flex justify-between text-ash-grey">
+                  <span>Best Friends ($9.99)</span>
+                  <span className="text-purple-500">→ Premium</span>
+                </div>
+                <div className="flex justify-between text-ash-grey">
+                  <span>You Love Me ($24.99)</span>
+                  <span className="text-yellow-500">→ VIP</span>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           {/* Verification Form */}

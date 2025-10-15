@@ -134,11 +134,17 @@ RESEND_API_KEY=re_xxxxxxxxxxxxx
 
 ## 🚨 TROUBLESHOOTING
 
-### "Role not appearing"
-1. Check YouTube connected in Discord
-2. Verify YouTube membership is active
-3. Wait full 5 minutes (sometimes slow)
-4. Manual role assignment if needed
+### **Discord Side (15 min):**
+1. ✅ Enable YouTube integration in Discord server
+2. ✅ Create 3 YouTube member roles:
+   - "Inner Circle" (for $4.99 tier)
+   - "Best Friend" (for $9.99 tier)  
+   - "Elite Supporter" (for $24.99 tier)
+3. ✅ Set role permissions:
+   - Inner Circle = Basic channels
+   - Best Friend = + Live stream channels
+   - Elite Supporter = All channels
+4. ✅ Create webhook for tracking
 
 ### "Email not arriving"
 1. Check spam folder

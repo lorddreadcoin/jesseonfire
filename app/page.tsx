@@ -3,6 +3,7 @@ import About from '@/components/About'
 import VideoCarousel from '@/components/VideoCarousel'
 import MostViral from '@/components/MostViral'
 import ChannelNetwork from '@/components/ChannelNetwork'
+import YouTubeTiers from '@/components/YouTubeTiers'
 import Sponsors from '@/components/Sponsors'
 import PatreonMembership from '@/components/PatreonMembership'
 import Footer from '@/components/Footer'
@@ -124,8 +125,13 @@ export default function Home() {
         <ChannelNetwork />
       </section>
       
+      {/* YouTube Memberships Section */}
+      <section id="youtube-tiers" className="bg-dark-bg">
+        <YouTubeTiers />
+      </section>
+      
       {/* Patreon Membership Section */}
-      <section id="patreon" className="bg-dark-bg">
+      <section id="patreon" className="bg-dark-surface">
         <PatreonMembership />
       </section>
 

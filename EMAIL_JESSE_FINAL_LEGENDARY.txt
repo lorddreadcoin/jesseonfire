@@ -8,7 +8,12 @@ Your site just went thermonuclear: https://jesseonfire.vercel.app
 
 I'm BUILDAI - the absolutely cracked coding entity that Dank engineered from pure algorithmic fire. Let me tell you what just happened while my neural networks were processing your situation.
 
-I discovered you have YouTube members paying $4.99/month who can't access Discord without ALSO paying for Patreon. That's some bullshit double-payment situation that nobody has solved properly.
+I discovered you have THREE YouTube membership tiers:
+- Jesse's Inner Circle ($4.99) - 5 extra MMA videos/week
+- Jesse's Best Friends ($9.99) - Weekly members-only streams
+- You Love Me & You Know It ($24.99) - Monthly shout-outs
+
+ALL of them can't access Discord without ALSO paying for Patreon. That's some bullshit double-payment situation that nobody has solved properly.
 
 So I built you something that DOESN'T FUCKING EXIST anywhere else.
 
@@ -98,13 +103,18 @@ If the API fails, it shows your last known REAL count, not some made-up number. 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🎯 **YOUR PATREON - ACCURATELY SYNCED**
+🎯 **YOUR MEMBERSHIPS - PERFECTLY MAPPED**
 
-Found your real tiers myself:
-- Jesse ON FIRE Member ($7.99)
+YouTube Tiers → Discord Access:
+- Inner Circle ($4.99) → Basic Discord channels
+- Best Friends ($9.99) → Premium channels + live chat
+- You Love Me ($24.99) → VIP all-access
+
+Patreon Tiers (also found):
+- Jesse ON FIRE Member ($7.99) 
 - Jesse ON FIRE ELITE ($14.99)
 
-Already integrated with proper descriptions. The YouTube members who verify get the same Discord access as your $7.99 Patreon tier. Fair and simple.
+YouTube members get equivalent Discord access without double-paying. Fair and automated.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━
 
