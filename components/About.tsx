@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { BIO } from "@/lib/constants";
+import { FaYoutube } from "react-icons/fa";
 
 const About = () => {
   const containerVariants = {
@@ -39,35 +40,36 @@ const About = () => {
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
-        <motion.div variants={itemVariants}>
-          <div className="relative w-full aspect-square max-w-[600px] mx-auto">
-            {/* Fallback gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-600 via-red-600 to-orange-500 rounded-2xl" />
+        {/* Portrait/Image - REAL JESSE */}
+        <motion.div 
+          className="relative"
+          variants={itemVariants}
+        >
+          <div className="relative w-full h-[600px] rounded-xl overflow-hidden shadow-fire-glow-lg">
+            <Image
+              src="https://i.imgur.com/8Reixdn.jpg"
+              alt="Jesse ON FIRE with YouTube Plaque"
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={90}
+            />
+            {/* Fire gradient overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             
-            {/* Fire effect overlay */}
-            <div className="absolute inset-0 bg-black/40 rounded-2xl" />
-            
-            {/* Text overlay as image placeholder */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-white rounded-2xl border-2 border-orange-500/20">
-              <span className="text-6xl mb-4">🔥</span>
-              <h3 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400">JESSE</h3>
-              <h4 className="text-3xl font-bold text-white/90">ON FIRE</h4>
-              <p className="text-sm text-white/70 mt-2">Black Belt on the Mat & Mic</p>
+            {/* Badge overlay */}
+            <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-full border border-fire-orange/50">
+              <div className="flex items-center gap-2">
+                <FaYoutube className="text-red-600 text-xl" />
+                <span className="text-white font-bold">516K+ Warriors</span>
+              </div>
             </div>
             
-            {/* Try to load actual image with fallback */}
-            <Image
-              src="/images/jesse-portrait.jpg"
-              alt="Jesse ON FIRE"
-              width={600}
-              height={600}
-              className="rounded-2xl border-2 border-orange-500/20 object-cover relative z-10"
-              priority
-              onError={(e) => {
-                // Hide image on error to show fallback
-                e.currentTarget.style.display = 'none';
-              }}
-            />
+            {/* Purple Belt Badge */}
+            <div className="absolute top-4 right-4 bg-purple-600/90 backdrop-blur-sm px-3 py-1 rounded-full">
+              <span className="text-white text-sm font-bold">🥋 Purple Belt BJJ</span>
+            </div>
           </div>
         </motion.div>
 
