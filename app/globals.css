@@ -2,6 +2,125 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Jesse ON FIRE - Cinematic Media Empire */
+
+@layer base {
+  :root {
+    --font-bebas: var(--font-bebas);
+    --font-anton: var(--font-anton);
+    --font-playfair: var(--font-playfair);
+    
+    /* Fire Colors */
+    --fire-orange: #FF5A1F;
+    --lava-red: #E23E1D;
+    --obsidian: #0A0A0C;
+    --charcoal: #16181D;
+    --ash-grey: #C4C7CC;
+    --molten-amber: #FFB86C;
+  }
+
+  body {
+    @apply bg-ember-gradient text-ash-grey antialiased;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3 {
+    @apply text-fire-orange;
+    font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  h4, h5, h6 {
+    font-family: var(--font-anton), 'Anton', 'Oswald', sans-serif;
+  }
+
+  blockquote {
+    font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+    @apply italic text-ash-grey;
+  }
+}
+
+@layer components {
+  /* Primary CTA Button */
+  .btn-fire {
+    @apply bg-fire-gradient text-white font-display uppercase;
+    @apply px-6 py-3 rounded-xl shadow-fire-glow;
+    @apply transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-fire-glow-lg;
+    font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  /* Fire Glow Text Effect */
+  .text-fire-glow {
+    @apply text-fire-orange;
+    text-shadow: 0 0 10px rgba(255, 90, 31, 0.5);
+  }
+
+  /* Card with Cinematic Depth */
+  .card-cinematic {
+    @apply bg-charcoal rounded-xl p-6;
+    @apply border border-fire-orange/10;
+    background: linear-gradient(135deg, rgba(255, 90, 31, 0.02) 0%, transparent 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Ember Particle Effect */
+  .ember-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, var(--fire-orange) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: emberDrift 8s linear infinite;
+    opacity: 0;
+  }
+}
+
+@layer utilities {
+  /* Fire Flicker Animation */
+  @keyframes fireFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+  }
+
+  /* Glow Pulse Animation */
+  @keyframes glowPulse {
+    0% { 
+      box-shadow: 0 0 10px rgba(255, 90, 31, 0.3);
+      text-shadow: 0 0 10px rgba(255, 90, 31, 0.5);
+    }
+    100% { 
+      box-shadow: 0 0 30px rgba(255, 90, 31, 0.6);
+      text-shadow: 0 0 20px rgba(255, 90, 31, 0.8);
+    }
+  }
+
+  /* Ember Drift Animation */
+  @keyframes emberDrift {
+    0% { 
+      transform: translateY(100vh) translateX(0);
+      opacity: 0;
+    }
+    10% { opacity: 0.3; }
+    90% { opacity: 0.3; }
+    100% { 
+      transform: translateY(-10vh) translateX(20px);
+      opacity: 0;
+    }
+  }
+
+  .animate-fire-flicker {
+    animation: fireFlicker 3s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite alternate;
+  }
+}
+
 @layer base {
   :root {
     --fire-primary: #FF4500;

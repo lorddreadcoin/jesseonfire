@@ -4,6 +4,11 @@ Got the site live for you to check out: https://jesseonfire.vercel.app
 
 Fixed the purple belt thing and removed all the comedian positioning - it's all political/MMA truth-speaker now.
 
+Also updated:
+- PrizePicks promo to the correct "Play $5, Get $50" (was showing $100)
+- Social links now point to @realjesseonfire
+- Removed the confusing belt progression widget
+
 Need 3 things from you when you get a sec:
 
 1. Which 3-5 videos should be featured on the homepage? 
@@ -15,6 +20,7 @@ Need 3 things from you when you get a sec:
 3. Any copy you want changed? 
    (The text on the site - I kept it simple but you know your voice better)
 
-Also removed that belt progression thing that was confusing - kept it clean with just your subscriber count.
+4. Are the Patreon tiers right? ($5 Spark, $15 Flame, $35 Inferno)
+   (Let me know if prices or benefits need updating)
 
 Take your time, I know you're busy. No rush.

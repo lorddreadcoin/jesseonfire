@@ -1,11 +1,33 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Bebas_Neue, Anton, Playfair_Display } from 'next/font/google'
 import './globals.css'
 
+// Jesse ON FIRE - Cinematic Typography
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+})
+
+const bebasNeue = Bebas_Neue({ 
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-bebas',
+})
+
+const anton = Anton({ 
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-anton',
+})
+
+const playfair = Playfair_Display({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair',
+  style: ['normal', 'italic'],
 })
 
 export const metadata: Metadata = {
@@ -69,12 +91,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${bebasNeue.variable} ${anton.variable} ${playfair.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="theme-color" content="#FF5A1F" />
       </head>
-      <body className="min-h-screen font-sans">
+      <body className="min-h-screen font-sans bg-obsidian text-ash-grey">
         {children}
       </body>
     </html>
