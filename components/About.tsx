@@ -79,8 +79,8 @@ const About = () => {
             {BIO.headline}
           </motion.h2>
 
-          <motion.div
-            className="flex flex-wrap gap-4"
+          <motion.div 
+            className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
             variants={itemVariants}
           >
             {BIO.stats.map((stat, index) => (
@@ -92,7 +92,12 @@ const About = () => {
                 <div className="text-3xl font-display text-fire-gradient bg-clip-text text-transparent">
                   {stat.value}
                 </div>
-                <div className="text-sm font-heading text-ash-grey uppercase tracking-wide mt-2">{stat.label}</div>
+                <div className="text-sm font-heading text-ash-grey uppercase tracking-wide mt-2">
+                  {stat.label}
+                  {stat.label === "YouTube Warriors" && (
+                    <span className="text-fire-orange text-xs block mt-1 animate-pulse">LIVE</span>
+                  )}
+                </div>
               </motion.div>
             ))}
           </motion.div>
