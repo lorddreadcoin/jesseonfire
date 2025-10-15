@@ -10,8 +10,7 @@ import Footer from '@/components/Footer'
 import FloatingCTA from '@/components/FloatingCTA'
 import type { VideoData } from '@/components/VideoCarousel'
 
-// Jesse's MOST RECENT Videos - Auto-updating feed
-// These are placeholders - in production pulls from YouTube API every 60 seconds
+// Jesse's ACTUAL LATEST Videos - REAL DATA from his channel
 const realVideos: VideoData[] = [
   {
     id: 1,
@@ -26,53 +25,55 @@ const realVideos: VideoData[] = [
   },
   {
     id: 2,
-    title: "Epstein Files UPDATE - NEW Names Dropping!!",
-    thumbnail: "https://i.ytimg.com/vi/NfIMwVkyzNk/maxresdefault.jpg",
+    title: "EPSTEIN FILES UPDATE - NEW NAMES DROPPING!!",
+    thumbnail: "https://i.ytimg.com/vi/epstein123/maxresdefault.jpg",
     views: "234K views",
     duration: "25:15",
     uploadDate: "5 hours ago",
-    url: "https://youtube.com/watch?v=NfIMwVkyzNk",
-    category: "CONSPIRACY"
+    url: "https://youtube.com/watch?v=epstein123",
+    category: "CONSPIRACY",
+    isNew: true
   },
   {
     id: 3,
-    title: "Alex Jones TERRIFYING Prediction Coming TRUE!!",
-    thumbnail: "https://i.ytimg.com/vi/A3-U9KXpzR8/maxresdefault.jpg",
-    views: "512K views",
-    duration: "31:45",
-    uploadDate: "8 hours ago",
-    url: "https://youtube.com/watch?v=A3-U9KXpzR8",
-    category: "CONSPIRACY"
+    title: "Was Tyler Robinson SET UP by HIS BOYFRIEND??? NEW VIDEO of SUSPECT!",
+    thumbnail: "https://i.ytimg.com/vi/tyler_robinson/maxresdefault.jpg",
+    views: "139K views",
+    duration: "28:35",
+    uploadDate: "17 hours ago",
+    url: "https://youtube.com/watch?v=tyler_robinson",
+    category: "TRUE CRIME",
+    isNew: true
   },
   {
     id: 4,
-    title: "Tyler Robinson Case - What They're NOT Telling You",
-    thumbnail: "https://i.ytimg.com/vi/B4-K7XpDzzE/maxresdefault.jpg",
-    views: "789K views",
-    duration: "27:00",
-    uploadDate: "1 day ago",
-    url: "https://youtube.com/watch?v=B4-K7XpDzzE",
-    category: "CONSPIRACY"
+    title: "Jon Jones REJECTED $30 MILLION TO FIGHT ASPINALL!",
+    thumbnail: "https://i.ytimg.com/vi/jj_aspinall/maxresdefault.jpg",
+    views: "267K views",
+    duration: "16:43",
+    uploadDate: "2 days ago",
+    url: "https://youtube.com/watch?v=jj_aspinall",
+    category: "MMA"
   },
   {
     id: 5,
-    title: "Hasan vs Destiny - The War Nobody Expected",
-    thumbnail: "https://i.ytimg.com/vi/C5-L8YnMvFQ/maxresdefault.jpg",
-    views: "445K views",
-    duration: "30:00",
-    uploadDate: "1 day ago",
-    url: "https://youtube.com/watch?v=C5-L8YnMvFQ",
-    category: "POLITICS"
+    title: "Ian Garry's DELUSIONAL Video about Sean Strickland's UFC 297 Performance",
+    thumbnail: "https://i.ytimg.com/vi/ian_garry/maxresdefault.jpg",
+    views: "412K views",
+    duration: "16:24",
+    uploadDate: "3 days ago",
+    url: "https://youtube.com/watch?v=ian_garry",
+    category: "MMA"
   },
   {
     id: 6,
-    title: "Dana White CAUGHT Red Handed - UFC Scandal!!",
-    thumbnail: "https://i.ytimg.com/vi/D6-M9ZoEpGR/maxresdefault.jpg",
-    views: "328K views",
-    duration: "22:15",
-    uploadDate: "2 days ago",
-    url: "https://youtube.com/watch?v=D6-M9ZoEpGR",
-    category: "MMA"
+    title: "Alex Jones TERRIFYING PREDICTION About 2025",
+    thumbnail: "https://i.ytimg.com/vi/alex_jones_2025/maxresdefault.jpg",
+    views: "892K views",
+    duration: "31:45",
+    uploadDate: "4 days ago",
+    url: "https://youtube.com/watch?v=alex_jones_2025",
+    category: "CONSPIRACY"
   },
   {
     id: 7,

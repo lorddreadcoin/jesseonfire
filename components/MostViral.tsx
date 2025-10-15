@@ -11,6 +11,7 @@ export interface ViralVideo {
   thumbnail: string;
   views: string;
   url: string;
+  description: string;
   isNumber1?: boolean;
 }
 
@@ -18,39 +19,44 @@ export interface ViralVideo {
 const viralVideos: ViralVideo[] = [
   {
     id: 1,
-    title: "MMA Guru EXPOSED For Being A Pathological LIAR",
-    thumbnail: "https://i.ytimg.com/vi/NfIMwVkyzNk/maxresdefault.jpg",
-    views: "2.1M views",
-    url: "https://youtube.com/watch?v=NfIMwVkyzNk",
+    title: "Josh Fabia DESTROYED My Channel - The FULL Story",
+    views: "3.4M",
+    thumbnail: "https://i.ytimg.com/vi/josh_fabia_full/maxresdefault.jpg",
+    url: "https://youtube.com/watch?v=josh_fabia_full",
+    description: "The complete saga of how Josh Fabia tried to destroy everything I built",
     isNumber1: true
   },
   {
     id: 2,
-    title: "Sean Strickland Goes OFF on Reporter",
-    thumbnail: "https://i.ytimg.com/vi/A3-U9KXpzR8/maxresdefault.jpg",
-    views: "892K views",
-    url: "https://youtube.com/watch?v=A3-U9KXpzR8"
+    title: "Joe Rogan CONFRONTS Me About MMA Coverage",
+    views: "2.1M",
+    thumbnail: "https://i.ytimg.com/vi/rogan_confronts/maxresdefault.jpg",
+    url: "https://youtube.com/watch?v=rogan_confronts",
+    description: "Joe Rogan called me out on his podcast - here's my response"
   },
   {
     id: 3,
-    title: "Joe Rogan Just EXPOSED The UFC's Biggest Secret",
-    thumbnail: "https://i.ytimg.com/vi/C5-L8YnMvFQ/maxresdefault.jpg",
-    views: "1.2M views",
-    url: "https://youtube.com/watch?v=C5-L8YnMvFQ"
+    title: "Tyler Robinson Case - What They're HIDING From You",
+    views: "1.8M",
+    thumbnail: "https://i.ytimg.com/vi/tyler_hidden/maxresdefault.jpg",
+    url: "https://youtube.com/watch?v=tyler_hidden",
+    description: "The explosive evidence mainstream media refuses to cover"
   },
   {
     id: 4,
-    title: "Dana White's ILLEGAL Business EXPOSED",
-    thumbnail: "https://i.ytimg.com/vi/D6-M9ZoEpGR/maxresdefault.jpg",
-    views: "678K views",
-    url: "https://youtube.com/watch?v=D6-M9ZoEpGR"
+    title: "Charlie Kirk's $50 MILLION Secret EXPOSED",
+    views: "1.2M",
+    thumbnail: "https://i.ytimg.com/vi/kirk_50m/maxresdefault.jpg",
+    url: "https://youtube.com/watch?v=kirk_50m",
+    description: "Following the money trail leads to shocking revelations"
   },
   {
     id: 5,
     title: "Why Everyone HATES Jake Paul - Deep Dive",
+    views: "923K",
     thumbnail: "https://i.ytimg.com/vi/E7-N0aFhJTY/maxresdefault.jpg",
-    views: "923K views",
-    url: "https://youtube.com/watch?v=E7-N0aFhJTY"
+    url: "https://youtube.com/watch?v=E7-N0aFhJTY",
+    description: "The real reasons behind the Jake Paul hate train"
   }
 ];
 
