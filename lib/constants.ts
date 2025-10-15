@@ -8,8 +8,8 @@ export interface SiteConfig {
 
 export const SITE_CONFIG: SiteConfig = {
   name: "Jesse ON FIRE",
-  tagline: "Black Belt Mic Skills",
-  description: "Stand-up comedian, MMA enthusiast, and professional roaster bringing the heat to stages nationwide"
+  tagline: "Uncensored. Unfiltered. On Fire.",
+  description: "Political analyst. MMA lifer. Truth speaker. Black Belt on the mat & the mic."
 };
 
 export interface Links {
