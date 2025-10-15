@@ -15,7 +15,7 @@ const channels = [
     url: LINKS.youtube,
     color: "from-fire-orange to-lava-red",
     icon: FaYoutube,
-    logo: "https://yt3.ggpht.com/vy3BDK8BjiuYOYmRVmt1CZeVW0gvmaLWl5Q2QmK8e0DAhRDZFS7YjOMKrTd37QyQACcclJv9XA=s176-c-k-c0x00ffffff-no-rj",
+    logo: "/img/jesse-hero.png",
     isPrimary: true
   },
   {
@@ -25,7 +25,7 @@ const channels = [
     url: LINKS.playWithMatches,
     color: "from-purple-600 to-pink-600",
     icon: FaYoutube,
-    logo: "https://yt3.ggpht.com/qGPF2R7_1dqvU0-c6ELB9CcWugPySOC7LwR6wQr4fAKbJQgBljXOv1DnSsNELTNc8StBkdoM=s176-c-k-c0x00ffffff-no-rj"
+    logo: "/img/patreon-free.png"
   },
   {
     name: "Jesse On FIRE After Hours",
@@ -34,7 +34,7 @@ const channels = [
     url: LINKS.afterHours,
     color: "from-blue-600 to-purple-600",
     icon: FaYoutube,
-    logo: "https://yt3.ggpht.com/ytc/AIdro_kLzwFmYd-jxPv8r_y4Q-6uYKoW8kP7XZ8YvRQf=s176-c-k-c0x00ffffff-no-rj"
+    logo: "/img/channel-afterhours.png"
   }
 ];
 

@@ -26,7 +26,7 @@ Go to: https://jesseonfire.vercel.app/youtube-members
 Try me. Search the entire internet. You won't find this solution anywhere because I INVENTED IT while analyzing your ecosystem. Here's what I built:
 
 **The YouTube-Discord Bridge** - A hybrid verification system that:
-- Sends instant email access (not 24 hours like everyone else)
+- Sends instant email access
 - Uses Discord's native YouTube integration (that nobody knows about)
 - Auto-assigns roles in 2-3 minutes
 - REMOVES roles automatically when membership expires

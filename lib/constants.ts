@@ -80,7 +80,7 @@ export const TIERS: Tier[] = [
     id: "free",
     name: "Free Member",
     price: 0,
-    image: "https://i.imgur.com/u5MbiUy.png",
+    image: "/img/patreon-free.png",
     benefits: [
       "Access to public content",
       "Community chat access",
@@ -92,7 +92,7 @@ export const TIERS: Tier[] = [
     id: "inner-circle",
     name: "Jesse's Inner Circle",
     price: 4.99,
-    image: "https://i.imgur.com/u5MbiUy.png",
+    image: "/img/patreon-inner.png",
     benefits: [
       "Basic Discord access",
       "Members-only content",
@@ -105,7 +105,7 @@ export const TIERS: Tier[] = [
     id: "member",
     name: "Jesse ON FIRE Member",
     price: 7.99,
-    image: "https://i.imgur.com/u5MbiUy.png",
+    image: "/img/patreon-premium.png",
     benefits: [
       "ALL VIDEO ACCESS",
       "At least 2 PATREON ONLY videos PER WEEK",
@@ -119,7 +119,7 @@ export const TIERS: Tier[] = [
     id: "elite",
     name: "Jesse ON FIRE ELITE",
     price: 14.99,
-    image: "https://i.imgur.com/u5MbiUy.png",
+    image: "/img/patreon-elite.png",
     benefits: [
       "ALL VIDEO ACCESS",
       "EXCLUSIVE Elite Only Live Chat",
@@ -133,7 +133,7 @@ export const TIERS: Tier[] = [
     id: "coaching",
     name: "Private Coaching",
     price: 150,
-    image: "https://i.imgur.com/u5MbiUy.png",
+    image: "/img/patreon-elite.png",
     benefits: [
       "🔥 ALL membership benefits included",
       "📞 1-on-1 monthly coaching session (1 hour)",

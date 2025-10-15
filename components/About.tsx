@@ -51,7 +51,7 @@ const About = () => {
             {/* Jesse's actual image */}
             <div className="aspect-[4/5] relative">
               <Image
-                src="https://yt3.ggpht.com/vy3BDK8BjiuYOYmRVmt1CZeVW0gvmaLWl5Q2QmK8e0DAhRDZFS7YjOMKrTd37QyQACcclJv9XA=s900-c-k-c0x00ffffff-no-rj"
+                src="/img/jesse-hero.png"
                 alt="Jesse ON FIRE"
                 fill
                 className="object-cover"

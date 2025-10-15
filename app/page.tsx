@@ -3,7 +3,6 @@ import About from '@/components/About'
 import VideoCarousel from '@/components/VideoCarousel'
 import MostViral from '@/components/MostViral'
 import ChannelNetwork from '@/components/ChannelNetwork'
-import YouTubeTiers from '@/components/YouTubeTiers'
 import Sponsors from '@/components/Sponsors'
 import PatreonMembership from '@/components/PatreonMembership'
 import Footer from '@/components/Footer'
@@ -14,86 +13,66 @@ import type { VideoData } from '@/components/VideoCarousel'
 const realVideos: VideoData[] = [
   {
     id: 1,
-    title: "Charlie Kirk WITNESS TAMPERING Evidence EXPOSED!!",
-    thumbnail: "https://i.ytimg.com/vi/DYc7C2aEkxQ/maxresdefault.jpg",
-    views: "89K views",
-    duration: "18:32",
-    uploadDate: "2 hours ago",
-    url: "https://youtube.com/watch?v=kCQY91tGkKg",
-    category: "POLITICS",
+    title: "Was Tyler Robinson SET UP by HIS BOYFRIEND??? NEW VIDEO of SUSPECT!",
+    thumbnail: "https://i.ytimg.com/vi/DiiXCi--ryI/maxresdefault.jpg",
+    views: "152K views",
+    duration: "28:35",
+    uploadDate: "Today",
+    url: "https://youtube.com/watch?v=DiiXCi--ryI",
+    category: "TRUE CRIME",
     isNew: true
   },
   {
     id: 2,
-    title: "EPSTEIN FILES UPDATE - NEW NAMES DROPPING!!",
-    thumbnail: "https://i.ytimg.com/vi/epstein_update/maxresdefault.jpg",
-    views: "234K views",
-    duration: "25:15",
-    uploadDate: "5 hours ago",
-    url: "https://youtube.com/watch?v=epstein123",
+    title: "Alex Jones Gives TERRIFYING UPDATE!! SHOCKING Epstein News has Elites SCRAMBLING to EXPLAIN!!",
+    thumbnail: "https://i.ytimg.com/vi/sFj-v4qu6xg/maxresdefault.jpg",
+    views: "201K views",
+    duration: "22:47",
+    uploadDate: "Today",
+    url: "https://youtube.com/watch?v=sFj-v4qu6xg",
     category: "CONSPIRACY",
     isNew: true
   },
   {
     id: 3,
-    title: "Was Tyler Robinson SET UP by HIS BOYFRIEND??? NEW VIDEO of SUSPECT!",
-    thumbnail: "https://i.ytimg.com/vi/B4-K7XpDzzE/maxresdefault.jpg",
-    views: "139K views",
-    duration: "28:35",
-    uploadDate: "17 hours ago",
-    url: "https://youtube.com/watch?v=tyler_robinson",
-    category: "TRUE CRIME",
+    title: "NEW SUSPECTS in Charlie Kirk Assassination!! The SHOCKING VIDEO EVIDENCE!!",
+    thumbnail: "https://i.ytimg.com/vi/lWyWwZfKjpI/maxresdefault.jpg",
+    views: "178K views",
+    duration: "24:18",
+    uploadDate: "12 hours ago",
+    url: "https://youtube.com/watch?v=lWyWwZfKjpI",
+    category: "POLITICS",
     isNew: true
   },
   {
     id: 4,
-    title: "Jon Jones REJECTED $30 MILLION TO FIGHT ASPINALL!",
-    thumbnail: "https://i.ytimg.com/vi/jj30million/maxresdefault.jpg",
-    views: "267K views",
-    duration: "16:43",
-    uploadDate: "2 days ago",
-    url: "https://youtube.com/watch?v=jj_aspinall",
-    category: "MMA"
+    title: "This VIDEO CLIP will BREAK THE WORLD!! Charlie SHOT Direction SOLVED!! IT WAS THEM!!",
+    thumbnail: "https://i.ytimg.com/vi/wWDdnpA6s-A/maxresdefault.jpg",
+    views: "264K views",
+    duration: "21:06",
+    uploadDate: "1 day ago",
+    url: "https://youtube.com/watch?v=wWDdnpA6s-A",
+    category: "INVESTIGATION"
   },
   {
     id: 5,
-    title: "Ian Garry's DELUSIONAL Video about Sean Strickland's UFC 297 Performance",
-    thumbnail: "https://i.ytimg.com/vi/iangarry297/maxresdefault.jpg",
-    views: "412K views",
-    duration: "16:24",
-    uploadDate: "3 days ago",
-    url: "https://youtube.com/watch?v=ian_garry",
-    category: "MMA"
+    title: "Hasan Piker ANIMAL ABUSE SCANDAL is INSANE! Destiny WAGES WAR on JD VANCE!!",
+    thumbnail: "https://i.ytimg.com/vi/VMglO8gJuqE/maxresdefault.jpg",
+    views: "193K views",
+    duration: "23:12",
+    uploadDate: "1 day ago",
+    url: "https://youtube.com/watch?v=VMglO8gJuqE",
+    category: "COMMENTARY"
   },
   {
     id: 6,
-    title: "Alex Jones TERRIFYING PREDICTION About 2025",
-    thumbnail: "https://i.ytimg.com/vi/alexjones2025/maxresdefault.jpg",
-    views: "892K views",
-    duration: "31:45",
-    uploadDate: "4 days ago",
-    url: "https://youtube.com/watch?v=alex_jones_2025",
-    category: "CONSPIRACY"
-  },
-  {
-    id: 7,
-    title: "Jake Paul vs Mike Tyson - The REAL Story",
-    thumbnail: "https://i.ytimg.com/vi/E7-N0aFhJTY/maxresdefault.jpg",
-    views: "567K views",
-    duration: "19:45",
-    uploadDate: "3 days ago",
-    url: "https://youtube.com/watch?v=E7-N0aFhJTY",
-    category: "MMA"
-  },
-  {
-    id: 8,
-    title: "Government Admits UFOs Are REAL - Now What?",
-    thumbnail: "https://i.ytimg.com/vi/F8-O1bGiKUZ/maxresdefault.jpg",
-    views: "892K views",
-    duration: "28:30",
-    uploadDate: "4 days ago",
-    url: "https://youtube.com/watch?v=F8-O1bGiKUZ",
-    category: "CONSPIRACY"
+    title: "THREATENING TEXTS to Charlie Kirk LEAK! Charlie DISCUSSES ASSASSINATION DIRECTLY!",
+    thumbnail: "https://i.ytimg.com/vi/PSf_e71tn24/maxresdefault.jpg",
+    views: "221K views",
+    duration: "25:04",
+    uploadDate: "2 days ago",
+    url: "https://youtube.com/watch?v=PSf_e71tn24",
+    category: "POLITICS"
   }
 ];
 
@@ -124,11 +103,6 @@ export default function Home() {
       {/* Channel Network Section */}
       <section id="channels" className="bg-dark-surface">
         <ChannelNetwork />
-      </section>
-      
-      {/* YouTube Memberships Section */}
-      <section id="youtube-tiers" className="bg-dark-bg">
-        <YouTubeTiers />
       </section>
       
       {/* Patreon Membership Section */}
