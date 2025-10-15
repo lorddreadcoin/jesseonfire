@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero'
 import About from '@/components/About'
 import VideoCarousel from '@/components/VideoCarousel'
+import LiveStreams from '@/components/LiveStreams'
 import MostViral from '@/components/MostViral'
 import ChannelNetwork from '@/components/ChannelNetwork'
 import Sponsors from '@/components/Sponsors'
@@ -88,6 +89,11 @@ export default function Home() {
       {/* About Section - Dark Surface Background */}
       <section id="about" className="bg-dark-surface">
         <About />
+      </section>
+      
+      {/* Live Streams Section */}
+      <section id="live" className="bg-dark-surface">
+        <LiveStreams />
       </section>
       
       {/* Most Viral Videos Section */}

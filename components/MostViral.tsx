@@ -15,48 +15,48 @@ export interface ViralVideo {
   isNumber1?: boolean;
 }
 
-// Jesse's ACTUAL most viral videos - REAL LIVE STREAMS
+// Jesse's ACTUAL most viral videos from the channel
 const viralVideos: ViralVideo[] = [
   {
     id: 1,
-    title: "LIVE: Charlie Kirk Assassination Attempt BREAKING Coverage",
-    views: "487K",
-    thumbnail: "https://i.ytimg.com/vi/f-17aycj6vM/maxresdefault.jpg",
-    url: "https://www.youtube.com/live/f-17aycj6vM",
-    description: "BREAKING: Real-time coverage of the shocking Charlie Kirk situation",
+    title: "FBI Connected DIRECTLY to Donald Trump Assassination Attempt in NE...",
+    views: "3.7M",
+    thumbnail: "https://i.ytimg.com/vi/D5MDzmxJquQ/maxresdefault.jpg",
+    url: "https://youtu.be/D5MDzmxJquQ",
+    description: "The FBI's direct connection to the assassination attempt exposed",
     isNumber1: true
   },
   {
     id: 2,
-    title: "LIVE: Tyler Robinson Case - NEW EVIDENCE Dropping NOW",
-    views: "412K",
-    thumbnail: "https://i.ytimg.com/vi/sJiLjQ9f0w4/maxresdefault.jpg",
-    url: "https://www.youtube.com/live/sJiLjQ9f0w4",
-    description: "Explosive new evidence in the Tyler Robinson case revealed LIVE"
+    title: "Donald Trump's Assassination Attempt has DEEP STATE Fingerprints...",
+    views: "1.8M",
+    thumbnail: "https://i.ytimg.com/vi/pXRvJH4br0k/maxresdefault.jpg",
+    url: "https://youtu.be/pXRvJH4br0k",
+    description: "Deep state involvement in Trump assassination attempt revealed"
   },
   {
     id: 3,
-    title: "LIVE: Alex Jones EMERGENCY Broadcast - What They Don't Want You to Know",
-    views: "389K",
-    thumbnail: "https://i.ytimg.com/vi/CQYNGiK5ZAQ/maxresdefault.jpg",
-    url: "https://www.youtube.com/live/CQYNGiK5ZAQ",
-    description: "Alex Jones joins me for an emergency expose of the deep state"
+    title: "LEAKED Diddy Home Videos are INSANE & DISGUSTING!",
+    views: "1.1M",
+    thumbnail: "https://i.ytimg.com/vi/10cLi9LV4nw/maxresdefault.jpg",
+    url: "https://youtu.be/10cLi9LV4nw",
+    description: "Shocking leaked footage from Diddy's home parties"
   },
   {
     id: 4,
-    title: "LIVE: Joe Rogan vs Dana White - The UFC Drama Nobody's Talking About",
-    views: "356K",
-    thumbnail: "https://i.ytimg.com/vi/IkOW6mcNJmM/maxresdefault.jpg",
-    url: "https://www.youtube.com/live/IkOW6mcNJmM",
-    description: "Inside the UFC power struggle that's tearing the organization apart"
+    title: "Diddy Witness: 'Beiber was GRAPED by 3 MEN & J-Lo ASSAULTED LITTLE...'",
+    views: "1M",
+    thumbnail: "https://i.ytimg.com/vi/CHr9htxNOy8/maxresdefault.jpg",
+    url: "https://youtu.be/CHr9htxNOy8",
+    description: "Explosive witness testimony about Hollywood's darkest secrets"
   },
   {
     id: 5,
-    title: "LIVE: Conor McGregor EXPOSED - The Video They Tried to DELETE",
-    views: "342K",
-    thumbnail: "https://i.ytimg.com/vi/IpGdtysiyU0/maxresdefault.jpg",
-    url: "https://www.youtube.com/live/IpGdtysiyU0",
-    description: "The shocking Conor McGregor footage that was scrubbed from the internet"
+    title: "CHARLIE KIRK WAS SHOT FROM BEHIND!? Decoys, Lies, & GLOBAL...",
+    views: "788K",
+    thumbnail: "https://i.ytimg.com/vi/ynzRsowWzpE/maxresdefault.jpg",
+    url: "https://youtu.be/ynzRsowWzpE",
+    description: "The Charlie Kirk shooting conspiracy unraveled"
   }
 ];
 
@@ -81,10 +81,10 @@ const MostViral = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-display text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider">
-            🔥 Most Viral Live Streams 🔥
+            🔥 Most Viral Videos 🔥
           </h2>
           <p className="text-xl text-ash-grey font-heading uppercase">
-            The Explosive Broadcasts That Shook YouTube
+            The Videos That Broke The Internet - Millions Watched
           </p>
         </motion.div>
 
