@@ -4,12 +4,16 @@ export interface SiteConfig {
   name: string;
   tagline: string;
   description: string;
+  url: string;
+  creator: string;
 }
 
 export const SITE_CONFIG: SiteConfig = {
   name: "Jesse ON FIRE",
-  tagline: "Uncensored. Unfiltered. On Fire.",
-  description: "Political analyst. MMA lifer. Truth speaker. Purple Belt on the mat, Black Belt on the mic."
+  tagline: "Uncensored. Unfiltered. Undefeated.",
+  description: "516K+ Warriors Strong. Exposing Truth Daily.",
+  url: "https://jesseonfire.com",
+  creator: "@realjesseonfire"
 };
 
 export interface Links {
@@ -105,17 +109,17 @@ export interface Bio {
 }
 
 export const BIO: Bio = {
-  headline: "Black Belt Mic Skills",
+  headline: "516K Warriors & Growing Daily",
   paragraphs: [
-    "Jesse ON FIRE isn't just a stage name—it's a warning. This political analyst and MMA lifer brings the same intensity to truth-telling that he brings to the mat as a Purple Belt under Six Blades BJJ.",
-    "From exposing political puppet masters to breaking down UFC conspiracies, Jesse has built a massive following by combining fearless commentary with deep knowledge of combat sports and world events. His unique perspective as an MMA insider and independent voice gives him credibility that mainstream media can't match.",
-    "Whether he's streaming live, dropping truth bombs on YouTube, or calling out the establishment on social media, Jesse keeps it 100% uncensored. No corporate overlords, no narrative control—just pure, unfiltered fire."
+    "Jesse ON FIRE isn't just a stage name—it's a warning. With 516,000+ subscribers and 127 million views, this political analyst and Purple Belt BJJ practitioner brings combat intensity to truth-telling.",
+    "Dropping 3-4 videos daily on everything from Charlie Kirk conspiracies to Epstein revelations, Jesse has become the independent voice that mainstream media fears. 1,200+ videos deep, still uncensored, still undefeated.",
+    "Whether he's exposing government corruption, breaking down MMA politics, or going OFF THE RAILS on his latest investigation, Jesse delivers what his army demands: pure, unfiltered truth that makes the establishment panic."
   ],
-  pullQuote: "They want you silent. They want you compliant. They want you watching their approved narratives. I'm here to burn it all down with truth.",
+  pullQuote: "516,000 strong and growing. They tried to silence us. Now we're too big to stop.",
   stats: [
-    { label: "YouTube Subscribers", value: "516K+" },
-    { label: "BJJ Rank", value: "Purple Belt" },
-    { label: "Years in MMA", value: "10+" },
-    { label: "Truth Bombs Dropped", value: "∞" }
+    { label: "YouTube Warriors", value: "516K+" },
+    { label: "Total Destruction", value: "127M+ Views" },
+    { label: "Videos Uploaded", value: "1,200+" },
+    { label: "Daily Uploads", value: "3-4 Videos" }
   ]
 };

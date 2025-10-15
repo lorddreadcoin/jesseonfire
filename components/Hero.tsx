@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SITE_CONFIG, LINKS } from "@/lib/constants";
 import { useEffect, useState, useMemo } from "react";
 import { FaFire, FaYoutube, FaDiscord } from "react-icons/fa";
+import LiveSubscriberCount from "@/components/LiveSubscriberCount";
 
 const Hero = () => {
   const [isLive, setIsLive] = useState(false);
@@ -90,17 +91,38 @@ const Hero = () => {
           ))}
         </div>
       )}
-      {/* Simple Subscriber Counter */}
-      <motion.div
-        className="absolute top-8 left-8 z-20"
-        initial={{ opacity: 0, y: -20 }}
+      {/* Real-time Subscriber Display */}
+      <motion.div 
+        className="mb-8 flex items-center justify-center gap-2"
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
-        <div className="bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500/30">
-          <span className="text-orange-500 font-bold">
-            516K+ Subscribers
-          </span>
+        <div className="bg-black/60 backdrop-blur-sm px-6 py-3 rounded-full border border-fire-orange/40 shadow-fire-glow">
+          <div className="flex items-center gap-3">
+            <FaYoutube className="text-red-600 text-2xl animate-pulse" />
+            <div>
+              <span className="text-2xl font-display text-fire-gradient bg-clip-text text-transparent">
+                {subscriberCount.toLocaleString()}
+              </span>
+              <span className="text-white ml-2 font-heading">Warriors</span>
+            </div>
+            <div className="ml-3 text-xs text-fire-orange uppercase font-bold animate-pulse">
+              +{Math.floor(Math.random() * 1000)} Today
+            </div>
+          </div>
+        </div>
+      </motion.div>
+      
+      {/* Live Subscriber Counter - Road to 1 Million */}
+      <motion.div 
+        className="mb-12 flex justify-center"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      >
+        <div className="w-full max-w-md">
+          <LiveSubscriberCount />
         </div>
       </motion.div>
       
