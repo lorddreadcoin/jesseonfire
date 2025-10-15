@@ -22,28 +22,23 @@ const PatreonMembership = () => {
             Support Jesse & Get Instant Discord Access
           </p>
           <p className="text-lg text-fire-orange/80 font-bold">
-            One Signup → Exclusive Content + Discord Server + Jesse's Warriors Community
+            Patreon Members Get Automatic Discord Access via Bot
           </p>
         </motion.div>
 
-        {/* Discord Access Callout */}
+        {/* Discord Access Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <div className="max-w-4xl mx-auto bg-gradient-to-r from-fire-orange/20 via-lava-red/20 to-fire-orange/20 rounded-2xl p-8 border-2 border-fire-orange/30">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <span className="text-4xl">🔥</span>
-              <h3 className="font-display text-3xl text-white uppercase">Instant Discord Access</h3>
-              <span className="text-4xl">🔥</span>
-            </div>
-            <p className="text-white text-center text-lg mb-4">
-              Join any Patreon tier and Patreon Bot <span className="text-fire-orange font-bold">AUTOMATICALLY</span> gives you Discord access
+          <div className="max-w-4xl mx-auto bg-gradient-to-r from-fire-orange/20 via-lava-red/20 to-fire-orange/20 rounded-2xl p-6 border-2 border-fire-orange/30">
+            <p className="text-white text-center text-lg">
+              Join Patreon → Patreon Bot <span className="text-fire-orange font-bold">AUTOMATICALLY</span> gives you Discord access
             </p>
-            <p className="text-ash-grey text-center">
-              No extra steps • No manual verification • No double payment • Just instant access to Jesse and the Warriors
+            <p className="text-ash-grey text-center text-sm mt-2">
+              Already a YouTube member? Use the YouTube bridge above to link your membership
             </p>
           </div>
         </motion.div>

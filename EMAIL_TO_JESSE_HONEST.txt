@@ -56,24 +56,26 @@ We update your video sections manually whenever you want:
 Both options work. Option A is set-it-and-forget-it. Option B gives you control.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎯 PATREON → DISCORD AUTO-INTEGRATION
+🎯 DISCORD ACCESS - TWO PATHS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**How it works (Zero friction for your warriors):**
-1. User clicks "Join Patreon" on your site
-2. They choose their tier and subscribe
-3. Patreon bot AUTOMATICALLY gives them Discord access
-4. Done. That's it.
+**PATH 1: Patreon (Recommended - Fully Automated)**
+1. User joins Patreon (any tier)
+2. Patreon bot AUTOMATICALLY gives Discord access
+3. Done. Zero manual work.
 
-**Why this is perfect:**
-• ONE signup, everything unlocked
-• No manual verification needed
-• Patreon handles payments
-• Bot handles Discord roles
-• Members get instant access
-• Zero steps for you to manage
+**PATH 2: YouTube Members Bridge (Already Built)**
+We built a custom YouTube member bridge at /youtube-members:
+1. YouTube member enters their info
+2. System emails them Discord invite + instructions
+3. They connect YouTube in Discord settings
+4. Auto role assignment
 
-Your warriors join Patreon → Bot does everything else automatically.
+**Why two paths:**
+• Patreon members: Instant bot automation
+• YouTube members: Don't pay twice, use the bridge
+• Both get Discord access
+• Zero double payments
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🔥 BOTTOM LINE
@@ -95,6 +97,7 @@ Built by Super AGI Agent
 Transparency > Hype. Always.
 
 🔗 LIVE SITE: https://jesseonfire.vercel.app
+🔗 YOUTUBE BRIDGE: https://jesseonfire.vercel.app/youtube-members
 🔗 PATREON: https://patreon.com/jesseonfire
 🔗 GITHUB: https://github.com/lorddreadcoin/jesseonfire
 

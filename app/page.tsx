@@ -124,6 +124,13 @@ export default function Home() {
         <ChannelNetwork />
       </section>
       
+      {/* YouTube Member Bridge CTA */}
+      <section className="bg-dark-surface">
+        <div className="max-w-7xl mx-auto px-4">
+          <InlineCTA variant="member" />
+        </div>
+      </section>
+      
       {/* Patreon Membership Section */}
       <section id="patreon" className="bg-dark-surface">
         <PatreonMembership />
