@@ -11,17 +11,17 @@ const SPONSORS = [
     description: "Daily fantasy sports made simple. Use code JESSEONFIRE for a deposit match up to $100",
     logo: "/prizepicks-logo.png",
     code: "JESSEONFIRE",
-    link: "https://prizepicks.onelink.me/ivHR/JESSEONFIRE",
-    bonus: "$100 Bonus",
+    link: "https://prizepicks.com",
+    bonus: "$100 Deposit Match",
     fallbackColor: "bg-gradient-to-br from-green-500 to-green-700",
     fallbackText: "PP"
   },
   {
     name: "Magic Mind",
-    description: "The world's first productivity shot. Get 20% off your subscription",
+    description: "The world's first productivity shot. Get 20% off your subscription with code JESSEFIRE20",
     logo: "/magicmind-logo.png",
     code: "JESSEFIRE20",
-    link: "https://magicmind.co/jessefire",
+    link: "https://magicmind.com",
     bonus: "20% Off",
     fallbackColor: "bg-gradient-to-br from-purple-500 to-blue-600",
     fallbackText: "MM"
@@ -31,8 +31,8 @@ const SPONSORS = [
     description: "Premium kratom products. Use code FIRE15 for 15% off your first order",
     logo: "/yokratom-logo.png",
     code: "FIRE15",
-    link: "https://yokratom.com/jesse",
-    bonus: "15% Off",
+    link: "https://yokratom.com",
+    bonus: "15% Off First Order",
     fallbackColor: "bg-gradient-to-br from-amber-500 to-orange-600",
     fallbackText: "YK"
   }
