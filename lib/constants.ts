@@ -9,7 +9,7 @@ export interface SiteConfig {
 export const SITE_CONFIG: SiteConfig = {
   name: "Jesse ON FIRE",
   tagline: "Uncensored. Unfiltered. On Fire.",
-  description: "Political analyst. MMA lifer. Truth speaker. Black Belt on the mat & the mic."
+  description: "Political analyst. MMA lifer. Truth speaker. Purple Belt on the mat, Black Belt on the mic."
 };
 
 export interface Links {
@@ -118,15 +118,15 @@ export interface Bio {
 export const BIO: Bio = {
   headline: "Black Belt Mic Skills",
   paragraphs: [
-    "Jesse ON FIRE isn't just a stage name—it's a warning. This comedian brings the same intensity to stand-up that he once brought to the MMA cage, delivering knockout punchlines with surgical precision.",
-    "From roasting celebrities to breaking down fight cards, Jesse has built a loyal following by combining razor-sharp wit with genuine passion for combat sports and comedy. His unique perspective as a former fighter turned comedian gives him an edge that audiences can't resist.",
-    "Whether he's on stage, streaming, or dropping hot takes on social media, Jesse keeps it 100% authentic. No filters, no holding back—just pure, unfiltered fire."
+    "Jesse ON FIRE isn't just a stage name—it's a warning. This political analyst and MMA lifer brings the same intensity to truth-telling that he brings to the mat as a Purple Belt under Six Blades BJJ.",
+    "From exposing political puppet masters to breaking down UFC conspiracies, Jesse has built a massive following by combining fearless commentary with deep knowledge of combat sports and world events. His unique perspective as an MMA insider and independent voice gives him credibility that mainstream media can't match.",
+    "Whether he's streaming live, dropping truth bombs on YouTube, or calling out the establishment on social media, Jesse keeps it 100% uncensored. No corporate overlords, no narrative control—just pure, unfiltered fire."
   ],
-  pullQuote: "I approach comedy like I approached fighting: Study your opponent, find the weakness, and strike with precision. The only difference? In comedy, everyone leaves happy.",
+  pullQuote: "They want you silent. They want you compliant. They want you watching their approved narratives. I'm here to burn it all down with truth.",
   stats: [
-    { label: "Years in Comedy", value: "8+" },
-    { label: "Live Shows", value: "500+" },
-    { label: "Roasts Delivered", value: "10K+" },
-    { label: "Followers", value: "250K+" }
+    { label: "YouTube Subscribers", value: "516K+" },
+    { label: "BJJ Rank", value: "Purple Belt" },
+    { label: "Years in MMA", value: "10+" },
+    { label: "Truth Bombs Dropped", value: "∞" }
   ]
 };
