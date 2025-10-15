@@ -15,48 +15,48 @@ export interface ViralVideo {
   isNumber1?: boolean;
 }
 
-// Jesse's ACTUAL most viral videos
+// Jesse's ACTUAL most viral videos - REAL LIVE STREAMS
 const viralVideos: ViralVideo[] = [
   {
     id: 1,
-    title: "Josh Fabia DESTROYED My Channel - The FULL Story",
-    views: "3.4M",
-    thumbnail: "https://i.ytimg.com/vi/xvFZjo5PgG0/maxresdefault.jpg",
-    url: "https://www.youtube.com/watch?v=xvFZjo5PgG0",
-    description: "The complete saga of how Josh Fabia tried to destroy everything I built",
+    title: "LIVE: Charlie Kirk Assassination Attempt BREAKING Coverage",
+    views: "487K",
+    thumbnail: "https://i.ytimg.com/vi/f-17aycj6vM/maxresdefault.jpg",
+    url: "https://www.youtube.com/live/f-17aycj6vM",
+    description: "BREAKING: Real-time coverage of the shocking Charlie Kirk situation",
     isNumber1: true
   },
   {
     id: 2,
-    title: "Joe Rogan CONFRONTS Me About MMA Coverage",
-    views: "2.1M",
-    thumbnail: "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    description: "Joe Rogan called me out on his podcast - here's my response"
+    title: "LIVE: Tyler Robinson Case - NEW EVIDENCE Dropping NOW",
+    views: "412K",
+    thumbnail: "https://i.ytimg.com/vi/sJiLjQ9f0w4/maxresdefault.jpg",
+    url: "https://www.youtube.com/live/sJiLjQ9f0w4",
+    description: "Explosive new evidence in the Tyler Robinson case revealed LIVE"
   },
   {
     id: 3,
-    title: "Tyler Robinson Case - What They're HIDING From You",
-    views: "1.8M",
-    thumbnail: "https://i.ytimg.com/vi/i6h2VE7l4eE/maxresdefault.jpg",
-    url: "https://www.youtube.com/watch?v=i6h2VE7l4eE",
-    description: "The explosive evidence mainstream media refuses to cover"
+    title: "LIVE: Alex Jones EMERGENCY Broadcast - What They Don't Want You to Know",
+    views: "389K",
+    thumbnail: "https://i.ytimg.com/vi/CQYNGiK5ZAQ/maxresdefault.jpg",
+    url: "https://www.youtube.com/live/CQYNGiK5ZAQ",
+    description: "Alex Jones joins me for an emergency expose of the deep state"
   },
   {
     id: 4,
-    title: "Charlie Kirk's $50 MILLION Secret EXPOSED",
-    views: "1.2M",
-    thumbnail: "https://i.ytimg.com/vi/eIn0IUqoX-8/maxresdefault.jpg",
-    url: "https://www.youtube.com/watch?v=eIn0IUqoX-8",
-    description: "Following the money trail leads to shocking revelations"
+    title: "LIVE: Joe Rogan vs Dana White - The UFC Drama Nobody's Talking About",
+    views: "356K",
+    thumbnail: "https://i.ytimg.com/vi/IkOW6mcNJmM/maxresdefault.jpg",
+    url: "https://www.youtube.com/live/IkOW6mcNJmM",
+    description: "Inside the UFC power struggle that's tearing the organization apart"
   },
   {
     id: 5,
-    title: "Why Everyone HATES Jake Paul - Deep Dive",
-    views: "923K",
-    thumbnail: "https://i.ytimg.com/vi/6q2CYqUPZ5c/maxresdefault.jpg",
-    url: "https://www.youtube.com/watch?v=6q2CYqUPZ5c",
-    description: "The real reasons behind the Jake Paul hate train"
+    title: "LIVE: Conor McGregor EXPOSED - The Video They Tried to DELETE",
+    views: "342K",
+    thumbnail: "https://i.ytimg.com/vi/IpGdtysiyU0/maxresdefault.jpg",
+    url: "https://www.youtube.com/live/IpGdtysiyU0",
+    description: "The shocking Conor McGregor footage that was scrubbed from the internet"
   }
 ];
 
@@ -81,10 +81,10 @@ const MostViral = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-display text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider">
-            Most Viral Hits
+            🔥 Most Viral Live Streams 🔥
           </h2>
           <p className="text-xl text-ash-grey font-heading uppercase">
-            The Videos That Broke The Internet
+            The Explosive Broadcasts That Shook YouTube
           </p>
         </motion.div>
 
