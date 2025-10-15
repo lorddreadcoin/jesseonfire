@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FaYoutube, FaTiktok, FaInstagram, FaTwitter } from "react-icons/fa";
 import { LINKS } from "@/lib/constants";
 import { fetchRealYouTubeStats } from "@/lib/youtube-fetcher";
+import Image from "next/image";
 
 const channels = [
   {
@@ -14,6 +15,7 @@ const channels = [
     url: LINKS.youtube,
     color: "from-fire-orange to-lava-red",
     icon: FaYoutube,
+    logo: "https://yt3.ggpht.com/vy3BDK8BjiuYOYmRVmt1CZeVW0gvmaLWl5Q2QmK8e0DAhRDZFS7YjOMKrTd37QyQACcclJv9XA=s176-c-k-c0x00ffffff-no-rj",
     isPrimary: true
   },
   {
@@ -22,7 +24,8 @@ const channels = [
     stats: "Growing Channel • Exclusive Content",
     url: LINKS.playWithMatches,
     color: "from-purple-600 to-pink-600",
-    icon: FaYoutube
+    icon: FaYoutube,
+    logo: "https://yt3.ggpht.com/qGPF2R7_1dqvU0-c6ELB9CcWugPySOC7LwR6wQr4fAKbJQgBljXOv1DnSsNELTNc8StBkdoM=s176-c-k-c0x00ffffff-no-rj"
   },
   {
     name: "Jesse On FIRE After Hours",
@@ -30,7 +33,8 @@ const channels = [
     stats: "After Dark • Unfiltered",
     url: LINKS.afterHours,
     color: "from-blue-600 to-purple-600",
-    icon: FaYoutube
+    icon: FaYoutube,
+    logo: "https://yt3.ggpht.com/ytc/AIdro_kLzwFmYd-jxPv8r_y4Q-6uYKoW8kP7XZ8YvRQf=s176-c-k-c0x00ffffff-no-rj"
   }
 ];
 
@@ -121,13 +125,31 @@ const ChannelNetwork = () => {
                         </span>
                       )}
                     </div>
-                    <channel.icon className="text-3xl text-red-600" />
                   </div>
-                  
-                  <p className="text-ash-grey mb-3">
-                    {channel.description}
-                  </p>
-                  
+                  <div 
+                    className={`bg-gradient-to-br ${channel.color} rounded-2xl p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-fire-glow-lg cursor-pointer border border-fire-orange/20`}
+                    onClick={() => window.open(channel.url, '_blank')}
+                  >
+                    <div className="flex justify-between items-start mb-4">
+                      <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
+                        <Image
+                          src={channel.logo}
+                          alt={channel.name}
+                          fill
+                          className="object-cover"
+                          unoptimized
+                        />
+                      </div>
+                    </div>
+                    
+                    <p className="text-ash-grey mb-3">
+                      {channel.description}
+                    </p>
+                    
+                    <p className="text-sm text-ash-grey/70">
+                      {channel.stats}
+                    </p>
+                  </div>
                   <p className="text-sm text-ash-grey/70">
                     {channel.stats}
                   </p>

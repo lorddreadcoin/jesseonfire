@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { BIO } from "@/lib/constants";
 import { FaYoutube } from "react-icons/fa";
+import { BIO } from "@/lib/constants";
 
 const About = () => {
   const containerVariants = {
@@ -41,20 +41,24 @@ const About = () => {
         variants={containerVariants}
       >
         {/* Portrait/Image - REAL JESSE */}
-        <motion.div 
+        <motion.div
           className="relative"
-          variants={itemVariants}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <div className="relative w-full h-[600px] rounded-xl overflow-hidden shadow-fire-glow-lg">
-            <Image
-              src="https://i.imgur.com/8Reixdn.jpg"
-              alt="Jesse ON FIRE with YouTube Plaque"
-              fill
-              className="object-cover object-center"
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              quality={90}
-            />
+          <div className="relative rounded-lg overflow-hidden shadow-fire-glow-lg">
+            {/* Jesse's actual image */}
+            <div className="aspect-[4/5] relative">
+              <Image
+                src="https://yt3.ggpht.com/vy3BDK8BjiuYOYmRVmt1CZeVW0gvmaLWl5Q2QmK8e0DAhRDZFS7YjOMKrTd37QyQACcclJv9XA=s900-c-k-c0x00ffffff-no-rj"
+                alt="Jesse ON FIRE"
+                fill
+                className="object-cover"
+                priority
+                unoptimized
+              />
+            </div>
             {/* Fire gradient overlay for depth */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             

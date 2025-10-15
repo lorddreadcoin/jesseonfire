@@ -15,7 +15,7 @@ const realVideos: VideoData[] = [
   {
     id: 1,
     title: "Charlie Kirk WITNESS TAMPERING Evidence EXPOSED!!",
-    thumbnail: "https://i.ytimg.com/vi/kCQY91tGkKg/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/DYc7C2aEkxQ/maxresdefault.jpg",
     views: "89K views",
     duration: "18:32",
     uploadDate: "2 hours ago",
@@ -26,7 +26,7 @@ const realVideos: VideoData[] = [
   {
     id: 2,
     title: "EPSTEIN FILES UPDATE - NEW NAMES DROPPING!!",
-    thumbnail: "https://i.ytimg.com/vi/epstein123/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/epstein_update/maxresdefault.jpg",
     views: "234K views",
     duration: "25:15",
     uploadDate: "5 hours ago",
@@ -37,7 +37,7 @@ const realVideos: VideoData[] = [
   {
     id: 3,
     title: "Was Tyler Robinson SET UP by HIS BOYFRIEND??? NEW VIDEO of SUSPECT!",
-    thumbnail: "https://i.ytimg.com/vi/tyler_robinson/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/B4-K7XpDzzE/maxresdefault.jpg",
     views: "139K views",
     duration: "28:35",
     uploadDate: "17 hours ago",
@@ -48,7 +48,7 @@ const realVideos: VideoData[] = [
   {
     id: 4,
     title: "Jon Jones REJECTED $30 MILLION TO FIGHT ASPINALL!",
-    thumbnail: "https://i.ytimg.com/vi/jj_aspinall/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/jj30million/maxresdefault.jpg",
     views: "267K views",
     duration: "16:43",
     uploadDate: "2 days ago",
@@ -58,7 +58,7 @@ const realVideos: VideoData[] = [
   {
     id: 5,
     title: "Ian Garry's DELUSIONAL Video about Sean Strickland's UFC 297 Performance",
-    thumbnail: "https://i.ytimg.com/vi/ian_garry/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/iangarry297/maxresdefault.jpg",
     views: "412K views",
     duration: "16:24",
     uploadDate: "3 days ago",
@@ -68,7 +68,7 @@ const realVideos: VideoData[] = [
   {
     id: 6,
     title: "Alex Jones TERRIFYING PREDICTION About 2025",
-    thumbnail: "https://i.ytimg.com/vi/alex_jones_2025/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/alexjones2025/maxresdefault.jpg",
     views: "892K views",
     duration: "31:45",
     uploadDate: "4 days ago",

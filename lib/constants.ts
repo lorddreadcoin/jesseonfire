@@ -34,7 +34,7 @@ export const LINKS: Links = {
   twitter: "https://twitter.com/realjesseonfire",
   instagram: "https://instagram.com/realjesseonfire",
   tiktok: "https://tiktok.com/@jesseonfire",
-  playWithMatches: "https://www.youtube.com/@PLAYWMATCHES",
+  playWithMatches: "https://www.youtube.com/@PlaywithMatcheswGabiJesse",
   afterHours: "https://www.youtube.com/@JesseOnFIREAfterHours"
 };
 
@@ -69,6 +69,7 @@ export interface Tier {
   id: string;
   name: string;
   price: number;
+  image?: string;
   benefits: string[];
   featured?: boolean;
   description?: string;
@@ -79,6 +80,7 @@ export const TIERS: Tier[] = [
     id: "free",
     name: "Free Member",
     price: 0,
+    image: "https://i.imgur.com/u5MbiUy.png",
     benefits: [
       "Access to public content",
       "Community chat access",
@@ -90,6 +92,7 @@ export const TIERS: Tier[] = [
     id: "inner-circle",
     name: "Jesse's Inner Circle",
     price: 4.99,
+    image: "https://i.imgur.com/u5MbiUy.png",
     benefits: [
       "Basic Discord access",
       "Members-only content",
@@ -102,6 +105,7 @@ export const TIERS: Tier[] = [
     id: "member",
     name: "Jesse ON FIRE Member",
     price: 7.99,
+    image: "https://i.imgur.com/u5MbiUy.png",
     benefits: [
       "ALL VIDEO ACCESS",
       "At least 2 PATREON ONLY videos PER WEEK",
@@ -115,6 +119,7 @@ export const TIERS: Tier[] = [
     id: "elite",
     name: "Jesse ON FIRE ELITE",
     price: 14.99,
+    image: "https://i.imgur.com/u5MbiUy.png",
     benefits: [
       "ALL VIDEO ACCESS",
       "EXCLUSIVE Elite Only Live Chat",
@@ -128,6 +133,7 @@ export const TIERS: Tier[] = [
     id: "coaching",
     name: "Private Coaching",
     price: 150,
+    image: "https://i.imgur.com/u5MbiUy.png",
     benefits: [
       "🔥 ALL membership benefits included",
       "📞 1-on-1 monthly coaching session (1 hour)",

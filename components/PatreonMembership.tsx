@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { TIERS } from "@/lib/constants";
 
 const PatreonMembership = () => {
@@ -45,11 +46,23 @@ const PatreonMembership = () => {
                       YOU MIGHT LIKE
                     </div>
                   )}
-                  {/* Fire Avatar */}
+                  {/* Tier Image */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-fire-orange to-lava-red flex items-center justify-center shadow-fire-glow">
-                      <span className="text-6xl animate-fire-flicker">🔥</span>
-                    </div>
+                    {tier.image ? (
+                      <div className="relative w-32 h-32 rounded-full overflow-hidden shadow-fire-glow">
+                        <Image
+                          src={tier.image}
+                          alt={tier.name}
+                          fill
+                          className="object-cover"
+                          unoptimized
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-32 h-32 rounded-full bg-gradient-to-br from-fire-orange to-lava-red flex items-center justify-center shadow-fire-glow">
+                        <span className="text-6xl animate-fire-flicker">🔥</span>
+                      </div>
+                    )}
                   </div>
                 </div>
 
