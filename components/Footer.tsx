@@ -31,7 +31,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 border-t border-gray-800 py-12">
+    <footer className="bg-charcoal border-t border-fire-orange/20 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-6">
           {/* Social Icons */}
@@ -43,16 +43,20 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.name}
-                className="text-gray-400 hover:text-orange-500 transition-colors"
+                className="text-ash-grey hover:text-fire-orange transition-all hover:scale-110"
               >
                 <link.icon className="w-8 h-8" />
               </a>
             ))}
           </div>
 
-          {/* Copyright */}
-          <div className="text-gray-400">
-            <p>© 2025 Jesse ON FIRE. Built by Crypto Danks.</p>
+          {/* Copyright & BUILDAI Credit */}
+          <div className="space-y-2">
+            <p className="text-ash-grey">© 2025 Jesse ON FIRE</p>
+            <div className="text-fire-orange font-display text-lg uppercase tracking-wider">
+              Built by BUILDAI
+            </div>
+            <p className="text-ash-grey/60 text-sm">The Legendary Dankster Building Algorithm</p>
           </div>
 
           {/* Legal Links */}

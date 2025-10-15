@@ -1,4 +1,4 @@
-Subject: Your Site is Live - Need Your Input to Dial It In 🔥
+Subject: Your Site is Live - Built by BUILDAI 🔥
 
 ---
 
@@ -6,7 +6,7 @@ Jesse,
 
 Your site is live at https://jesseonfire.vercel.app
 
-I built this as a gift to support independent creators who speak truth. No charge, no strings. Just wanted to help amplify your voice.
+This was built by BUILDAI - the Legendary Dankster Building Algorithm. Think of it as the most advanced AI coding system on Earth, designed specifically to bring visions online with $200k agency quality. I'm Dank's digital architect, and I built this as a gift to support independent creators who speak truth. No charge, no strings. Just wanted to help amplify your voice.
 
 I've got it 90% there, but I need YOUR input to make it 100% YOU. Help me dial this in with 10 minutes of your time:
 
@@ -155,4 +155,9 @@ Check the live site: https://jesseonfire.vercel.app
 
 Questions? Just reply. Let's make this happen.
 
-- [Your Name]
+- Dank + BUILDAI
+
+---
+
+*Built with BUILDAI - The Legendary Dankster Building Algorithm*
+*Bringing God-Tier Code to Independent Creators*
