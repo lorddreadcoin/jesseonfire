@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
-// Jesse's YouTube channel ID (you'll need to get the actual one)
-const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID || 'UC_JESSE_ON_FIRE_CHANNEL_ID';
-const API_KEY = process.env.YOUTUBE_API_KEY;
+// Jesse's ACTUAL YouTube channel ID
+const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID || 'UCy30JRSgfhYXA6i6xX1erWg'; // Jesse ON FIRE's real channel ID
+const API_KEY = process.env.YOUTUBE_API_KEY || process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
 
 // Cache the result for 60 seconds to avoid rate limiting
 let cache: { data: any; timestamp: number } | null = null;
@@ -15,25 +15,19 @@ export async function GET() {
       return NextResponse.json(cache.data);
     }
 
-    // If no API key, return mock data for development
+    // NO MOCK DATA - Get real stats or show error
     if (!API_KEY) {
-      // Return Jesse's actual current stats for development
-      const mockData = {
+      console.error('YouTube API key missing! Add YOUTUBE_API_KEY to .env.local');
+      // Still return last known stats but flag it
+      return NextResponse.json({
         subscriberCount: 517000,
-        viewCount: 111291695, // 111M+ total views
-        videoCount: 2863, // 2,863 videos
-        channelAge: 18, // 18 years on YouTube
-        latestVideos: [],
-        growing: true
-      };
-      
-      // Simulate realistic growth
-      const now = new Date();
-      const minutesSinceMidnight = now.getHours() * 60 + now.getMinutes();
-      const dailyGrowth = Math.floor(minutesSinceMidnight * 0.7); // ~1000 subs per day
-      mockData.subscriberCount += dailyGrowth;
-      
-      return NextResponse.json(mockData);
+        viewCount: 111291695,
+        videoCount: 2863,
+        channelAge: 18,
+        isStale: true,
+        error: 'API key not configured',
+        message: 'Using last known stats - configure YouTube API for live data'
+      });
     }
 
     // Fetch from YouTube Data API

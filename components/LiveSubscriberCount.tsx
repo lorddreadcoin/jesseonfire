@@ -3,25 +3,31 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaYoutube, FaFire } from "react-icons/fa";
+import { fetchRealYouTubeStats, formatSubscriberCount, calculateMilestone } from "@/lib/youtube-fetcher";
 
 interface SubscriberData {
   current: number;
   formatted: string;
   percentToMillion: number;
   subscribersToGo: number;
+  isRealData: boolean;
+  lastFetch: Date;
 }
 
 const LiveSubscriberCount = () => {
-  // Starting with Jesse's current count - 517K
+  // Starting with Jesse's REAL count
   const [subscriberData, setSubscriberData] = useState<SubscriberData>({
     current: 517000,
     formatted: "517K",
     percentToMillion: 51.7,
-    subscribersToGo: 483000
+    subscribersToGo: 483000,
+    isRealData: false,
+    lastFetch: new Date()
   });
 
-  const [isLive, setIsLive] = useState(true);
+  const [isLive, setIsLive] = useState(false);
   const [lastUpdate, setLastUpdate] = useState(new Date());
+  const [error, setError] = useState<string | null>(null);
 
   // Format number with commas
   const formatNumber = (num: number): string => {
@@ -47,41 +53,54 @@ const LiveSubscriberCount = () => {
     };
   };
 
-  // Fetch real subscriber count
+  // Fetch REAL subscriber count - NO MOCK DATA
   const fetchSubscriberCount = async () => {
     try {
-      // In production, this would hit your backend API that safely stores the YouTube API key
-      // Backend would make the actual YouTube API call
-      const response = await fetch('/api/youtube-stats');
+      const stats = await fetchRealYouTubeStats();
       
-      if (!response.ok) {
-        // Fallback to simulated growth if API fails
-        simulateGrowth();
-        return;
+      if (stats) {
+        const milestone = calculateMilestone(stats.subscriberCount);
+        const newData = {
+          current: stats.subscriberCount,
+          formatted: formatSubscriberCount(stats.subscriberCount),
+          percentToMillion: (stats.subscriberCount / 1000000) * 100,
+          subscribersToGo: 1000000 - stats.subscriberCount,
+          isRealData: true,
+          lastFetch: new Date()
+        };
+        setSubscriberData(newData);
+        setLastUpdate(new Date());
+        setIsLive(true);
+        setError(null);
+        
+        // Store in localStorage for offline access
+        localStorage.setItem('jesse_stats', JSON.stringify({
+          ...stats,
+          timestamp: Date.now()
+        }));
+      } else {
+        throw new Error('Failed to fetch real data');
       }
-      
-      const data = await response.json();
-      const newData = calculateProgress(data.subscriberCount);
-      setSubscriberData(newData);
-      setLastUpdate(new Date());
-      setIsLive(true);
     } catch (error) {
       console.error('Failed to fetch subscriber count:', error);
-      // Use simulation as fallback
-      simulateGrowth();
+      setError('Using cached data - Live update temporarily unavailable');
+      setIsLive(false);
+      
+      // Try to use localStorage cache
+      const cached = localStorage.getItem('jesse_stats');
+      if (cached) {
+        const data = JSON.parse(cached);
+        const milestone = calculateMilestone(data.subscriberCount);
+        setSubscriberData({
+          current: data.subscriberCount,
+          formatted: formatSubscriberCount(data.subscriberCount),
+          percentToMillion: (data.subscriberCount / 1000000) * 100,
+          subscribersToGo: 1000000 - data.subscriberCount,
+          isRealData: false,
+          lastFetch: new Date(data.timestamp)
+        });
+      }
     }
-  };
-
-  // Simulate realistic growth when API is not available
-  const simulateGrowth = () => {
-    setSubscriberData(prev => {
-      // Jesse gains roughly 500-1000 subs per day based on his growth
-      // That's about 20-40 per hour, or 0.3-0.6 per minute
-      // For demo purposes, show smaller increments every minute
-      const increment = Math.floor(Math.random() * 3) + 1; // 1-3 subs per update
-      const newCount = prev.current + increment;
-      return calculateProgress(newCount);
-    });
   };
 
   useEffect(() => {
