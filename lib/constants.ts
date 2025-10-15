@@ -23,9 +23,9 @@ export interface Links {
 export const LINKS: Links = {
   patreon: "https://patreon.com/jesseonfire",
   discord: "https://discord.gg/jesseonfire",
-  youtube: "https://youtube.com/@jesseonfire",
-  twitter: "https://twitter.com/jesseonfire",
-  instagram: "https://instagram.com/jesseonfire"
+  youtube: "https://youtube.com/@realjesseonfire",
+  twitter: "https://twitter.com/realjesseonfire",
+  instagram: "https://instagram.com/realjesseonfire"
 };
 
 export interface Sponsor {
@@ -45,13 +45,13 @@ export const SPONSORS: Sponsors = {
     name: "PrizePicks",
     url: "https://prizepicks.onelink.me/ivHR/JESSEONFIRE",
     code: "JESSEONFIRE",
-    description: "Daily fantasy sports made simple. Use code JESSEONFIRE for a deposit match up to $100"
+    description: "Daily fantasy sports made simple. Play $5 and get $50 in bonus lineups instantly"
   },
   yokratom: {
-    name: "Yo Kratom",
-    url: "https://yokratom.com",
+    name: "Better Help",
+    url: "https://betterhelp.com/jesseonfire",
     code: "JESSEONFIRE",
-    description: "Premium kratom products for focus and energy. Save 20% with code JESSEONFIRE"
+    description: "Professional online therapy. Get 10% off your first month"
   }
 };
 
