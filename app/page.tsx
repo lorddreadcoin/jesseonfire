@@ -8,6 +8,9 @@ import Sponsors from '@/components/Sponsors'
 import PatreonMembership from '@/components/PatreonMembership'
 import Footer from '@/components/Footer'
 import FloatingCTA from '@/components/FloatingCTA'
+import SubscribeCTA from '@/components/SubscribeCTA'
+import InlineCTA from '@/components/InlineCTA'
+import UrgentCTA from '@/components/UrgentCTA'
 import type { VideoData } from '@/components/VideoCarousel'
 
 // Jesse's ACTUAL LATEST Videos - REAL DATA from his channel
@@ -86,9 +89,19 @@ export default function Home() {
       {/* Video Carousel Section - Latest Fire Content */}
       <VideoCarousel videos={realVideos} />
       
+      {/* Subscribe CTA - After Videos */}
+      <section className="bg-dark-surface">
+        <SubscribeCTA />
+      </section>
+      
       {/* About Section - Dark Surface Background */}
       <section id="about" className="bg-dark-surface">
         <About />
+      </section>
+      
+      {/* Urgent CTA - After About */}
+      <section className="bg-dark-surface">
+        <UrgentCTA />
       </section>
       
       {/* Live Streams Section */}
@@ -101,6 +114,13 @@ export default function Home() {
         <MostViral />
       </section>
       
+      {/* Discord CTA - After Viral Videos */}
+      <section className="bg-dark-surface">
+        <div className="max-w-7xl mx-auto px-4">
+          <InlineCTA variant="discord" />
+        </div>
+      </section>
+      
       {/* Sponsors Section - Dark Surface Background */}
       <section id="sponsors" className="bg-dark-surface">
         <Sponsors />
@@ -109,6 +129,13 @@ export default function Home() {
       {/* Channel Network Section */}
       <section id="channels" className="bg-dark-surface">
         <ChannelNetwork />
+      </section>
+      
+      {/* YouTube Member Bridge CTA */}
+      <section className="bg-dark-surface">
+        <div className="max-w-7xl mx-auto px-4">
+          <InlineCTA variant="member" />
+        </div>
       </section>
       
       {/* Patreon Membership Section */}

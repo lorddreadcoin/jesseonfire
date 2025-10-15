@@ -3,6 +3,7 @@ import { Inter, Bebas_Neue, Anton, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import FlameCursor from '@/components/FlameCursor'
 import FireScroll from '@/components/FireScroll'
+import StickySubscribeBar from '@/components/StickySubscribeBar'
 
 // Jesse ON FIRE - Cinematic Typography
 const inter = Inter({ 
@@ -102,6 +103,7 @@ export default function RootLayout({
       <body className="min-h-screen font-sans bg-obsidian text-ash-grey">
         <FireScroll />
         <FlameCursor />
+        <StickySubscribeBar />
         {children}
       </body>
     </html>

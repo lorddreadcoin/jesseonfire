@@ -25,7 +25,7 @@ const FloatingCTA = () => {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0, opacity: 0 }}
-      className="fixed bottom-8 right-8 z-50"
+      className="fixed bottom-8 right-8 z-50 hidden md:block"
     >
       <motion.a
         href={LINKS.patreon}
@@ -50,14 +50,20 @@ const FloatingCTA = () => {
         />
         
         {/* Button */}
-        <div className="relative bg-gradient-to-r from-orange-600 to-red-600 text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 font-bold text-lg">
+        <div className="relative bg-gradient-to-r from-orange-600 to-red-600 text-white px-8 py-5 rounded-full shadow-2xl flex items-center gap-3 font-bold text-lg">
           <motion.div
-            animate={{ rotate: [0, 10, -10, 0] }}
+            animate={{ 
+              rotate: [0, 10, -10, 0],
+              scale: [1, 1.2, 1]
+            }}
             transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
           >
-            <FaFire className="w-5 h-5" />
+            <FaFire className="w-6 h-6" />
           </motion.div>
-          <span className="whitespace-nowrap">Join the Fire</span>
+          <div className="flex flex-col">
+            <span className="whitespace-nowrap text-sm opacity-90">🔥 LIMITED SPOTS</span>
+            <span className="whitespace-nowrap font-black">Join the Fire</span>
+          </div>
           <motion.span
             className="text-2xl"
             animate={{ x: [0, 5, 0] }}
