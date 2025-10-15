@@ -9,7 +9,7 @@ const SPONSORS = [
   {
     name: "PrizePicks",
     description: "Daily fantasy sports made simple. Play $5 and get $50 in bonus lineups instantly",
-    logo: "/images/prizepicks-logo.png",
+    logo: "https://i.imgur.com/VJmi74t.png", // PrizePicks logo from imgur
     code: "JESSEONFIRE",
     link: "https://prizepicks.onelink.me/ivHR/JESSEONFIRE",
     bonus: "Get $50",
@@ -20,7 +20,7 @@ const SPONSORS = [
   {
     name: "YoKratom",
     description: "Premium kratom products for focus and energy. Save 20% with your first order",
-    logo: "/images/yokratom-logo.png",
+    logo: "https://i.imgur.com/LFduJSs.png", // YoKratom logo from imgur
     code: "JESSEONFIRE",
     link: "https://yokratom.com",
     bonus: "20% Off",
@@ -52,29 +52,17 @@ const Sponsors = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SPONSORS.map((sponsor) => (
             <div key={sponsor.name} className="card-cinematic hover:shadow-fire-glow-lg transition-all duration-300 hover:scale-105 flex flex-col space-y-6">
-              {/* Logo with Fallback - CINEMATIC */}
-              <div className="h-24 flex items-center justify-center p-4">
+              {/* Logo - CINEMATIC */}
+              <div className="h-24 flex items-center justify-center p-4 bg-white/5 rounded-xl">
                 {sponsor.hasLogo ? (
-                  <div className="relative w-full max-w-[220px] h-full">
+                  <div className="relative w-full max-w-[220px] h-full flex items-center justify-center">
                     <Image
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      width={220}
-                      height={100}
-                      className="object-contain w-full h-full"
-                      onError={(e) => {
-                        // Show fallback on error
-                        const parent = e.currentTarget.parentElement;
-                        if (parent) {
-                          parent.innerHTML = `
-                            <div class="${sponsor.fallbackColor} w-full h-20 rounded-lg flex items-center justify-center relative overflow-hidden shadow-fire-glow">
-                              <span class="text-3xl font-display text-white z-10">${sponsor.fallbackText}</span>
-                              <span class="absolute bottom-1 right-2 text-xs font-heading text-white/70">${sponsor.name}</span>
-                              <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                            </div>
-                          `;
-                        }
-                      }}
+                      width={200}
+                      height={80}
+                      className="object-contain"
+                      unoptimized // For external images
                     />
                   </div>
                 ) : (

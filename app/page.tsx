@@ -3,10 +3,9 @@ import About from '@/components/About'
 import VideoCarousel from '@/components/VideoCarousel'
 import MostViral from '@/components/MostViral'
 import Sponsors from '@/components/Sponsors'
-import Community from '@/components/Community'
+import PatreonMembership from '@/components/PatreonMembership'
 import Footer from '@/components/Footer'
 import FloatingCTA from '@/components/FloatingCTA'
-import PatreonMembership from '@/components/PatreonMembership'
 import { VideoData } from '@/components/VideoCarousel'
 
 // Jesse's MOST RECENT Videos - Auto-updating feed
@@ -119,13 +118,10 @@ export default function Home() {
         <Sponsors />
       </section>
       
-      {/* Community Section - Default Dark Background */}
-      <section id="community" className="bg-dark-bg">
-        <Community />
-      </section>
-
       {/* Patreon Membership Section */}
-      <PatreonMembership />
+      <section id="patreon" className="bg-dark-bg">
+        <PatreonMembership />
+      </section>
 
       {/* Footer */}
       <Footer />
