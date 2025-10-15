@@ -2,7 +2,8 @@
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { SITE_CONFIG, LINKS } from '@/lib/constants'
-import FireParticles from './FireParticles'
+import EnhancedFireParticles from './EnhancedFireParticles'
+import FloorFlames from './FloorFlames'
 import OctagonGrid from './OctagonGrid'
 import LiveCounter from './LiveCounter'
 
@@ -43,11 +44,14 @@ export default function Hero() {
         }}
       />
       
-      {/* Layer 4: Fire particles */}
-      <FireParticles />
+      {/* Layer 4: Enhanced fire particles with parallax */}
+      <EnhancedFireParticles />
       
       {/* Layer 5: Octagon grid */}
       <OctagonGrid />
+      
+      {/* Layer 6: Floor flames */}
+      <FloorFlames />
       
       {/* Live counter */}
       <LiveCounter />

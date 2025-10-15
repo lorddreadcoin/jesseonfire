@@ -22,6 +22,14 @@
   body {
     @apply bg-ember-gradient text-ash-grey antialiased;
     background-attachment: fixed;
+    cursor: none; /* Hide default cursor for custom flame cursor */
+  }
+  
+  /* Show default cursor on mobile where custom cursor is hidden */
+  @media (max-width: 768px) {
+    body {
+      cursor: auto;
+    }
   }
 
   h1, h2, h3 {
