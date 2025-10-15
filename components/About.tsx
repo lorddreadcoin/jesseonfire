@@ -71,9 +71,9 @@ const About = () => {
           </div>
         </motion.div>
 
-        <motion.div className="space-y-6">
+        <motion.div className="space-y-8">
           <motion.h2
-            className="text-4xl lg:text-5xl font-bold text-white"
+            className="font-display text-5xl lg:text-6xl text-fire-orange uppercase tracking-wider mb-8"
             variants={itemVariants}
           >
             {BIO.headline}
@@ -84,15 +84,16 @@ const About = () => {
             variants={itemVariants}
           >
             {BIO.stats.map((stat, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-4"
+                className="card-cinematic hover:shadow-fire-glow-lg transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
               >
-                <div className="text-2xl font-bold text-orange-500">
+                <div className="text-3xl font-display text-fire-gradient bg-clip-text text-transparent">
                   {stat.value}
                 </div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
-              </div>
+                <div className="text-sm font-heading text-ash-grey uppercase tracking-wide mt-2">{stat.label}</div>
+              </motion.div>
             ))}
           </motion.div>
 
@@ -108,10 +109,12 @@ const About = () => {
           </motion.div>
 
           <motion.blockquote
-            className="border-l-4 border-orange-500 pl-6 italic text-xl text-gray-300"
+            className="border-l-4 border-fire-orange pl-8 py-4 font-quote italic text-2xl text-ash-grey relative"
             variants={itemVariants}
           >
-            "{BIO.pullQuote}"
+            <span className="absolute -left-4 -top-2 text-6xl text-fire-orange/30">"</span>
+            {BIO.pullQuote}
+            <span className="absolute -right-4 -bottom-2 text-6xl text-fire-orange/30">"</span>
           </motion.blockquote>
         </motion.div>
       </motion.div>

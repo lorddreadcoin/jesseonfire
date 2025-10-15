@@ -40,20 +40,20 @@ const SPONSORS = [
 
 const Sponsors = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-charcoal">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-bold text-center text-white mb-12">
+        <h2 className="font-display text-5xl lg:text-6xl text-center text-fire-orange mb-12 uppercase tracking-wider">
           Official Partners
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SPONSORS.map((sponsor) => (
-            <Card hover key={sponsor.name} className="flex flex-col space-y-6">
-              {/* Logo with Fallback */}
+            <div key={sponsor.name} className="card-cinematic hover:shadow-fire-glow-lg transition-all duration-300 hover:scale-105 flex flex-col space-y-6">
+              {/* Logo with Fallback - CINEMATIC */}
               <div className="h-20 flex items-center justify-center">
-                <div className={`${sponsor.fallbackColor} w-full max-w-[200px] h-20 rounded-lg flex items-center justify-center relative overflow-hidden shadow-lg`}>
-                  <span className="text-3xl font-black text-white z-10">{sponsor.fallbackText}</span>
-                  <span className="absolute bottom-1 right-2 text-xs text-white/70 font-medium">{sponsor.name}</span>
+                <div className={`${sponsor.fallbackColor} w-full max-w-[200px] h-20 rounded-lg flex items-center justify-center relative overflow-hidden shadow-fire-glow`}>
+                  <span className="text-3xl font-display text-white z-10">{sponsor.fallbackText}</span>
+                  <span className="absolute bottom-1 right-2 text-xs font-heading text-white/70">{sponsor.name}</span>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   <Image
                     src={sponsor.logo}
@@ -68,16 +68,16 @@ const Sponsors = () => {
                 </div>
               </div>
 
-              {/* Description */}
-              <p className="text-lg text-gray-400">
+              {/* Description - CINEMATIC */}
+              <p className="text-lg text-ash-grey">
                 {sponsor.description}
               </p>
 
-              {/* Promo Code */}
+              {/* Promo Code - FIRE EDITION */}
               <div className="space-y-2">
-                <p className="text-sm text-gray-500">Promo Code:</p>
+                <p className="text-sm font-heading uppercase text-ash-grey/70 tracking-wide">Promo Code:</p>
                 <div className="flex items-center gap-4">
-                  <code className="font-mono text-2xl text-orange-500 font-bold">
+                  <code className="font-display text-3xl text-fire-orange">
                     {sponsor.code}
                   </code>
                   <CopyButton text={sponsor.code} />
@@ -91,11 +91,11 @@ const Sponsors = () => {
                 rel="noopener noreferrer"
                 className="mt-auto"
               >
-                <Button variant="primary" className="w-full">
+                <button className="btn-fire w-full text-lg">
                   Claim {sponsor.bonus} →
-                </Button>
+                </button>
               </a>
-            </Card>
+            </div>
           ))}
         </div>
       </div>

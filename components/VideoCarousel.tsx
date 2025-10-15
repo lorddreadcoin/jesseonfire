@@ -58,27 +58,16 @@ const VideoCarousel = ({ videos }: VideoCarouselProps) => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-gray-950 relative overflow-hidden">
-      {/* Fire gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black z-10 pointer-events-none" />
-      
-      <div className="container max-w-7xl mx-auto px-4 relative z-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-obsidian overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <motion.h2 
+          className="font-display text-5xl lg:text-6xl text-center text-fire-orange mb-12 uppercase tracking-wider"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
         >
-          <h2 className="text-5xl lg:text-6xl font-black text-white mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">
-              Latest Fire
-            </span>
-          </h2>
-          <p className="text-xl text-gray-400">
-            Hot takes, brutal truths, and conspiracy deep dives
-          </p>
-        </motion.div>
+          Latest Fire Content
+        </motion.h2>
 
         <Swiper
           effect={'coverflow'}
@@ -172,11 +161,11 @@ const VideoCarousel = ({ videos }: VideoCarouselProps) => {
                       </div>
                     </div>
                   ) : (
-                    /* Thumbnail View */
-                    <motion.div 
-                      className="relative w-full h-full"
-                      whileHover={{ scale: 1.02 }}
+                    /* Thumbnail View - CINEMATIC */
+                    <motion.div
+                      className="relative w-full h-full cursor-pointer group"
                       onClick={() => handlePlayClick(video.id)}
+                      whileHover={{ scale: 1.02 }}
                     >
                       {video.thumbnail ? (
                         <Image
@@ -193,19 +182,19 @@ const VideoCarousel = ({ videos }: VideoCarouselProps) => {
                       {/* Overlay gradient */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                       
-                      {/* Play button with text */}
-                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                        <motion.div
-                          className="bg-red-600/90 rounded-full p-4 group-hover:bg-red-600 transition-colors shadow-2xl"
+                      {/* Play button overlay - FIRE EDITION */}
+                      <motion.div 
+                        className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/40 transition-all"
+                        whileHover={{ backgroundColor: "rgba(0,0,0,0.2)" }}
+                      >
+                        <motion.div 
+                          className="bg-fire-gradient rounded-full p-5 shadow-fire-glow group-hover:shadow-fire-glow-lg transition-all"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                         >
-                          <FaPlay className="w-8 h-8 text-white ml-1" />
+                          <FaPlay className="w-10 h-10 text-white ml-1" />
                         </motion.div>
-                        <div className="text-white text-xs font-medium bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
-                          Play Here
-                        </div>
-                      </div>
+                      </motion.div>
                       
                       {/* Quick YouTube Link */}
                       <motion.button
@@ -240,9 +229,9 @@ const VideoCarousel = ({ videos }: VideoCarouselProps) => {
                   )}
                 </div>
 
-                {/* Video info */}
+                {/* Video info - CINEMATIC */}
                 <div className="mt-4 px-2">
-                  <h3 className="text-white font-bold text-lg line-clamp-2 group-hover:text-orange-500 transition-colors">
+                  <h3 className="font-heading text-white text-xl line-clamp-2 group-hover:text-fire-orange transition-colors uppercase">
                     {video.title}
                   </h3>
                   <div className="flex items-center gap-4 mt-2 text-sm text-gray-400">
@@ -266,7 +255,7 @@ const VideoCarousel = ({ videos }: VideoCarouselProps) => {
         <style jsx global>{`
           .swiper-button-next,
           .swiper-button-prev {
-            color: #FF4500 !important;
+            color: #FF5A1F !important;
             background: rgba(0, 0, 0, 0.5);
             width: 40px;
             height: 40px;
@@ -289,7 +278,7 @@ const VideoCarousel = ({ videos }: VideoCarouselProps) => {
           }
           
           .swiper-pagination-bullet-active {
-            background: #FF4500 !important;
+            background: #FF5A1F !important;
           }
         `}</style>
       </div>

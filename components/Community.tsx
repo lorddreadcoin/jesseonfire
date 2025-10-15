@@ -6,36 +6,36 @@ import Button from "@/components/ui/Button";
 
 const Community = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-obsidian">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="font-display text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider">
             Where Real Conversations Happen
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-ash-grey max-w-3xl mx-auto font-sans">
             Join the inner circle. Uncensored content. Direct access. No algorithm bullshit.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {TIERS.map((tier) => (
-            <Card key={tier.id} hover className="relative flex flex-col">
+            <div key={tier.id} className="card-cinematic hover:shadow-fire-glow-lg transition-all duration-300 hover:scale-105 relative flex flex-col">
               {tier.featured && (
-                <div className="absolute -top-4 right-4 bg-orange-500 text-white text-sm font-bold px-4 py-1 rounded-full">
+                <div className="absolute -top-4 right-4 bg-fire-gradient text-white text-sm font-display uppercase px-4 py-1 rounded-full shadow-fire-glow tracking-wider">
                   MOST POPULAR
                 </div>
               )}
 
               <div className="space-y-4 flex-grow">
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="font-heading text-3xl text-fire-orange uppercase">
                   {tier.name}
                 </h3>
 
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-black text-orange-500">
+                  <span className="font-display text-5xl text-fire-gradient bg-clip-text text-transparent">
                     ${tier.price}
                   </span>
-                  <span className="text-gray-400">/mo</span>
+                  <span className="text-ash-grey font-sans">/mo</span>
                 </div>
 
                 <ul className="space-y-3 pt-4">
@@ -67,15 +67,14 @@ const Community = () => {
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <Button
-                    variant={tier.featured ? "primary" : "secondary"}
-                    className="w-full"
+                  <button
+                    className={tier.featured ? "btn-fire w-full text-lg" : "bg-charcoal border-2 border-fire-orange/50 text-white font-display uppercase px-6 py-3 rounded-xl hover:bg-fire-orange/10 hover:border-fire-orange transition-all w-full text-lg"}
                   >
                     Choose {tier.name}
-                  </Button>
+                  </button>
                 </a>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
 
