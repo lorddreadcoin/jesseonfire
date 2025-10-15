@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --fire-primary: #FF4500;
+    --fire-secondary: #FF6B35;
+    --dark-bg: #0A0A0A;
+    --dark-surface: #1A1A1A;
+    --dark-border: #2A2A2A;
+  }
+
+  * {
+    @apply border-dark-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-dark-bg text-text-primary antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* Remove default button styles */
+  button {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-fire-primary focus-visible:ring-offset-2 focus-visible:ring-offset-dark-bg;
+  }
+
+  /* Smooth scrolling sections */
+  section {
+    @apply scroll-mt-20;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    @apply bg-gradient-to-r from-fire-primary to-fire-secondary bg-clip-text text-transparent;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  /* Focus ring utilities */
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-fire-primary focus-visible:ring-offset-2 focus-visible:ring-offset-dark-bg;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom selection colors */
+  ::selection {
+    @apply bg-fire-primary text-white;
+  }
+}
