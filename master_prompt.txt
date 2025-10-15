@@ -1,0 +1,188 @@
+MISSION: Build a production-ready, AAA+ brand website for Jesse ON FIRE.
+
+CONTEXT:
+- Jesse has 516K YouTube subscribers and 111M+ views.
+- Former tech entrepreneur, purple belt BJJ, political/MMA commentator.
+- This site is core brand infrastructure and must look like a $50M media operation.
+- This build is pro-bono; it must be flawless.
+
+PROJECT SETUP:
+- Create a new directory named fire-hq.
+- Framework: Next.js 14 (App Router).
+- Language: TypeScript (strict mode).
+- Styling: Tailwind CSS; Framer Motion for animations.
+- Deployment: Vercel (include vercel.json config).
+
+DESIGN SYSTEM:
+Colors:
+- --fire-primary: #FF4500
+- --fire-secondary: #FF6B35
+- --dark-bg: #0A0A0A
+- --dark-surface: #1A1A1A
+- --dark-border: #2A2A2A
+- --text-primary: #FFFFFF
+- --text-secondary: #B0B0B0
+
+Typography:
+- Font: Inter (Google Fonts).
+- H1: 72px desktop / 48px mobile.
+- H2: 48px desktop / 36px mobile.
+- Body: 18px desktop / 16px mobile.
+
+Spacing:
+- Section vertical padding: 120px desktop / 80px mobile.
+- Base unit: 8px; card padding: 24px; grid gap: 32px.
+
+SITE STRUCTURE (Single-page, vertical scroll):
+
+1) HERO SECTION
+- Full viewport height, dark textured background (subtle noise/gradient).
+- Center content: Brand wordmark "JESSE ON FIRE", headline "Uncensored. Unfiltered. On Fire."
+- Subheadline: "Political analyst. MMA lifer. Truth speaker. Black Belt on the mat & the mic."
+- CTAs: Primary "Join the Patreon" (fire button), Secondary "Enter Discord" (outlined), Tertiary "Watch on YouTube" (ghost).
+- Parallax background and staggered fade-in (Framer Motion).
+
+2) ABOUT SECTION
+- Two-column layout desktop, stacked mobile.
+- Left: portrait placeholder (600x600, rounded).
+- Right: Headline "Black Belt Mic Skills"; 3 stat cards: "516K Subscribers", "111M+ Views", "Purple Belt BJJ".
+- Bio paragraphs (use provided copy from constants); pull-quote: "If they can silence truth, they can own reality."
+
+3) VIDEO HIGHLIGHTS
+- Headline: "Latest Fire".
+- Responsive YouTube embed (16:9): use https://www.youtube.com/embed/VIDEOID placeholder.
+- Optional grid of 3 thumbnail cards below the player; hover lift + glow.
+
+4) OFFICIAL PARTNERS
+- Headline: "Official Partners".
+- Two sponsor cards side-by-side (2 cols desktop, 1 mobile).
+
+PrizePicks card:
+- Logo placeholder, description "Daily fantasy sports reimagined. Play $5, get $50 guaranteed."
+- Promo code: "JESSEONFIRE" with copy-to-clipboard microinteraction.
+- CTA: https://prizepicks.onelink.me/ivHR/JESSEONFIRE
+
+YoKratom card:
+- Logo placeholder, description "Premium kratom for focus, energy, and wellness."
+- Promo code: "JESSEONFIRE" with copy-to-clipboard button.
+- CTA: https://yokratom.com
+
+- Card style: dark surface, 1px fire-accent border, hover scale + glow.
+
+5) COMMUNITY SECTION
+- Headline: "Where Real Conversations Happen".
+- Subtext: "Join the inner circle. Uncensored content. Direct access. No algorithm bullshit."
+- Three tier cards: SPARK ($5), FLAME ($15, popular), INFERNO ($35).
+- Each card: icon, price, features list. Large CTA "Join the Patreon". Secondary "Enter Discord".
+
+6) FOOTER
+- Social icons linking to YouTube/X/Instagram/Discord/Patreon (open in new tab).
+- Copyright: "© 2025 Jesse ON FIRE. Built by Crypto Danks."
+- Links: Privacy Policy | Terms (placeholders).
+
+FILE STRUCTURE TO CREATE:
+fire-hq/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── globals.css
+│   └── favicon.ico
+├── components/
+│   ├── Hero.tsx
+│   ├── About.tsx
+│   ├── VideoHighlights.tsx
+│   ├── Sponsors.tsx
+│   ├── Community.tsx
+│   ├── Footer.tsx
+│   └── ui/
+│       ├── Button.tsx
+│       ├── Card.tsx
+│       └── CopyButton.tsx
+├── lib/
+│   ├── constants.ts
+│   └── utils.ts
+├── public/
+│   └── images/
+├── styles/
+│   └── themes.css
+├── tailwind.config.ts
+├── next.config.js
+├── tsconfig.json
+├── package.json
+└── README.md
+
+TECHNICAL REQUIREMENTS:
+- All external links target="_blank" rel="noopener".
+- Copy-to-clipboard must work on mobile (use async navigator.clipboard).
+- Smooth scroll (CSS scroll-behavior: smooth).
+- Intersection Observer + Framer Motion for scroll-triggered animations (once).
+- Next.js Image component for images; optimized assets.
+- SEO meta in layout.tsx: title, description, og image (1200x630), twitter card.
+- Lighthouse target: 95+ performance, high accessibility.
+- Mobile-first breakpoints: 375, 768, 1024, 1440.
+
+ANIMATION SPECIFICATIONS:
+- Hero: staggered fade-in (logo → headline → subheadline → buttons).
+- Sections: fade + slide-up on view (duration 0.35-0.5s).
+- Buttons: scale 1.05 on hover, 0.2s.
+- Cards: scale 1.02 + shadow glow on hover.
+- Parallax hero background: transform translateY(scroll*0.5).
+
+CODE QUALITY STANDARDS:
+- TypeScript strict mode.
+- Explicit prop interfaces for components.
+- Reusable UI primitives (Button, Card, CopyButton).
+- Text & links in constants file.
+- Tailwind classes only (no inline styles except transforms).
+- Minimal dependencies; comments only on complex logic.
+
+CONSTANTS FILE:
+- Export SITE_CONFIG: name, tagline, description, links.
+- Export SPONSORS object.
+- Export TIERS array with names/prices/features.
+- Export BIO text and stats.
+
+IMMEDIATE DELIVERABLES:
+1) Create the complete file structure and base scaffold.
+2) Implement components in order: Hero, About, VideoHighlights, Sponsors, Community, Footer.
+3) Add Button/Card/CopyButton primitives.
+4) Wire constants and render content.
+5) Implement copy-to-clipboard microinteraction.
+6) Add Framer Motion animations and Intersection Observer triggers.
+7) Make responsive and mobile-first.
+8) Provide README with setup & deploy steps.
+
+EXECUTION STEPS (Commands):
+- npx create-next-app@latest fire-hq --typescript --tailwind --app
+- cd fire-hq
+- npm install framer-motion react-icons
+- npx vercel (on successful build & test)
+
+DELIVERY EXPECTATIONS:
+- After scaffold, "npm run dev" should start without errors.
+- All sections render and CTAs link to placeholders.
+- Copy button shows "✓ Copied!" feedback for 2s.
+- Vercel preview URL generated for QA.
+
+DO NOT:
+- Use lorem ipsum for key headlines or CTAs.
+- Skip TypeScript interfaces.
+- Use CSS frameworks other than Tailwind.
+- Add authentication or server backends; site is static/SSG with minimal server logic.
+- Add unnecessary dependencies.
+
+START PROCEDURE:
+1) Initialize project with create-next-app command above.
+2) Commit initial scaffold to git.
+3) Push to GitHub and connect to Vercel for preview URLs.
+
+NOTES / ASSETS NEEDED (request from Jesse):
+- High-res hero portrait (>=1200px).
+- PrizePicks and YoKratom logos (transparent PNG).
+- Confirm Patreon URL and Discord invite link.
+- Confirm sponsor promo codes.
+
+CONTACT & PITCH TEXT (for Jesse preview):
+"Yo Jesse, here's v1 of your brand HQ. Dark, elite, no bullshit—every click funnels to Patreon, Discord or YouTube. Mobile-optimized. Preview: [VERCEL_PREVIEW_URL]. Let me know changes before we lock the domain."
+
+END OF PROMPT.

@@ -1,0 +1,40 @@
+# Jesse ON FIRE Website - Production Build Rules
+
+## Context
+High-stakes project for 516K subscriber YouTuber. Must be AAA+ quality.
+User is donating this build for free - cannot fail.
+
+## Code Standards
+- TypeScript strict mode REQUIRED
+- All components need explicit prop interfaces
+- Use Tailwind classes only (no inline styles except dynamic transforms)
+- Reusable components in components/ui/
+- All copy from lib/constants.ts (NO hardcoded text)
+- Mobile-first responsive design
+
+## Critical Requirements
+1. Copy-to-clipboard MUST work on mobile Safari (use fallback)
+2. All external links: target="_blank" rel="noopener noreferrer"
+3. Guard window/document usage (useEffect or dynamic imports)
+4. Next.js Image for all images
+5. Framer Motion animations must be SSR-safe
+
+## Component Structure
+- Keep components focused and small
+- Split into smaller files if >150 lines
+- Export interfaces separately
+- Group imports: React → Next → External → Internal
+
+## Testing Before Commit
+- npm run dev works
+- No TypeScript errors
+- No console errors
+- Responsive on 375px, 768px, 1440px
+
+## Deployment Blockers
+- Any build errors = STOP and fix
+- Missing dependencies = STOP and install
+- Type errors = STOP and resolve
+
+## Report After Each Phase
+Output JSON summary with files created, tests run, errors, preview URL.
