@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Bebas_Neue, Anton, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import FlameCursor from '@/components/FlameCursor'
+import FireScroll from '@/components/FireScroll'
 
 // Jesse ON FIRE - Cinematic Typography
 const inter = Inter({ 
@@ -99,6 +100,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#FF5A1F" />
       </head>
       <body className="min-h-screen font-sans bg-obsidian text-ash-grey">
+        <FireScroll />
         <FlameCursor />
         {children}
       </body>

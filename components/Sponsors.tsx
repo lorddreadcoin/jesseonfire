@@ -27,17 +27,6 @@ const SPONSORS = [
     fallbackColor: "bg-gradient-to-br from-amber-500 to-orange-600",
     fallbackText: "YK",
     hasLogo: true
-  },
-  {
-    name: "Magic Mind",
-    description: "The world's first productivity shot. Get 20% off your subscription",
-    logo: "/images/magicmind-logo.png",
-    code: "JESSEFIRE20",
-    link: "https://magicmind.co/jessefire",
-    bonus: "20% Off",
-    fallbackColor: "bg-gradient-to-br from-purple-500 to-blue-600",
-    fallbackText: "MM",
-    hasLogo: false
   }
 ];
 
@@ -53,17 +42,18 @@ const Sponsors = () => {
           {SPONSORS.map((sponsor) => (
             <div key={sponsor.name} className="card-cinematic hover:shadow-fire-glow-lg transition-all duration-300 hover:scale-105 flex flex-col space-y-6">
               {/* Logo - CINEMATIC */}
-              <div className="h-24 flex items-center justify-center p-4 bg-white/5 rounded-xl">
+              <div className="h-28 flex items-center justify-center p-4 bg-white/5 rounded-xl">
                 {sponsor.hasLogo ? (
-                  <div className="relative w-full max-w-[220px] h-full flex items-center justify-center">
-                    <Image
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      width={200}
-                      height={80}
-                      className="object-contain"
-                      unoptimized // For external images
-                    />
+                  <div className="relative w-full h-full max-w-[260px] flex items-center justify-center">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        fill
+                        className="object-contain"
+                        unoptimized
+                      />
+                    </div>
                   </div>
                 ) : (
                   <div className={`${sponsor.fallbackColor} w-full max-w-[200px] h-20 rounded-lg flex items-center justify-center relative overflow-hidden shadow-fire-glow`}>

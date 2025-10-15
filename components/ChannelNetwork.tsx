@@ -15,7 +15,7 @@ const channels = [
     url: LINKS.youtube,
     color: "from-fire-orange to-lava-red",
     icon: FaYoutube,
-    logo: "/img/jesse-hero.png",
+    logo: "/img/playwithmatches-logo.png",
     isPrimary: true
   },
   {
@@ -25,7 +25,7 @@ const channels = [
     url: LINKS.playWithMatches,
     color: "from-purple-600 to-pink-600",
     icon: FaYoutube,
-    logo: "/img/playwithmatches-logo.png"
+    logo: "/img/jesse-hero.png"
   },
   {
     name: "Jesse On FIRE After Hours",
