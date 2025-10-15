@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { SITE_CONFIG, LINKS } from "@/lib/constants";
 import Button from "@/components/ui/Button";
-import SubscriberBeltProgress from "@/components/SubscriberBeltProgress";
 import { useEffect, useState, useMemo } from "react";
 
 const Hero = () => {
@@ -91,8 +90,19 @@ const Hero = () => {
           ))}
         </div>
       )}
-      {/* Subscriber Belt Progress */}
-      <SubscriberBeltProgress />
+      {/* Simple Subscriber Counter */}
+      <motion.div
+        className="absolute top-8 left-8 z-20"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        <div className="bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500/30">
+          <span className="text-orange-500 font-bold">
+            516K+ Subscribers
+          </span>
+        </div>
+      </motion.div>
       
       {/* Live Indicator */}
       {isLive && (
