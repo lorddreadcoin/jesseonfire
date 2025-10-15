@@ -1,270 +1,218 @@
-"use client";
+'use client'
+import { motion } from 'framer-motion'
+import { useEffect } from 'react'
+import { SITE_CONFIG, LINKS } from '@/lib/constants'
+import FireParticles from './FireParticles'
+import OctagonGrid from './OctagonGrid'
+import LiveCounter from './LiveCounter'
 
-import { motion, AnimatePresence } from "framer-motion";
-import { SITE_CONFIG, LINKS } from "@/lib/constants";
-import { useEffect, useState, useMemo } from "react";
-import { FaFire, FaYoutube, FaDiscord } from "react-icons/fa";
-import LiveSubscriberCount from "@/components/LiveSubscriberCount";
-
-const Hero = () => {
-  const [isLive, setIsLive] = useState(false);
-  const [subscriberCount, setSubscriberCount] = useState(517000);
-  const [mounted, setMounted] = useState(false);
-  
-  // Generate stable particle positions
-  const particles = useMemo(() => {
-    return [...Array(20)].map((_, i) => ({
-      id: i,
-      initialX: `${(i * 5) % 100}%`,
-      animateX: `${((i * 7) + 30) % 100}%`,
-      duration: 10 + (i % 10) * 2,
-      delay: (i % 5) * 2
-    }));
-  }, []);
-  
+export default function Hero() {
+  // Cursor glow effect
   useEffect(() => {
-    setMounted(true);
-    // Animate subscriber count on mount
-    const interval = setInterval(() => {
-      setSubscriberCount((prev) => {
-        const increment = Math.floor(Math.random() * 3);
-        return prev + increment;
-      });
-    }, 5000);
+    const handleMouseMove = (e: MouseEvent) => {
+      const glow = document.getElementById('cursor-glow')
+      if (glow) {
+        glow.style.left = e.clientX + 'px'
+        glow.style.top = e.clientY + 'px'
+      }
+    }
     
-    return () => clearInterval(interval);
-  }, []);
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Dynamic Fire Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-black" />
-        <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-30 mix-blend-screen" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-      </div>
+    <section className="relative min-h-screen overflow-hidden flex items-center justify-center">
+      {/* Layer 1: Animated gradient base */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-red-950/20 to-black" />
       
-      {/* Animated Fire Particles */}
-      {mounted && (
-        <div className="absolute inset-0 z-0">
-          {particles.map((particle) => (
-            <motion.div
-              key={particle.id}
-              className="absolute w-2 h-2 bg-orange-500 rounded-full opacity-60"
-              initial={{ 
-                x: particle.initialX,
-                y: "110%"
-              }}
-              animate={{ 
-                y: "-10%",
-                x: particle.animateX
-              }}
-              transition={{
-                duration: particle.duration,
-                repeat: Infinity,
-                ease: "linear",
-                delay: particle.delay
-              }}
-            />
-          ))}
-        </div>
-      )}
-      {/* Real-time Subscriber Display */}
-      <motion.div 
-        className="mb-8 flex items-center justify-center gap-2"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-      >
-        <div className="bg-black/60 backdrop-blur-sm px-6 py-3 rounded-full border border-fire-orange/40 shadow-fire-glow">
-          <div className="flex items-center gap-3">
-            <FaYoutube className="text-red-600 text-2xl animate-pulse" />
-            <div>
-              <span className="text-2xl font-display text-fire-gradient bg-clip-text text-transparent">
-                {subscriberCount.toLocaleString()}
-              </span>
-              <span className="text-white ml-2 font-heading">Warriors</span>
-            </div>
-            <div className="ml-3 text-xs text-fire-orange uppercase font-bold animate-pulse">
-              +{Math.floor(Math.random() * 1000)} Today
-            </div>
-          </div>
-        </div>
-      </motion.div>
+      {/* Layer 2: Noise texture overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.15]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px'
+        }}
+      />
       
-      {/* Live Subscriber Counter - Road to 1 Million */}
-      <motion.div 
-        className="mb-12 flex justify-center"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-      >
-        <div className="w-full max-w-md">
-          <LiveSubscriberCount />
-        </div>
-      </motion.div>
+      {/* Layer 3: Radial spotlight effect */}
+      <div 
+        className="absolute inset-0 opacity-40"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(255,69,0,0.15) 0%, transparent 70%)'
+        }}
+      />
       
-      {/* Live Indicator */}
-      {isLive && (
-        <motion.div 
-          className="absolute top-8 right-8 z-20"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, type: "spring" }}
-        >
-          <div className="flex items-center gap-2 bg-red-600 px-4 py-2 rounded-full shadow-2xl">
-            <motion.div
-              className="w-3 h-3 bg-white rounded-full"
-              animate={{ opacity: [1, 0.5, 1] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-            />
-            <span className="text-white font-bold">517K+ Warriors</span>
-          </div>
-        </motion.div>
-      )}
+      {/* Layer 4: Fire particles */}
+      <FireParticles />
       
-      <motion.div
-        className="text-center max-w-5xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
+      {/* Layer 5: Octagon grid */}
+      <OctagonGrid />
+      
+      {/* Live counter */}
+      <LiveCounter />
+      
+      {/* Main content */}
+      <div className="relative z-10 container-custom text-center px-4">
+        {/* Brand name with fire effect */}
         <motion.h1 
-          className="font-display text-7xl md:text-8xl lg:text-9xl mb-6 relative tracking-wider"
-          initial={{ scale: 0.5 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 100, damping: 10 }}
+          className="relative mb-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, type: "spring" }}
         >
-          {/* Fire glow layers */}
-          <motion.span
-            className="absolute inset-0 text-fire-orange blur-xl opacity-60"
-            animate={{ 
-              opacity: [0.4, 0.8, 0.4],
-              scale: [1, 1.02, 1]
+          <span 
+            className="relative inline-block text-[clamp(3rem,15vw,10rem)] font-black tracking-tighter"
+            style={{
+              background: 'linear-gradient(to bottom, #FFFFFF 0%, #FF4500 50%, #8B0000 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              filter: 'drop-shadow(0 0 30px rgba(255,69,0,0.5))'
             }}
-            transition={{ repeat: Infinity, duration: 3 }}
           >
             JESSE ON FIRE
-          </motion.span>
+          </span>
           
-          <motion.span
-            className="absolute inset-0 text-lava-red blur-md opacity-50"
-            animate={{ 
-              opacity: [0.5, 0.7, 0.5],
-              scale: [1, 1.01, 1]
+          {/* Glowing outline */}
+          <span 
+            className="absolute inset-0 blur-2xl opacity-50 pointer-events-none"
+            aria-hidden="true"
+            style={{
+              background: 'linear-gradient(to bottom, #FF4500, #8B0000)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
             }}
-            transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
           >
-            JESSE ON FIRE
-          </motion.span>
-          
-          <span className="relative bg-fire-gradient bg-clip-text text-transparent drop-shadow-2xl">
             JESSE ON FIRE
           </span>
         </motion.h1>
 
-        {/* Tagline - CINEMATIC */}
+        {/* Tagline with pulsing effect */}
         <motion.div
-          className="mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          className="relative text-[clamp(1.5rem,5vw,3rem)] font-bold mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: 1,
+            textShadow: [
+              '0 0 20px rgba(255,69,0,0.3)',
+              '0 0 40px rgba(255,69,0,0.6)',
+              '0 0 20px rgba(255,69,0,0.3)'
+            ]
+          }}
+          transition={{ 
+            opacity: { delay: 0.3, duration: 0.5 },
+            textShadow: { duration: 2, repeat: Infinity }
+          }}
         >
-          <h2 className="font-heading text-3xl lg:text-4xl text-fire-orange mb-4 uppercase tracking-wide">
-            {SITE_CONFIG.tagline}
-          </h2>
-          <div className="flex justify-center gap-2 mb-6">
-            {[...Array(3)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="w-20 h-1 bg-fire-gradient"
-                initial={{ width: 0 }}
-                animate={{ width: 80 }}
-                transition={{ delay: 0.8 + i * 0.1, duration: 0.5 }}
-              />
-            ))}
-          </div>
+          <span className="text-fire-orange">UNCENSORED.</span>
+          {' '}
+          <span className="text-lava-red">UNFILTERED.</span>
+          {' '}
+          <span className="text-yellow-500">UNDEFEATED.</span>
         </motion.div>
 
-        {/* Description - CINEMATIC */}
+        {/* Description */}
         <motion.p
-          className="font-sans text-xl lg:text-2xl text-ash-grey max-w-4xl mx-auto mb-12 leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
+          className="text-[clamp(1rem,3vw,1.5rem)] text-gray-300 mb-12 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
         >
           {SITE_CONFIG.description}
         </motion.p>
-        <motion.div
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+
+        {/* CTA Buttons */}
+        <motion.div 
+          className="flex flex-wrap justify-center gap-6"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, type: "spring" }}
+          transition={{ delay: 0.6 }}
         >
-          <motion.a 
-            href={LINKS.patreon} 
-            target="_blank" 
+          {/* Primary CTA - Animated glow */}
+          <motion.a
+            href={LINKS.patreon}
+            target="_blank"
             rel="noopener noreferrer"
+            className="group relative px-10 py-5 text-xl font-bold rounded-xl overflow-hidden"
             whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <button className="btn-fire text-xl px-8 py-4 flex items-center gap-3">
-              <FaFire className="text-2xl" />
-              Join the Patreon
-            </button>
+            {/* Animated background */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-fire-orange via-red-600 to-fire-orange"
+              animate={{
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+              style={{ backgroundSize: '200% 100%' }}
+            />
+            
+            {/* Glow effect */}
+            <div className="absolute inset-0 blur-xl opacity-50 group-hover:opacity-100 transition-opacity bg-fire-orange" />
+            
+            <span className="relative z-10 flex items-center gap-3 text-white">
+              🔥 JOIN THE PATREON
+            </span>
           </motion.a>
-          
-          <motion.a 
-            href={LINKS.discord} 
-            target="_blank" 
+
+          {/* Discord button */}
+          <motion.a
+            href={LINKS.discord}
+            target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="relative px-10 py-5 text-xl font-bold rounded-xl border-2 border-fire-orange hover:bg-fire-orange/10 transition-all group text-white"
+            whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(255,69,0,0.5)' }}
+            whileTap={{ scale: 0.98 }}
           >
-            <button className="bg-electric-steel/20 border-2 border-electric-steel text-electric-steel font-display uppercase px-8 py-4 rounded-xl shadow-lg hover:bg-electric-steel/30 hover:shadow-electric-steel/50 transition-all text-xl flex items-center gap-3">
-              <FaDiscord className="text-2xl" />
-              Enter Discord
-            </button>
+            <span className="flex items-center gap-3">
+              💬 ENTER DISCORD
+            </span>
           </motion.a>
-          
-          <motion.a 
-            href={LINKS.youtube} 
-            target="_blank" 
+
+          {/* YouTube button */}
+          <motion.a
+            href={LINKS.youtube}
+            target="_blank"
             rel="noopener noreferrer"
+            className="px-10 py-5 text-xl font-bold text-gray-400 hover:text-white transition-colors"
             whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <button className="bg-lava-red/20 border-2 border-lava-red text-white font-display uppercase px-8 py-4 rounded-xl shadow-lg hover:bg-lava-red/30 hover:shadow-lava-red/50 transition-all text-xl flex items-center gap-3">
-              <FaYoutube className="text-2xl" />
-              Watch on YouTube
-            </button>
+            📺 WATCH ON YOUTUBE
           </motion.a>
         </motion.div>
-      </motion.div>
-    </section>
-  );
-};
+      </div>
 
-export default Hero;
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity }}
+      >
+        <div className="flex flex-col items-center gap-2 text-gray-500">
+          <span className="text-sm uppercase tracking-widest">Scroll to explore</span>
+          <svg 
+            className="w-6 h-6"
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </div>
+      </motion.div>
+
+      {/* Cursor glow */}
+      <div 
+        id="cursor-glow"
+        className="fixed w-96 h-96 pointer-events-none -translate-x-1/2 -translate-y-1/2 opacity-20 blur-3xl bg-fire-orange rounded-full mix-blend-screen hidden md:block"
+        style={{ zIndex: 9999 }}
+      />
+    </section>
+  )
+}
