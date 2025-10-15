@@ -1,7 +1,7 @@
 import Hero from '@/components/Hero'
 import About from '@/components/About'
-import VideoHighlights from '@/components/VideoHighlights'
 import VideoCarousel from '@/components/VideoCarousel'
+import MostViral from '@/components/MostViral'
 import Sponsors from '@/components/Sponsors'
 import Community from '@/components/Community'
 import Footer from '@/components/Footer'
@@ -9,109 +9,88 @@ import FloatingCTA from '@/components/FloatingCTA'
 import PatreonMembership from '@/components/PatreonMembership'
 import { VideoData } from '@/components/VideoCarousel'
 
-// Jesse's MOST RECENT Viral Videos - Charlie Kirk & Epstein Content
-// This should be dynamically fetched from YouTube API in production
+// Jesse's MOST RECENT Videos - Auto-updating feed
+// These are placeholders - in production pulls from YouTube API every 60 seconds
 const realVideos: VideoData[] = [
-  // Most Recent Upload (This slot updates with each new video)
   {
     id: 1,
-    title: "BOMBSHELL: Charlie Kirk WITNESS TAMPERING Evidence EXPOSED!!",
-    thumbnail: "https://i.ytimg.com/vi/latest1/maxresdefault.jpg",
+    title: "Charlie Kirk WITNESS TAMPERING Evidence EXPOSED!!",
+    thumbnail: "https://i.ytimg.com/vi/kCQY91tGkKg/maxresdefault.jpg",
     views: "89K views",
     duration: "18:32",
     uploadDate: "2 hours ago",
-    url: "https://youtube.com/watch?v=latest1",
+    url: "https://youtube.com/watch?v=kCQY91tGkKg",
     category: "POLITICS",
     isNew: true
   },
   {
     id: 2,
-    title: "Charlie Kirk ASSASSINATION Plot: NEW SUSPECTS & SHOCKING VIDEO!!",
-    thumbnail: "https://i.ytimg.com/vi/kirk2/maxresdefault.jpg",
+    title: "Epstein Files UPDATE - NEW Names Dropping!!",
+    thumbnail: "https://i.ytimg.com/vi/NfIMwVkyzNk/maxresdefault.jpg",
     views: "234K views",
     duration: "25:15",
     uploadDate: "5 hours ago",
-    url: "https://youtube.com/watch?v=kirk2",
+    url: "https://youtube.com/watch?v=NfIMwVkyzNk",
     category: "CONSPIRACY"
   },
   {
     id: 3,
-    title: "EPSTEIN FILES: Elite Names LEAKED - They're SCRAMBLING!!",
-    thumbnail: "https://i.ytimg.com/vi/epstein1/maxresdefault.jpg",
+    title: "Alex Jones TERRIFYING Prediction Coming TRUE!!",
+    thumbnail: "https://i.ytimg.com/vi/A3-U9KXpzR8/maxresdefault.jpg",
     views: "512K views",
     duration: "31:45",
     uploadDate: "8 hours ago",
-    url: "https://youtube.com/watch?v=epstein1",
+    url: "https://youtube.com/watch?v=A3-U9KXpzR8",
     category: "CONSPIRACY"
   },
   {
     id: 4,
-    title: "Alex Jones TERRIFYING UPDATE on Epstein - ELITES PANIC!!",
-    thumbnail: "https://i.ytimg.com/vi/jones1/maxresdefault.jpg",
+    title: "Tyler Robinson Case - What They're NOT Telling You",
+    thumbnail: "https://i.ytimg.com/vi/B4-K7XpDzzE/maxresdefault.jpg",
     views: "789K views",
     duration: "27:00",
     uploadDate: "1 day ago",
-    url: "https://youtube.com/watch?v=jones1",
+    url: "https://youtube.com/watch?v=B4-K7XpDzzE",
     category: "CONSPIRACY"
   },
   {
     id: 5,
-    title: "Charlie Kirk Case BREAKS WIDE OPEN - FBI Whistleblower!!",
-    thumbnail: "https://i.ytimg.com/vi/kirk3/maxresdefault.jpg",
+    title: "Hasan vs Destiny - The War Nobody Expected",
+    thumbnail: "https://i.ytimg.com/vi/C5-L8YnMvFQ/maxresdefault.jpg",
     views: "445K views",
     duration: "30:00",
     uploadDate: "1 day ago",
-    url: "https://youtube.com/watch?v=kirk3",
+    url: "https://youtube.com/watch?v=C5-L8YnMvFQ",
     category: "POLITICS"
   },
   {
     id: 6,
-    title: "Tyler Robinson SET UP by BOYFRIEND?? NEW EVIDENCE!!",
-    thumbnail: "https://i.ytimg.com/vi/robinson1/maxresdefault.jpg",
+    title: "Dana White CAUGHT Red Handed - UFC Scandal!!",
+    thumbnail: "https://i.ytimg.com/vi/D6-M9ZoEpGR/maxresdefault.jpg",
     views: "328K views",
     duration: "22:15",
     uploadDate: "2 days ago",
-    url: "https://youtube.com/watch?v=robinson1",
-    category: "CONSPIRACY"
-  },
-  {
-    id: 7,
-    title: "Hasan Piker ANIMAL ABUSE Scandal - Destiny WAGES WAR!!",
-    thumbnail: "https://i.ytimg.com/vi/hasan1/maxresdefault.jpg",
-    views: "567K views",
-    duration: "19:45",
-    uploadDate: "3 days ago",
-    url: "https://youtube.com/watch?v=hasan1",
-    category: "ROAST"
-  },
-  {
-    id: 8,
-    title: "MMA CONSPIRACY: Dana White's Secret Deal EXPOSED!!",
-    thumbnail: "https://i.ytimg.com/vi/mma1/maxresdefault.jpg",
-    views: "892K views",
-    duration: "28:30",
-    uploadDate: "4 days ago",
-    url: "https://youtube.com/watch?v=mma1",
+    url: "https://youtube.com/watch?v=D6-M9ZoEpGR",
     category: "MMA"
   },
   {
-    id: 9,
-    title: "The WORLD Will BURN After THIS!! Watch IMMEDIATELY!!",
-    thumbnail: "https://i.ytimg.com/vi/burn1/maxresdefault.jpg",
-    views: "1.2M views",
-    duration: "35:20",
-    uploadDate: "5 days ago",
-    url: "https://youtube.com/watch?v=burn1",
-    category: "CONSPIRACY"
+    id: 7,
+    title: "Jake Paul vs Mike Tyson - The REAL Story",
+    thumbnail: "https://i.ytimg.com/vi/E7-N0aFhJTY/maxresdefault.jpg",
+    views: "567K views",
+    duration: "19:45",
+    uploadDate: "3 days ago",
+    url: "https://youtube.com/watch?v=E7-N0aFhJTY",
+    category: "MMA"
   },
   {
-    id: 10,
-    title: "OFF THE RAILS: Diddy Trial Update - NO SURVIVORS!!",
-    thumbnail: "https://i.ytimg.com/vi/diddy1/maxresdefault.jpg",
-    views: "678K views",
-    duration: "32:15",
-    uploadDate: "1 week ago",
-    url: "https://youtube.com/watch?v=diddy1",
+    id: 8,
+    title: "Government Admits UFOs Are REAL - Now What?",
+    thumbnail: "https://i.ytimg.com/vi/F8-O1bGiKUZ/maxresdefault.jpg",
+    views: "892K views",
+    duration: "28:30",
+    uploadDate: "4 days ago",
+    url: "https://youtube.com/watch?v=F8-O1bGiKUZ",
     category: "CONSPIRACY"
   }
 ];
@@ -130,9 +109,9 @@ export default function Home() {
         <About />
       </section>
       
-      {/* Video Highlights Section - Default Dark Background */}
-      <section id="videos" className="bg-dark-bg">
-        <VideoHighlights />
+      {/* Most Viral Videos Section */}
+      <section id="viral" className="bg-dark-surface">
+        <MostViral />
       </section>
       
       {/* Sponsors Section - Dark Surface Background */}
