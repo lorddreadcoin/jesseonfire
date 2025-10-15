@@ -12,12 +12,12 @@ interface SubscriberData {
 }
 
 const LiveSubscriberCount = () => {
-  // Starting with Jesse's current count - 516K
+  // Starting with Jesse's current count - 517K
   const [subscriberData, setSubscriberData] = useState<SubscriberData>({
-    current: 516000,
-    formatted: "516K",
-    percentToMillion: 51.6,
-    subscribersToGo: 484000
+    current: 517000,
+    formatted: "517K",
+    percentToMillion: 51.7,
+    subscribersToGo: 483000
   });
 
   const [isLive, setIsLive] = useState(true);

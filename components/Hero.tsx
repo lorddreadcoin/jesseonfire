@@ -8,7 +8,7 @@ import LiveSubscriberCount from "@/components/LiveSubscriberCount";
 
 const Hero = () => {
   const [isLive, setIsLive] = useState(false);
-  const [subscriberCount, setSubscriberCount] = useState(516000);
+  const [subscriberCount, setSubscriberCount] = useState(517000);
   const [mounted, setMounted] = useState(false);
   
   // Generate stable particle positions
@@ -140,7 +140,7 @@ const Hero = () => {
               animate={{ opacity: [1, 0.5, 1] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             />
-            <span className="text-white font-bold text-sm">LIVE NOW</span>
+            <span className="text-white font-bold">517K+ Warriors</span>
           </div>
         </motion.div>
       )}

@@ -19,9 +19,10 @@ export async function GET() {
     if (!API_KEY) {
       // Return Jesse's actual current stats for development
       const mockData = {
-        subscriberCount: 516000,
-        viewCount: 127000000, // 127M+ total views
-        videoCount: 1200, // 1200+ videos
+        subscriberCount: 517000,
+        viewCount: 111291695, // 111M+ total views
+        videoCount: 2863, // 2,863 videos
+        channelAge: 18, // 18 years on YouTube
         latestVideos: [],
         growing: true
       };
@@ -77,9 +78,10 @@ export async function GET() {
     
     // Return fallback data on error
     return NextResponse.json({
-      subscriberCount: 516000,
-      viewCount: 127000000,
-      videoCount: 1200,
+      subscriberCount: 517000,
+      viewCount: 111291695,
+      videoCount: 2863,
+      channelAge: 18,
       error: 'Using cached data',
       growing: true
     });

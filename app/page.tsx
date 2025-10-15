@@ -2,6 +2,7 @@ import Hero from '@/components/Hero'
 import About from '@/components/About'
 import VideoCarousel from '@/components/VideoCarousel'
 import MostViral from '@/components/MostViral'
+import ChannelNetwork from '@/components/ChannelNetwork'
 import Sponsors from '@/components/Sponsors'
 import PatreonMembership from '@/components/PatreonMembership'
 import Footer from '@/components/Footer'
@@ -116,6 +117,11 @@ export default function Home() {
       {/* Sponsors Section - Dark Surface Background */}
       <section id="sponsors" className="bg-dark-surface">
         <Sponsors />
+      </section>
+      
+      {/* Channel Network Section */}
+      <section id="channels" className="bg-dark-surface">
+        <ChannelNetwork />
       </section>
       
       {/* Patreon Membership Section */}

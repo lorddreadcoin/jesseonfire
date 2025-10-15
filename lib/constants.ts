@@ -11,7 +11,7 @@ export interface SiteConfig {
 export const SITE_CONFIG: SiteConfig = {
   name: "Jesse ON FIRE",
   tagline: "Uncensored. Unfiltered. Undefeated.",
-  description: "516K+ Warriors Strong. Exposing Truth Daily.",
+  description: "517K+ Warriors Strong. Black Belt Mic Skills. 🥋",
   url: "https://jesseonfire.com",
   creator: "@realjesseonfire"
 };
@@ -22,14 +22,20 @@ export interface Links {
   youtube: string;
   twitter: string;
   instagram: string;
+  tiktok?: string;
+  playWithMatches?: string;
+  afterHours?: string;
 }
 
 export const LINKS: Links = {
   patreon: "https://www.patreon.com/c/jesseonfire",
   discord: "https://discord.gg/jesseonfire",
-  youtube: "https://youtube.com/@realjesseonfire",
+  youtube: "https://youtube.com/@RealJesseONFIRE",
   twitter: "https://twitter.com/realjesseonfire",
-  instagram: "https://instagram.com/realjesseonfire"
+  instagram: "https://instagram.com/realjesseonfire",
+  tiktok: "https://tiktok.com/@jesseonfire",
+  playWithMatches: "https://youtube.com/channel/UCMgZRuOPSceek0sGfoVkJ9Q",
+  afterHours: "https://youtube.com/channel/UCy4B2chgtradV0T7EFUURSA"
 };
 
 export interface Sponsor {
@@ -109,17 +115,17 @@ export interface Bio {
 }
 
 export const BIO: Bio = {
-  headline: "516K Warriors & Growing Daily",
+  headline: "517K Warriors & 18 Years Strong",
   paragraphs: [
-    "Jesse ON FIRE isn't just a stage name—it's a warning. With 516,000+ subscribers and 127 million views, this political analyst and Purple Belt BJJ practitioner brings combat intensity to truth-telling.",
-    "Dropping 3-4 videos daily on everything from Charlie Kirk conspiracies to Epstein revelations, Jesse has become the independent voice that mainstream media fears. 1,200+ videos deep, still uncensored, still undefeated.",
-    "Whether he's exposing government corruption, breaking down MMA politics, or going OFF THE RAILS on his latest investigation, Jesse delivers what his army demands: pure, unfiltered truth that makes the establishment panic."
+    "Jesse ON FIRE is the YOUTUBE GOAT on the mic. With 517,000+ subscribers and 111 million views, this political analyst and Purple Belt BJJ practitioner has been exposing truth since 2006. Black Belt mic skills. 🥋",
+    "With 2,863 videos and counting, Jesse drops content daily on everything from political conspiracies to MMA breakdowns. Running multiple channels including PLAY W MATCHES with wife Gabi and Jesse On FIRE After Hours for the real ones.",
+    "Whether he's exposing government corruption, breaking down UFC politics, or going OFF THE RAILS on his latest investigation, Jesse delivers what his army demands: pure, unfiltered truth that makes the establishment panic."
   ],
-  pullQuote: "516,000 strong and growing. They tried to silence us. Now we're too big to stop.",
+  pullQuote: "517,000 strong. 18 years on YouTube. They couldn't stop us then, they can't stop us now.",
   stats: [
-    { label: "YouTube Warriors", value: "516K+" },
-    { label: "Total Destruction", value: "127M+ Views" },
-    { label: "Videos Uploaded", value: "1,200+" },
-    { label: "Daily Uploads", value: "3-4 Videos" }
+    { label: "YouTube Warriors", value: "517K+" },
+    { label: "Total Views", value: "111M+" },
+    { label: "Videos Uploaded", value: "2,863" },
+    { label: "Years on YouTube", value: "18" }
   ]
 };

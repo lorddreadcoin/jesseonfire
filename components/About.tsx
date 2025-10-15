@@ -62,7 +62,7 @@ const About = () => {
             <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-full border border-fire-orange/50">
               <div className="flex items-center gap-2">
                 <FaYoutube className="text-red-600 text-xl" />
-                <span className="text-white font-bold">516K+ Warriors</span>
+                <span className="text-white font-bold">517K+ Warriors</span>
               </div>
             </div>
             
