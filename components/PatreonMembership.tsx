@@ -26,8 +26,8 @@ const PatreonMembership = () => {
           </p>
         </motion.div>
 
-        {/* Membership Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* Membership Cards - Updated Grid for 5 tiers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {TIERS.map((tier, index) => (
             <motion.div 
               key={tier.id}

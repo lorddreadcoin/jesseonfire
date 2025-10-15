@@ -8,7 +8,7 @@ import Sponsors from '@/components/Sponsors'
 import PatreonMembership from '@/components/PatreonMembership'
 import Footer from '@/components/Footer'
 import FloatingCTA from '@/components/FloatingCTA'
-import { VideoData } from '@/components/VideoCarousel'
+import type { VideoData } from '@/components/VideoCarousel'
 
 // Jesse's MOST RECENT Videos - Auto-updating feed
 // These are placeholders - in production pulls from YouTube API every 60 seconds

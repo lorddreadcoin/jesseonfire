@@ -1,8 +1,10 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaYoutube, FaTiktok, FaInstagram, FaTwitter } from "react-icons/fa";
 import { LINKS } from "@/lib/constants";
+import { fetchRealYouTubeStats } from "@/lib/youtube-fetcher";
 
 const channels = [
   {
@@ -39,6 +41,37 @@ const socials = [
 ];
 
 const ChannelNetwork = () => {
+  const [stats, setStats] = useState({
+    subscriberCount: 517000,
+    viewCount: 111291695,
+    videoCount: 2863,
+    isLive: false
+  });
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      const youtubeStats = await fetchRealYouTubeStats();
+      if (youtubeStats) {
+        setStats({
+          subscriberCount: youtubeStats.subscriberCount,
+          viewCount: youtubeStats.viewCount,
+          videoCount: youtubeStats.videoCount,
+          isLive: true
+        });
+      }
+    };
+    
+    fetchStats();
+    const interval = setInterval(fetchStats, 60000); // Update every minute
+    return () => clearInterval(interval);
+  }, []);
+
+  const formatNumber = (num: number) => {
+    if (num >= 1000000000) return (num / 1000000000).toFixed(1) + 'B';
+    if (num >= 1000000) return (num / 1000000).toFixed(0) + 'M';
+    if (num >= 1000) return (num / 1000).toFixed(0) + 'K';
+    return num.toString();
+  };
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-charcoal to-obsidian">
       <div className="max-w-7xl mx-auto">
@@ -129,24 +162,47 @@ const ChannelNetwork = () => {
             ))}
           </div>
           
-          {/* Stats Summary */}
+          {/* Stats Summary - REAL TIME */}
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            <div className="bg-black/30 rounded-lg p-4 backdrop-blur-sm border border-fire-orange/20">
-              <div className="text-2xl font-display text-fire-orange">517K+</div>
+            <motion.div 
+              className="bg-black/30 rounded-lg p-4 backdrop-blur-sm border border-fire-orange/20"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="text-2xl font-display text-fire-orange">
+                {formatNumber(stats.subscriberCount)}+
+                {stats.isLive && <span className="text-xs ml-1 text-green-500">LIVE</span>}
+              </div>
               <div className="text-xs text-ash-grey uppercase">Subscribers</div>
-            </div>
-            <div className="bg-black/30 rounded-lg p-4 backdrop-blur-sm border border-fire-orange/20">
-              <div className="text-2xl font-display text-fire-orange">2,863</div>
+            </motion.div>
+            <motion.div 
+              className="bg-black/30 rounded-lg p-4 backdrop-blur-sm border border-fire-orange/20"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+            >
+              <div className="text-2xl font-display text-fire-orange">{stats.videoCount.toLocaleString()}</div>
               <div className="text-xs text-ash-grey uppercase">Videos</div>
-            </div>
-            <div className="bg-black/30 rounded-lg p-4 backdrop-blur-sm border border-fire-orange/20">
-              <div className="text-2xl font-display text-fire-orange">111M+</div>
+            </motion.div>
+            <motion.div 
+              className="bg-black/30 rounded-lg p-4 backdrop-blur-sm border border-fire-orange/20"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+            >
+              <div className="text-2xl font-display text-fire-orange">{formatNumber(stats.viewCount)}+</div>
               <div className="text-xs text-ash-grey uppercase">Total Views</div>
-            </div>
-            <div className="bg-black/30 rounded-lg p-4 backdrop-blur-sm border border-fire-orange/20">
+            </motion.div>
+            <motion.div 
+              className="bg-black/30 rounded-lg p-4 backdrop-blur-sm border border-fire-orange/20"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
+            >
               <div className="text-2xl font-display text-fire-orange">18</div>
               <div className="text-xs text-ash-grey uppercase">Years Strong</div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

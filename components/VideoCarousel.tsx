@@ -1,28 +1,19 @@
 "use client";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Autoplay, Navigation } from 'swiper/modules';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaPlay, FaEye, FaYoutube, FaTimes, FaExpand } from 'react-icons/fa';
 import { useState } from 'react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { FaPlay, FaEye, FaYoutube } from "react-icons/fa";
 
 export interface VideoData {
   id: string | number;
-  youtubeId?: string;
   title: string;
   thumbnail: string;
-  views: string;
+  views?: string;
   duration?: string;
   uploadDate?: string;
-  url?: string;
-  category?: 'MMA' | 'POLITICS' | 'CONSPIRACY' | 'ROAST';
+  url: string;
+  category?: string;
   isNew?: boolean;
 }
 
@@ -30,317 +21,168 @@ interface VideoCarouselProps {
   videos: VideoData[];
 }
 
-const VideoCarousel = ({ videos }: VideoCarouselProps) => {
-  const [playingVideoId, setPlayingVideoId] = useState<string | number | null>(null);
-  const [expandedVideoId, setExpandedVideoId] = useState<string | number | null>(null);
+const VideoCarousel: React.FC<VideoCarouselProps> = ({ videos }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   
-  const extractYoutubeId = (url?: string): string => {
-    if (!url) return '';
-    const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
-    return match ? match[1] : '';
+  const handleVideoClick = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
-  
-  const handlePlayClick = (videoId: string | number) => {
-    setPlayingVideoId(videoId);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % videos.length);
   };
-  
-  const handleExpandClick = (videoId: string | number) => {
-    setExpandedVideoId(videoId);
-  };
-  
-  const handleCloseExpanded = () => {
-    setExpandedVideoId(null);
-  };
-  
-  const handleOpenInYouTube = (url?: string) => {
-    if (url) {
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-obsidian overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-obsidian">
       <div className="max-w-7xl mx-auto">
-        <motion.h2 
-          className="font-display text-5xl lg:text-6xl text-center text-fire-orange mb-4 uppercase tracking-wider"
+        {/* Header */}
+        <motion.div 
+          className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Most Recent Uploads
-        </motion.h2>
-        <motion.p 
-          className="text-center text-ash-grey text-lg mb-8 font-heading uppercase tracking-wide"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        >
-          Updated Multiple Times Daily - New Videos Always on Top
-        </motion.p>
+          <h2 className="font-display text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider">
+            Latest Fire Content
+          </h2>
+          <p className="text-xl text-ash-grey font-heading uppercase">
+            Fresh Uploads • Unfiltered Truth
+          </p>
+        </motion.div>
 
-        <Swiper
-          effect={'coverflow'}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={'auto'}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          }}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-            bulletClass: 'swiper-pagination-bullet bg-gray-600',
-            bulletActiveClass: 'swiper-pagination-bullet-active !bg-orange-500',
-          }}
-          navigation={true}
-          modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
-          className="py-12"
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-          }}
-        >
-          {videos.map((video) => (
-            <SwiperSlide key={video.id} className="max-w-[400px]">
-              <div className="cursor-pointer group">
-                <div className={`relative w-full aspect-video bg-gray-800 rounded-lg overflow-hidden shadow-2xl group cursor-pointer ${video.isNew ? 'ring-4 ring-fire-orange ring-opacity-50 animate-pulse' : ''}`}>
-                  {playingVideoId === video.id ? (
-                    /* YouTube Player Embed */
-                    <div className="relative w-full h-full bg-black">
-                      <iframe
-                        src={`https://www.youtube.com/embed/${extractYoutubeId(video.url)}?autoplay=1&modestbranding=1&rel=0`}
-                        title={video.title}
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                      
-                      {/* Controls Overlay */}
-                      <div className="absolute top-2 right-2 flex gap-2">
-                        <motion.button
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleExpandClick(video.id);
-                          }}
-                          className="bg-black/70 backdrop-blur-sm p-2 rounded-full hover:bg-black/90 transition-colors"
-                        >
-                          <FaExpand className="w-4 h-4 text-white" />
-                        </motion.button>
-                        <motion.button
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleOpenInYouTube(video.url);
-                          }}
-                          className="bg-red-600/70 backdrop-blur-sm p-2 rounded-full hover:bg-red-600 transition-colors"
-                        >
-                          <FaYoutube className="w-4 h-4 text-white" />
-                        </motion.button>
-                        <motion.button
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setPlayingVideoId(null);
-                          }}
-                          className="bg-black/70 backdrop-blur-sm p-2 rounded-full hover:bg-black/90 transition-colors"
-                        >
-                          <FaTimes className="w-4 h-4 text-white" />
-                        </motion.button>
-                      </div>
-                    </div>
-                  ) : (
-                    /* Thumbnail View - CINEMATIC */
-                    <motion.div
-                      className="relative w-full h-full cursor-pointer group"
-                      onClick={() => handlePlayClick(video.id)}
-                      whileHover={{ scale: 1.02 }}
-                    >
-                      {video.thumbnail ? (
-                        <Image
-                          src={video.thumbnail}
-                          alt={video.title}
-                          fill
-                          className="object-cover"
-                          unoptimized
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900" />
-                      )}
-                      
-                      {/* Overlay gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                      
-                      {/* Play button overlay - FIRE EDITION */}
-                      <motion.div 
-                        className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/40 transition-all"
-                        whileHover={{ backgroundColor: "rgba(0,0,0,0.2)" }}
-                      >
-                        <motion.div 
-                          className="bg-fire-gradient rounded-full p-5 shadow-fire-glow group-hover:shadow-fire-glow-lg transition-all"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          <FaPlay className="w-10 h-10 text-white ml-1" />
-                        </motion.div>
-                      </motion.div>
-                      
-                      {/* Quick YouTube Link */}
-                      <motion.button
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all hover:scale-110"
+            aria-label="Previous video"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all hover:scale-110"
+            aria-label="Next video"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Videos Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {videos.slice(currentIndex, currentIndex + 3).map((video) => (
+              <motion.div
+                key={video.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="group cursor-pointer"
+                onClick={() => handleVideoClick(video.url)}
+              >
+                <div className="card-cinematic overflow-hidden hover:shadow-fire-glow-lg transition-all hover:scale-105">
+                  {/* Thumbnail */}
+                  <div className="relative aspect-video">
+                    <Image
+                      src={video.thumbnail}
+                      alt={video.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      unoptimized // For external YouTube images
+                    />
+                    
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <motion.div
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleOpenInYouTube(video.url);
-                        }}
-                        className="absolute top-2 right-2 bg-red-600/70 backdrop-blur-sm p-2 rounded-full hover:bg-red-600 transition-colors"
+                        className="bg-fire-gradient rounded-full p-4 shadow-fire-glow"
                       >
-                        <FaYoutube className="w-4 h-4 text-white" />
-                      </motion.button>
-                      {/* New Video Badge */}
-                      {video.isNew && (
-                        <div className="absolute top-2 left-2 bg-fire-gradient px-3 py-1 rounded-full animate-pulse shadow-fire-glow">
-                          <span className="text-xs font-bold text-white uppercase tracking-wider">
-                            NEW UPLOAD
-                          </span>
-                        </div>
-                      )}
-                      
-                      {/* Category badge */}
-                      {video.category && (
-                        <div className={`absolute ${video.isNew ? 'top-10' : 'top-2'} left-2 bg-black/70 backdrop-blur-sm px-3 py-1 rounded-full`}>
-                          <span className="text-xs font-bold text-orange-500">
-                            {video.category}
-                          </span>
-                        </div>
-                      )}
+                        <FaPlay className="w-8 h-8 text-white ml-1" />
+                      </motion.div>
+                    </div>
 
-                      {/* Duration */}
-                      {video.duration && (
-                        <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm px-2 py-1 rounded">
-                          <span className="text-xs text-white font-medium">
-                            {video.duration}
-                          </span>
-                        </div>
-                      )}
-                    </motion.div>
-                  )}
-                </div>
+                    {/* Badges */}
+                    {video.isNew && (
+                      <div className="absolute top-2 left-2 bg-fire-gradient px-3 py-1 rounded-full animate-pulse shadow-fire-glow">
+                        <span className="text-xs font-bold text-white uppercase">NEW</span>
+                      </div>
+                    )}
+                    
+                    {video.category && (
+                      <div className="absolute top-2 right-2 bg-black/70 backdrop-blur-sm px-2 py-1 rounded">
+                        <span className="text-xs text-fire-orange font-bold">{video.category}</span>
+                      </div>
+                    )}
+                    
+                    {video.duration && (
+                      <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm px-2 py-1 rounded">
+                        <span className="text-xs text-white">{video.duration}</span>
+                      </div>
+                    )}
+                    
+                    {/* YouTube Icon */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleVideoClick(video.url);
+                      }}
+                      className="absolute bottom-2 left-2 bg-red-600/80 hover:bg-red-600 p-2 rounded-full transition-colors"
+                    >
+                      <FaYoutube className="w-4 h-4 text-white" />
+                    </button>
+                  </div>
 
-                {/* Video info - CINEMATIC */}
-                <div className="mt-4 px-2">
-                  <h3 className="font-heading text-white text-xl line-clamp-2 group-hover:text-fire-orange transition-colors uppercase">
-                    {video.title}
-                  </h3>
-                  <div className="flex items-center gap-4 mt-2 text-sm text-gray-400">
-                    {video.views && (
-                      <span className="flex items-center gap-1">
-                        <FaEye className="w-3 h-3" />
-                        {video.views}
-                      </span>
-                    )}
-                    {video.uploadDate && (
-                      <span>{video.uploadDate}</span>
-                    )}
+                  {/* Content */}
+                  <div className="p-4">
+                    <h3 className="font-heading text-lg text-white uppercase line-clamp-2 group-hover:text-fire-orange transition-colors">
+                      {video.title}
+                    </h3>
+                    
+                    {/* Stats */}
+                    <div className="flex items-center gap-4 mt-2 text-sm text-ash-grey">
+                      {video.views && (
+                        <span className="flex items-center gap-1">
+                          <FaEye className="w-3 h-3" />
+                          {video.views}
+                        </span>
+                      )}
+                      {video.uploadDate && (
+                        <span>{video.uploadDate}</span>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </motion.div>
+            ))}
+          </div>
 
-        {/* Custom navigation styling */}
-        <style jsx global>{`
-          .swiper-button-next,
-          .swiper-button-prev {
-            color: #FF5A1F !important;
-            background: rgba(0, 0, 0, 0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            backdrop-filter: blur(10px);
-          }
-          
-          .swiper-button-next:after,
-          .swiper-button-prev:after {
-            font-size: 20px !important;
-          }
-          
-          .swiper-pagination {
-            bottom: 0 !important;
-          }
-          
-          .swiper-pagination-bullet {
-            background: #4B5563;
-            opacity: 1;
-          }
-          
-          .swiper-pagination-bullet-active {
-            background: #FF5A1F !important;
-          }
-        `}</style>
+          {/* Pagination Dots */}
+          <div className="flex justify-center gap-2 mt-8">
+            {Array.from({ length: Math.ceil(videos.length / 3) }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index * 3)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  Math.floor(currentIndex / 3) === index
+                    ? 'w-8 bg-fire-orange'
+                    : 'bg-ash-grey hover:bg-white'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
-      
-      {/* Expanded Video Modal */}
-      <AnimatePresence>
-        {expandedVideoId && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm"
-            onClick={handleCloseExpanded}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="relative w-full max-w-6xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {videos.find(v => v.id === expandedVideoId) && (
-                <iframe
-                  src={`https://www.youtube.com/embed/${extractYoutubeId(videos.find(v => v.id === expandedVideoId)?.url)}?autoplay=1&modestbranding=1&rel=0`}
-                  title={videos.find(v => v.id === expandedVideoId)?.title}
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              )}
-              
-              {/* Close Button */}
-              <motion.button
-                whileHover={{ scale: 1.1, rotate: 90 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={handleCloseExpanded}
-                className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm p-3 rounded-full hover:bg-red-600 transition-colors z-10"
-              >
-                <FaTimes className="w-6 h-6 text-white" />
-              </motion.button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };

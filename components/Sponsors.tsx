@@ -9,18 +9,18 @@ const SPONSORS = [
   {
     name: "PrizePicks",
     description: "Daily fantasy sports made simple. Play $5 and get $50 in bonus lineups instantly",
-    logo: "https://i.imgur.com/VJmi74t.png", // PrizePicks logo from imgur
+    logo: "https://i.imgur.com/VJmi74t.png", // PrizePicks logo - correct link
     code: "JESSEONFIRE",
     link: "https://prizepicks.onelink.me/ivHR/JESSEONFIRE",
     bonus: "Get $50",
-    fallbackColor: "bg-gradient-to-br from-green-500 to-green-700",
+    fallbackColor: "bg-gradient-to-br from-purple-600 to-purple-800",
     fallbackText: "PP",
     hasLogo: true
   },
   {
     name: "YoKratom",
     description: "Premium kratom products for focus and energy. Save 20% with your first order",
-    logo: "https://i.imgur.com/LFduJSs.png", // YoKratom logo from imgur
+    logo: "https://i.imgur.com/f6u1FC1.png", // YoKratom logo - FIXED link
     code: "JESSEONFIRE",
     link: "https://yokratom.com",
     bonus: "20% Off",

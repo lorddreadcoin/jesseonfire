@@ -30,12 +30,12 @@ export interface Links {
 export const LINKS: Links = {
   patreon: "https://www.patreon.com/c/jesseonfire",
   discord: "https://discord.gg/jesseonfire",
-  youtube: "https://youtube.com/@RealJesseONFIRE",
+  youtube: "https://www.youtube.com/@RealJesseONFIRE",
   twitter: "https://twitter.com/realjesseonfire",
   instagram: "https://instagram.com/realjesseonfire",
   tiktok: "https://tiktok.com/@jesseonfire",
-  playWithMatches: "https://youtube.com/channel/UCMgZRuOPSceek0sGfoVkJ9Q",
-  afterHours: "https://youtube.com/channel/UCy4B2chgtradV0T7EFUURSA"
+  playWithMatches: "https://www.youtube.com/@PLAYWMATCHES",
+  afterHours: "https://www.youtube.com/@JesseOnFIREAfterHours"
 };
 
 export interface Sponsor {
@@ -76,6 +76,29 @@ export interface Tier {
 
 export const TIERS: Tier[] = [
   {
+    id: "free",
+    name: "Free Member",
+    price: 0,
+    benefits: [
+      "Access to public content",
+      "Community chat access",
+      "Email updates"
+    ],
+    description: "Join for free and get updates on public and exclusive posts."
+  },
+  {
+    id: "inner-circle",
+    name: "Jesse's Inner Circle",
+    price: 4.99,
+    benefits: [
+      "Basic Discord access",
+      "Members-only content",
+      "Early video access",
+      "Monthly updates"
+    ],
+    description: "Get started with exclusive content and basic community access."
+  },
+  {
     id: "member",
     name: "Jesse ON FIRE Member",
     price: 7.99,
@@ -83,9 +106,10 @@ export const TIERS: Tier[] = [
       "ALL VIDEO ACCESS",
       "At least 2 PATREON ONLY videos PER WEEK",
       "Celebrity CRUSHES (like Josh Fabia)",
-      "Exclusive roast content"
+      "Full Discord access"
     ],
-    description: "When you join my Patreon, you get access to all my videos here, which will include at least 2 PATREON ONLY videos PER WEEK where I CRUSH celebrities who deserve it (just like Josh Fabia). Don't miss Bill Cosby..."
+    featured: true,
+    description: "When you join my Patreon, you get access to all my videos here, which will include at least 2 PATREON ONLY videos PER WEEK where I CRUSH celebrities who deserve it."
   },
   {
     id: "elite",
@@ -95,10 +119,25 @@ export const TIERS: Tier[] = [
       "ALL VIDEO ACCESS",
       "EXCLUSIVE Elite Only Live Chat",
       "Direct access to JOF",
-      "All Member tier benefits"
+      "All Member tier benefits",
+      "Your name in video credits"
     ],
-    featured: true,
     description: "This tier will access exclusive live chats that no one else has access to. If you really want direct access to JOF, this is the way there."
+  },
+  {
+    id: "coaching",
+    name: "Private Coaching",
+    price: 150,
+    benefits: [
+      "🔥 ALL membership benefits included",
+      "📞 1-on-1 monthly coaching session (1 hour)",
+      "💬 Direct text access to Jesse",
+      "🎯 Personalized content strategy",
+      "📈 Channel growth consultation",
+      "🏆 Priority response to all questions",
+      "🎬 Custom video shoutouts"
+    ],
+    description: "Get personal coaching from Jesse himself. One monthly session plus ALL other membership benefits."
   }
 ];
 
