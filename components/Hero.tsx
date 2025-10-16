@@ -84,21 +84,19 @@ export default function Hero() {
           style={{ fontWeight: 700 }}
         >
           <span 
-            className="relative inline-block text-[clamp(3.5rem,15vw,11rem)] font-black"
+            className="relative inline-block text-[clamp(4rem,15vw,12rem)] font-council"
             style={{
-              fontFamily: "'Impact', 'Arial Black', 'Helvetica Neue', sans-serif",
-              fontWeight: 900,
-              letterSpacing: '-0.02em',
+              fontFamily: "'Council', 'OT Council', 'Council OT', serif",
+              fontWeight: 700,
+              letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              lineHeight: 0.85,
               background: 'linear-gradient(to bottom, #FFFFFF 0%, #FF4500 50%, #8B0000 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               filter: 'drop-shadow(0 0 30px rgba(255,69,0,0.5))'
             }}
           >
-            <span className="block">JESSE ON</span>
-            <span className="block" style={{ marginTop: '-0.1em' }}>FIRE</span>
+            JESSE ON FIRE
           </span>
           
           {/* Glowing outline */}
@@ -106,18 +104,16 @@ export default function Hero() {
             className="absolute inset-0 blur-2xl opacity-50 pointer-events-none"
             aria-hidden="true"
             style={{
-              fontFamily: "'Impact', 'Arial Black', 'Helvetica Neue', sans-serif",
-              fontWeight: 900,
-              letterSpacing: '-0.02em',
+              fontFamily: "'Council', 'OT Council', 'Council OT', serif",
+              fontWeight: 700,
+              letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              lineHeight: 0.85,
               background: 'linear-gradient(to bottom, #FF4500, #8B0000)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}
           >
-            <span className="block">JESSE ON</span>
-            <span className="block" style={{ marginTop: '-0.1em' }}>FIRE</span>
+            JESSE ON FIRE
           </span>
         </motion.h1>
 
