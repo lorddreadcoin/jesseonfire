@@ -3,43 +3,16 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { BIO } from '@/lib/constants'
 import Card from './ui/Card'
+import ElectricalBackground from './ElectricalBackground'
 
 export default function About() {
   return (
-    <section id="about" className="relative py-20 overflow-hidden">
-      {/* Electrical grid background effect */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 69, 0, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 69, 0, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-          animation: 'gridPulse 4s ease-in-out infinite'
-        }} />
-      </div>
+    <section id="about" className="relative py-20 overflow-hidden bg-black">
+      {/* NEW: Electrical background with lightning */}
+      <ElectricalBackground />
 
-      {/* Lightning bolts (subtle, animated) */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <motion.path
-            d="M 100 0 L 80 40 L 90 40 L 70 80 L 85 80 L 60 120"
-            stroke="rgba(59, 130, 246, 0.5)"
-            strokeWidth="2"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1, 0],
-              opacity: [0, 0.5, 0]
-            }}
-            transition={{ 
-              duration: 2,
-              repeat: Infinity,
-              repeatDelay: 3
-            }}
-          />
-        </svg>
-      </div>
+      {/* Darkening overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -145,11 +118,13 @@ export default function About() {
           >
             {/* Main mic image with enhanced effects */}
             <div className="relative">
-              {/* Outer glow - electric blue */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-blue-500/20 via-transparent to-fire-orange/20 blur-3xl animate-pulse" />
+              {/* Enhanced glow layers for blending */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-blue-500/20 via-purple-600/10 to-fire-orange/20 blur-3xl animate-pulse" />
               
-              {/* Middle glow - fire orange */}
-              <div className="absolute -inset-2 bg-gradient-to-t from-fire-orange/30 to-transparent blur-2xl" />
+              <div className="absolute -inset-4 bg-gradient-to-t from-fire-orange/40 via-transparent to-blue-500/20 blur-2xl" />
+              
+              {/* Edge fade effect to blend with background */}
+              <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/80 pointer-events-none" />
               
               {/* The mic image */}
               <div className="relative rounded-2xl overflow-hidden border border-fire-orange/30">
@@ -159,11 +134,14 @@ export default function About() {
                   width={800}
                   height={1200}
                   className="w-full h-auto"
+                  style={{ 
+                    mixBlendMode: 'lighten'
+                  }}
                   priority
                 />
                 
-                {/* Overlay effects */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                {/* Gradient overlay for edge blending */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                 
                 {/* Animated scanlines */}
                 <motion.div
@@ -174,6 +152,26 @@ export default function About() {
                   animate={{ y: [0, 20, 0] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                 />
+                
+                {/* Electrical connection lines from mic to background */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none">
+                  <motion.path
+                    d="M 50 20 Q 80 40, 95 30"
+                    stroke="rgba(59, 130, 246, 0.4)"
+                    strokeWidth="2"
+                    fill="none"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{ 
+                      pathLength: [0, 1, 0],
+                      opacity: [0, 0.6, 0]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatDelay: 3
+                    }}
+                  />
+                </svg>
               </div>
 
               {/* Electric arcs effect */}

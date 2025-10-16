@@ -319,6 +319,16 @@
   ::selection {
     @apply bg-fire-primary text-white;
   }
+  
+  /* Radial gradient utility */
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+  
+  /* Slow pulse animation */
+  .animate-slow-pulse {
+    animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
 
   /* Shimmer animation for glowing effect */
   @keyframes shimmer {
