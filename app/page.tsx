@@ -11,6 +11,7 @@ import FloatingCTA from '@/components/FloatingCTA'
 import SubscribeCTA from '@/components/SubscribeCTA'
 import InlineCTA from '@/components/InlineCTA'
 import UrgentCTA from '@/components/UrgentCTA'
+import WarriorPoll from '@/components/WarriorPoll'
 import type { VideoData } from '@/components/VideoCarousel'
 
 // Jesse's ACTUAL LATEST Videos - REAL DATA from his channel
@@ -75,6 +76,13 @@ export default function Home() {
     <main className="relative overflow-x-hidden">
       {/* Hero Section - Full Viewport */}
       <Hero />
+      
+      {/* Warriors Sound Off Poll - Prime Engagement Zone */}
+      <section id="warrior-poll" className="relative py-16 bg-gradient-to-b from-black to-charcoal">
+        <div className="container-custom max-w-4xl">
+          <WarriorPoll />
+        </div>
+      </section>
       
       {/* Video Carousel Section - Latest Fire Content */}
       <VideoCarousel videos={realVideos} />
