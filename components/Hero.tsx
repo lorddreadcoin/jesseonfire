@@ -84,18 +84,21 @@ export default function Hero() {
           style={{ fontWeight: 700 }}
         >
           <span 
-            className="relative inline-block text-[clamp(3rem,15vw,10rem)] font-council"
+            className="relative inline-block text-[clamp(3.5rem,15vw,11rem)] font-black"
             style={{
-              fontFamily: "'Council', 'OT Council', Impact, sans-serif",
-              fontWeight: 700,
-              letterSpacing: '0.15em',
+              fontFamily: "'Impact', 'Arial Black', 'Helvetica Neue', sans-serif",
+              fontWeight: 900,
+              letterSpacing: '-0.02em',
+              textTransform: 'uppercase',
+              lineHeight: 0.85,
               background: 'linear-gradient(to bottom, #FFFFFF 0%, #FF4500 50%, #8B0000 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               filter: 'drop-shadow(0 0 30px rgba(255,69,0,0.5))'
             }}
           >
-            JESSE ON FIRE
+            <span className="block">JESSE ON</span>
+            <span className="block" style={{ marginTop: '-0.1em' }}>FIRE</span>
           </span>
           
           {/* Glowing outline */}
@@ -103,13 +106,18 @@ export default function Hero() {
             className="absolute inset-0 blur-2xl opacity-50 pointer-events-none"
             aria-hidden="true"
             style={{
-              letterSpacing: '0.15em',
+              fontFamily: "'Impact', 'Arial Black', 'Helvetica Neue', sans-serif",
+              fontWeight: 900,
+              letterSpacing: '-0.02em',
+              textTransform: 'uppercase',
+              lineHeight: 0.85,
               background: 'linear-gradient(to bottom, #FF4500, #8B0000)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}
           >
-            JESSE ON FIRE
+            <span className="block">JESSE ON</span>
+            <span className="block" style={{ marginTop: '-0.1em' }}>FIRE</span>
           </span>
         </motion.h1>
 
