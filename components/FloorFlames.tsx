@@ -62,27 +62,26 @@ export default function FloorFlames() {
         </defs>
       </svg>
       
-      {/* Additional flame flicker particles */}
-      {Array.from({ length: 15 }).map((_, i) => (
+      {/* Lightweight flame flicker particles - reduced for performance */}
+      {Array.from({ length: 6 }).map((_, i) => (
         <motion.div
           key={i}
           className="absolute bottom-0 rounded-full"
           style={{
-            left: `${(i / 15) * 100}%`,
-            width: '4rem',
-            height: '4rem',
-            background: 'radial-gradient(circle, rgba(255, 100, 0, 0.6) 0%, rgba(255, 140, 0, 0.3) 40%, transparent 70%)',
-            filter: 'blur(8px)'
+            left: `${(i / 6) * 100}%`,
+            width: '3rem',
+            height: '3rem',
+            background: 'radial-gradient(circle, rgba(255, 100, 0, 0.5) 0%, rgba(255, 140, 0, 0.2) 40%, transparent 70%)',
+            filter: 'blur(6px)',
+            willChange: 'transform, opacity'
           }}
           animate={{
-            y: [0, -40, -20, -60, 0],
-            scale: [1, 1.3, 0.9, 1.2, 1],
-            opacity: [0.3, 0.6, 0.4, 0.7, 0.3],
-            x: [(Math.random() - 0.5) * 20, (Math.random() - 0.5) * 30, (Math.random() - 0.5) * 25, 0]
+            y: [0, -50, 0],
+            opacity: [0.3, 0.6, 0.3]
           }}
           transition={{
-            duration: 3 + Math.random() * 2,
-            delay: i * 0.2,
+            duration: 3 + i * 0.5,
+            delay: i * 0.3,
             repeat: Infinity,
             ease: "easeInOut"
           }}

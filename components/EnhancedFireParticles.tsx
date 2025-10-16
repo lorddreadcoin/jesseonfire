@@ -111,19 +111,20 @@ export default function EnhancedFireParticles() {
                 height: `${particle.size}rem`,
                 backgroundColor: layer.color,
                 filter: `blur(${particle.blur}px)`,
-                boxShadow: `0 0 ${particle.blur * 4}px ${layer.color}`
+                boxShadow: `0 0 ${particle.blur * 4}px ${layer.color}`,
+                willChange: 'transform, opacity'
               }}
               animate={{
-                y: [0, -window.innerHeight * (1 + Math.random() * 0.3)],
-                x: [0, (Math.random() - 0.5) * 100],
-                opacity: [0, 1, 1, 0],
-                scale: [0, 1.5, 1, 0]
+                y: [0, -window.innerHeight * 1.2],
+                x: [0, (Math.random() - 0.5) * 80],
+                opacity: [0, 1, 0],
+                scale: [0.5, 1.2, 0]
               }}
               transition={{
                 duration: particle.duration / layer.speed,
                 delay: particle.delay,
                 repeat: Infinity,
-                ease: "easeOut"
+                ease: "linear"
               }}
             />
           ))}

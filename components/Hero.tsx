@@ -8,25 +8,34 @@ import OctagonGrid from './OctagonGrid'
 import LiveCounter from './LiveCounter'
 
 export default function Hero() {
-  // Cursor glow effect with throttling
+  // Ultra-lightweight cursor glow with RAF
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout
+    let rafId: number
+    let currentX = 0
+    let currentY = 0
     
     const handleMouseMove = (e: MouseEvent) => {
-      if (timeoutId) clearTimeout(timeoutId)
+      currentX = e.clientX
+      currentY = e.clientY
       
-      timeoutId = setTimeout(() => {
+      // Cancel previous frame if it hasn't run yet
+      if (rafId) {
+        cancelAnimationFrame(rafId)
+      }
+      
+      // Schedule update on next frame
+      rafId = requestAnimationFrame(() => {
         const glow = document.getElementById('cursor-glow')
         if (glow) {
-          glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`
+          glow.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`
         }
-      }, 16) // ~60fps throttle
+      })
     }
     
-    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
-      if (timeoutId) clearTimeout(timeoutId)
+      if (rafId) cancelAnimationFrame(rafId)
     }
   }, [])
 

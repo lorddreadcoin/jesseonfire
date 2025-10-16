@@ -88,27 +88,22 @@ const About = () => {
             </motion.p>
           </div>
 
+          {/* Jesse's Signature Banner */}
           <motion.div 
-            className="grid grid-cols-3 gap-6 mb-12"
+            className="mb-12"
             variants={itemVariants}
           >
-            {BIO.stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="card-cinematic hover:shadow-fire-glow-lg transition-all duration-300 hover:scale-105 text-center p-6"
-                whileHover={{ y: -5 }}
-              >
-                <div className="text-4xl font-display text-fire-gradient bg-clip-text text-transparent mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm font-heading text-ash-grey uppercase tracking-wide">
-                  {stat.label}
-                  {stat.label === "Warriors" && (
-                    <span className="text-fire-orange text-xs block mt-1 animate-pulse">LIVE</span>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+            <div className="relative w-full max-w-2xl mx-auto lg:mx-0">
+              <Image
+                src="https://i.imgur.com/nGfrx8Y.png"
+                alt="Jesse ON FIRE Signature"
+                width={800}
+                height={200}
+                className="w-full h-auto"
+                unoptimized
+                priority
+              />
+            </div>
           </motion.div>
 
           <motion.div
