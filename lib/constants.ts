@@ -11,7 +11,7 @@ export interface SiteConfig {
 export const SITE_CONFIG: SiteConfig = {
   name: "Jesse ON FIRE",
   tagline: "Uncensored. Unfiltered. Undefeated.",
-  description: "517K+ Warriors Strong. Black Belt Mic Skills. 🥋",
+  description: "517K+ Warriors Strong. Black Belt Mic Skills.",
   url: "https://jesseonfire.com",
   creator: "@realjesseonfire"
 };
@@ -159,18 +159,40 @@ export interface Bio {
   stats: BioStats[];
 }
 
+// Tagline system for legendary messaging
+export const TAGLINES = {
+  // Main hero tagline (under brand name)
+  hero: "The YouTube GOAT on the Mic",
+  
+  // Alternative taglines (can rotate or use in different sections)
+  alternatives: [
+    "517K Warriors. One Unfiltered Voice.",
+    "Black Belt Mic Skills. Zero Bullshit.",
+    "The Voice They Can't Silence.",
+    "Combat Commentary. No Filter.",
+    "Truth Bombs. Daily.",
+    "Mic Assassin.",
+    "Where Real Talk Lives.",
+  ],
+  
+  // About section tagline
+  about: "Undefeated on the Mic",
+  
+  // Stats tagline (replaces timeline stat)
+  stats: "The GOAT on the Mic"
+};
+
 export const BIO: Bio = {
-  headline: "517K Warriors & 18 Years Strong",
+  headline: "Black Belt Mic Skills",
   paragraphs: [
-    "Jesse ON FIRE is the YOUTUBE GOAT on the mic. With 517,000+ subscribers and 111 million views, this political analyst and Purple Belt BJJ practitioner has been exposing truth since 2006. Black Belt mic skills. 🥋",
+    "Jesse ON FIRE is the YOUTUBE GOAT on the mic. With 517,000+ subscribers and 111 million views, this political analyst has been exposing truth with black belt precision. Unfiltered. Uncensored. Undefeated.",
     "With 2,863 videos and counting, Jesse drops content daily on everything from political conspiracies to MMA breakdowns. Running multiple channels including PLAY W MATCHES with wife Gabi and Jesse On FIRE After Hours for the real ones.",
     "Whether he's exposing government corruption, breaking down UFC politics, or going OFF THE RAILS on his latest investigation, Jesse delivers what his army demands: pure, unfiltered truth that makes the establishment panic."
   ],
-  pullQuote: "517,000 strong. 18 years on YouTube. They couldn't stop us then, they can't stop us now.",
+  pullQuote: "517,000 warriors strong. The voice they can't silence.",
   stats: [
-    { label: "YouTube Warriors", value: "517K+" },
+    { label: "Warriors", value: "517K+" },
     { label: "Total Views", value: "111M+" },
-    { label: "Videos Uploaded", value: "2,863" },
-    { label: "Years on YouTube", value: "18" }
+    { label: "The GOAT", value: "🔥" }
   ]
 };

@@ -90,7 +90,7 @@ const ChannelNetwork = () => {
             The Jesse Empire
           </h2>
           <p className="text-xl text-ash-grey font-heading uppercase">
-            18 Years • Multiple Channels • One Voice
+            Multiple Channels • One Voice • Unfiltered Truth
           </p>
         </motion.div>
 

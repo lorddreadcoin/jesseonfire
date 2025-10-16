@@ -42,10 +42,10 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-display text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider">
-            🔥 Latest Fire Content 🔥
+            🔥 Latest Drops 🔥
           </h2>
           <p className="text-xl text-ash-grey font-heading uppercase">
-            Fresh Off The Press - Unfiltered Truth
+            Most Recent Uploads
           </p>
         </motion.div>
 

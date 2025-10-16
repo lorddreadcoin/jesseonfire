@@ -24,9 +24,9 @@ export default function EnhancedFireParticles() {
   
   useEffect(() => {
     const layers: ParticleLayer[] = [
-      // Back layer - 160 particles (slowest, most blurred, deepest)
+      // Back layer - 40 particles (slowest, most blurred, deepest)
       {
-        particles: Array.from({ length: 160 }).map((_, i) => ({
+        particles: Array.from({ length: 40 }).map((_, i) => ({
           id: i,
           x: Math.random() * 100,
           delay: Math.random() * 8,
@@ -39,10 +39,10 @@ export default function EnhancedFireParticles() {
         zIndex: 1,
         color: 'rgba(255, 69, 0, 0.4)'
       },
-      // Mid-back layer - 80 particles
+      // Mid-back layer - 20 particles
       {
-        particles: Array.from({ length: 80 }).map((_, i) => ({
-          id: i + 160,
+        particles: Array.from({ length: 20 }).map((_, i) => ({
+          id: i + 40,
           x: Math.random() * 100,
           delay: Math.random() * 6,
           duration: 6 + Math.random() * 5,
@@ -54,10 +54,10 @@ export default function EnhancedFireParticles() {
         zIndex: 2,
         color: 'rgba(255, 100, 0, 0.5)'
       },
-      // Mid-front layer - 40 particles
+      // Mid-front layer - 10 particles
       {
-        particles: Array.from({ length: 40 }).map((_, i) => ({
-          id: i + 240,
+        particles: Array.from({ length: 10 }).map((_, i) => ({
+          id: i + 60,
           x: Math.random() * 100,
           delay: Math.random() * 5,
           duration: 4 + Math.random() * 4,
@@ -69,10 +69,10 @@ export default function EnhancedFireParticles() {
         zIndex: 3,
         color: 'rgba(255, 120, 0, 0.6)'
       },
-      // Front layer - 20 particles (fastest, sharpest, most visible)
+      // Front layer - 8 particles (fastest, sharpest, most visible)
       {
-        particles: Array.from({ length: 20 }).map((_, i) => ({
-          id: i + 280,
+        particles: Array.from({ length: 8 }).map((_, i) => ({
+          id: i + 70,
           x: Math.random() * 100,
           delay: Math.random() * 3,
           duration: 3 + Math.random() * 3,

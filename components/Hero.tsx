@@ -1,25 +1,33 @@
 'use client'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
-import { SITE_CONFIG, LINKS } from '@/lib/constants'
+import { SITE_CONFIG, LINKS, TAGLINES } from '@/lib/constants'
 import EnhancedFireParticles from './EnhancedFireParticles'
 import FloorFlames from './FloorFlames'
 import OctagonGrid from './OctagonGrid'
 import LiveCounter from './LiveCounter'
 
 export default function Hero() {
-  // Cursor glow effect
+  // Cursor glow effect with throttling
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout
+    
     const handleMouseMove = (e: MouseEvent) => {
-      const glow = document.getElementById('cursor-glow')
-      if (glow) {
-        glow.style.left = e.clientX + 'px'
-        glow.style.top = e.clientY + 'px'
-      }
+      if (timeoutId) clearTimeout(timeoutId)
+      
+      timeoutId = setTimeout(() => {
+        const glow = document.getElementById('cursor-glow')
+        if (glow) {
+          glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`
+        }
+      }, 16) // ~60fps throttle
     }
     
     window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+      if (timeoutId) clearTimeout(timeoutId)
+    }
   }, [])
 
   return (
@@ -90,6 +98,16 @@ export default function Hero() {
             JESSE ON FIRE
           </span>
         </motion.h1>
+
+        {/* Hero tagline - The GOAT */}
+        <motion.p
+          className="text-[clamp(1.2rem,4vw,2rem)] font-bold mb-4 text-gray-300"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          {TAGLINES.hero}
+        </motion.p>
 
         {/* Tagline with pulsing effect */}
         <motion.div
@@ -200,8 +218,11 @@ export default function Hero() {
       {/* Cursor glow */}
       <div 
         id="cursor-glow"
-        className="fixed w-96 h-96 pointer-events-none -translate-x-1/2 -translate-y-1/2 opacity-20 blur-3xl bg-fire-orange rounded-full mix-blend-screen hidden md:block"
-        style={{ zIndex: 9999 }}
+        className="fixed w-64 h-64 pointer-events-none opacity-10 blur-2xl bg-fire-orange rounded-full mix-blend-screen hidden md:block"
+        style={{ 
+          zIndex: 9999,
+          willChange: 'transform' // GPU acceleration
+        }}
       />
     </section>
   )

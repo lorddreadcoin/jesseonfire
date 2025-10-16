@@ -52,7 +52,7 @@ const About = () => {
             <div className="aspect-[4/5] relative">
               <Image
                 src="https://i.imgur.com/H6z4r3t.png"
-                alt="Jesse ON FIRE - Purple Belt BJJ"
+                alt="Jesse ON FIRE - The GOAT on the Mic"
                 fill
                 className="object-cover"
                 priority
@@ -69,38 +69,41 @@ const About = () => {
                 <span className="text-white font-bold">517K+ Warriors</span>
               </div>
             </div>
-            
-            {/* Purple Belt Badge */}
-            <div className="absolute top-4 right-4 bg-purple-600/90 backdrop-blur-sm px-3 py-1 rounded-full">
-              <span className="text-white text-sm font-bold">🥋 Purple Belt BJJ</span>
-            </div>
           </div>
         </motion.div>
 
         <motion.div className="space-y-8">
-          <motion.h2
-            className="font-display text-5xl lg:text-6xl text-fire-orange uppercase tracking-wider mb-8"
-            variants={itemVariants}
-          >
-            {BIO.headline}
-          </motion.h2>
+          <div className="text-center lg:text-left mb-6">
+            <motion.h2
+              className="font-display text-5xl lg:text-6xl text-fire-orange uppercase tracking-wider mb-2"
+              variants={itemVariants}
+            >
+              {BIO.headline}
+            </motion.h2>
+            <motion.p 
+              className="text-2xl text-gray-400 font-bold"
+              variants={itemVariants}
+            >
+              Undefeated on the Mic
+            </motion.p>
+          </div>
 
           <motion.div 
-            className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+            className="grid grid-cols-3 gap-6 mb-12"
             variants={itemVariants}
           >
             {BIO.stats.map((stat, index) => (
               <motion.div
                 key={index}
-                className="card-cinematic hover:shadow-fire-glow-lg transition-all duration-300 hover:scale-105"
+                className="card-cinematic hover:shadow-fire-glow-lg transition-all duration-300 hover:scale-105 text-center p-6"
                 whileHover={{ y: -5 }}
               >
-                <div className="text-3xl font-display text-fire-gradient bg-clip-text text-transparent">
+                <div className="text-4xl font-display text-fire-gradient bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
-                <div className="text-sm font-heading text-ash-grey uppercase tracking-wide mt-2">
+                <div className="text-sm font-heading text-ash-grey uppercase tracking-wide">
                   {stat.label}
-                  {stat.label === "YouTube Warriors" && (
+                  {stat.label === "Warriors" && (
                     <span className="text-fire-orange text-xs block mt-1 animate-pulse">LIVE</span>
                   )}
                 </div>

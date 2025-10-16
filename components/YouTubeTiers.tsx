@@ -140,8 +140,8 @@ const YouTubeTiers = () => {
               <div className="text-xs text-ash-grey uppercase">Subscribers</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-display text-fire-orange">18</div>
-              <div className="text-xs text-ash-grey uppercase">Years on YouTube</div>
+              <div className="text-2xl font-display text-fire-orange">🔥</div>
+              <div className="text-xs text-ash-grey uppercase">The GOAT</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-display text-fire-orange">2,863</div>
