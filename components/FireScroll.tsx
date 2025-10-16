@@ -43,10 +43,10 @@ export default function FireScroll() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Minimal particles - subtle ambient effect only
+  // Particles completely disabled
   const layerCounts = useMemo(() => {
-    // Reduced to very minimal particles
-    const base = [3, 5, 8, 12]
+    // No particles at all
+    const base = [0, 0, 0, 0]
     return base.map((n, i) => Math.round(n * (1 + progress * (i + 1) * 0.3)))
   }, [progress])
 
