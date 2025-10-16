@@ -87,13 +87,22 @@ export default function Hero() {
             className="relative inline-block text-[clamp(4rem,15vw,12rem)] font-council"
             style={{
               fontFamily: "'Council', 'OT Council', 'Council OT', serif",
-              fontWeight: 700,
+              fontWeight: 900,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              background: 'linear-gradient(to bottom, #FFFFFF 0%, #FF4500 50%, #8B0000 100%)',
+              background: 'linear-gradient(to bottom, #FFFFFF 0%, #FF6B35 45%, #FF4500 60%, #CC0000 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              filter: 'drop-shadow(0 0 30px rgba(255,69,0,0.5))'
+              filter: 'drop-shadow(0 2px 3px rgba(0,0,0,0.9)) drop-shadow(0 0 20px rgba(255,69,0,0.8)) drop-shadow(0 0 40px rgba(255,69,0,0.4))',
+              WebkitTextStroke: '0.5px rgba(139,0,0,0.3)',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale',
+              textRendering: 'optimizeLegibility',
+              fontKerning: 'normal',
+              fontVariantLigatures: 'none',
+              backfaceVisibility: 'hidden',
+              transform: 'translateZ(0)',
+              willChange: 'transform'
             }}
           >
             JESSE ON FIRE
@@ -101,16 +110,17 @@ export default function Hero() {
           
           {/* Glowing outline */}
           <span 
-            className="absolute inset-0 blur-2xl opacity-50 pointer-events-none"
+            className="absolute inset-0 blur-xl opacity-60 pointer-events-none"
             aria-hidden="true"
             style={{
               fontFamily: "'Council', 'OT Council', 'Council OT', serif",
-              fontWeight: 700,
+              fontWeight: 900,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              background: 'linear-gradient(to bottom, #FF4500, #8B0000)',
+              background: 'linear-gradient(to bottom, #FF6B35, #CC0000)',
               WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
+              WebkitTextFillColor: 'transparent',
+              transform: 'translateZ(0)'
             }}
           >
             JESSE ON FIRE
