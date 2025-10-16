@@ -43,17 +43,17 @@ export default function FireScroll() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Start at ~20 particles and scale up to ~320 by bottom (doubling effect)
+  // Minimal particles - subtle ambient effect only
   const layerCounts = useMemo(() => {
-    // Four layers, each scales with progress for stronger heat lower on page
-    const base = [20, 40, 80, 160]
-    return base.map((n, i) => Math.round(n * (1 + progress * (i + 1) * 0.5)))
+    // Reduced to very minimal particles
+    const base = [3, 5, 8, 12]
+    return base.map((n, i) => Math.round(n * (1 + progress * (i + 1) * 0.3)))
   }, [progress])
 
   const layers = layerCounts.map((count, idx) => ({
     count,
-    blur: 10 - idx * 2,
-    opacity: 0.18 + idx * 0.08 + progress * 0.1,
+    blur: 12 - idx * 2,
+    opacity: 0.08 + idx * 0.03 + progress * 0.05, // Much lower opacity
     speedScale: 0.6 + idx * 0.25 + progress * 0.2,
     zIndex: -20 - idx,
     particles: makeParticles(count, idx + 1),
