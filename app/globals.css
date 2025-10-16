@@ -69,17 +69,40 @@
     }
   }
 
-  h1, h2, h3 {
+  h1 {
     @apply text-fire-orange;
-    font-family: 'OT Council', var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+    font-family: 'OT Council', Impact, sans-serif !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: clamp(3rem, 8vw, 6rem) !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  h2 {
+    @apply text-fire-orange;
+    font-family: 'OT Council', Impact, sans-serif !important;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4.5rem) !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  h3 {
+    @apply text-fire-orange;
+    font-family: 'OT Council', Impact, sans-serif !important;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem) !important;
   }
 
   h4, h5, h6 {
-    font-family: 'OT Council', var(--font-anton), 'Anton', 'Oswald', sans-serif;
+    font-family: 'OT Council', Impact, sans-serif !important;
     font-weight: 700;
+    text-transform: uppercase;
+    font-size: clamp(1.5rem, 3vw, 2rem) !important;
   }
 
   blockquote {
@@ -106,6 +129,40 @@
     text-shadow: 0 0 10px rgba(255, 90, 31, 0.5);
     font-family: 'OT Council', var(--font-bebas), 'Bebas Neue', sans-serif;
     font-weight: 700;
+  }
+  
+  /* OT Council Impact Classes */
+  .ot-council-hero {
+    font-family: 'OT Council', Impact, sans-serif !important;
+    font-size: clamp(4rem, 12vw, 10rem) !important;
+    font-weight: 900 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    line-height: 0.9 !important;
+  }
+  
+  .ot-council-title {
+    font-family: 'OT Council', Impact, sans-serif !important;
+    font-size: clamp(3rem, 8vw, 6rem) !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7) !important;
+  }
+  
+  .ot-council-heading {
+    font-family: 'OT Council', Impact, sans-serif !important;
+    font-size: clamp(2rem, 5vw, 4rem) !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+  }
+  
+  .ot-council-text {
+    font-family: 'OT Council', Impact, sans-serif !important;
+    font-size: clamp(1.2rem, 3vw, 2rem) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
   }
 
   /* Card with Cinematic Depth */

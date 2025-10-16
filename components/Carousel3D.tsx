@@ -56,11 +56,11 @@ export default function Carousel3D({ videos, title, subtitle }: Carousel3DProps)
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-council text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider font-bold">
+            <h2 className="ot-council-title text-fire-orange mb-4">
               {title}
             </h2>
             {subtitle && (
-              <p className="text-xl text-ash-grey font-council uppercase">
+              <p className="ot-council-text text-ash-grey">
                 {subtitle}
               </p>
             )}
@@ -146,7 +146,7 @@ export default function Carousel3D({ videos, title, subtitle }: Carousel3DProps)
                     
                     {/* Content */}
                     <div className="p-4">
-                      <h3 className="text-white font-council text-lg mb-2 line-clamp-2 group-hover:text-fire-orange transition-colors font-bold">
+                      <h3 className="ot-council-heading text-white mb-2 line-clamp-2 group-hover:text-fire-orange transition-colors">
                         {video.title}
                       </h3>
                       

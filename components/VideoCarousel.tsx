@@ -41,10 +41,10 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-council text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider font-bold">
+          <h2 className="ot-council-title text-fire-orange mb-4">
             🔥 Latest Drops 🔥
           </h2>
-          <p className="text-xl text-ash-grey font-council uppercase">
+          <p className="ot-council-text text-ash-grey">
             Most Recent Uploads
           </p>
         </motion.div>
@@ -119,7 +119,7 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
                   
                   {/* Video Info */}
                   <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black to-transparent">
-                    <h3 className="text-white font-council font-bold text-2xl md:text-3xl line-clamp-2 group-hover:text-fire-orange transition-colors">
+                    <h3 className="ot-council-heading text-white line-clamp-2 group-hover:text-fire-orange transition-colors">
                       {topVideo.title}
                     </h3>
                     <div className="flex items-center gap-4 text-ash-grey text-lg">
@@ -187,7 +187,7 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
                   </div>
                   
                   {/* Title */}
-                  <h4 className="mt-2 text-white text-sm font-council font-semibold line-clamp-2 group-hover:text-fire-orange transition-colors">
+                  <h4 className="mt-2 ot-council-text text-white line-clamp-2 group-hover:text-fire-orange transition-colors">
                     {video.title}
                   </h4>
                   

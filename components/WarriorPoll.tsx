@@ -94,7 +94,7 @@ export default function WarriorPoll() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-black mb-3 text-fire-orange uppercase tracking-wider">
+          <h2 className="ot-council-title text-fire-orange mb-3">
             🔥 WARRIORS SOUND OFF
           </h2>
           <p className="text-xl text-gray-400">
@@ -104,7 +104,7 @@ export default function WarriorPoll() {
 
         <div className="card-cinematic p-8 md:p-12 border-2 border-fire-orange/30 hover:border-fire-orange/50 transition-all duration-300">
           {/* Question */}
-          <h3 className="text-2xl md:text-3xl font-heading font-bold text-center mb-8 text-white">
+          <h3 className="ot-council-heading text-center mb-8 text-white">
             {CURRENT_POLL.question}
           </h3>
 
@@ -151,7 +151,7 @@ export default function WarriorPoll() {
                       <span className={`font-semibold ${isSelected ? 'text-fire-orange' : 'text-gray-300'}`}>
                         {option} {isSelected && '✓'}
                       </span>
-                      <span className="text-2xl font-display font-black text-fire-orange">
+                      <span className="ot-council-heading text-fire-orange">
                         {percentage}%
                       </span>
                     </div>
