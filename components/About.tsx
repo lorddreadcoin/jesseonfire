@@ -75,13 +75,13 @@ const About = () => {
         <motion.div className="space-y-8">
           <div className="text-center lg:text-left mb-6">
             <motion.h2
-              className="font-display text-5xl lg:text-6xl text-fire-orange uppercase tracking-wider mb-2"
+              className="font-council text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider font-bold"
               variants={itemVariants}
             >
               {BIO.headline}
             </motion.h2>
             <motion.p 
-              className="text-2xl text-gray-400 font-bold"
+              className="text-xl text-ash-grey font-council uppercase"
               variants={itemVariants}
             >
               Undefeated on the Mic
@@ -118,7 +118,7 @@ const About = () => {
           </motion.div>
 
           <motion.blockquote
-            className="border-l-4 border-fire-orange pl-8 py-4 font-quote italic text-2xl text-ash-grey relative"
+            className="text-2xl lg:text-3xl text-fire-orange italic mb-8 font-council"
             variants={itemVariants}
           >
             <span className="absolute -left-4 -top-2 text-6xl text-fire-orange/30">"</span>

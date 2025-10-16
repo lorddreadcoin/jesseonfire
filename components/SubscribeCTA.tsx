@@ -33,7 +33,7 @@ export default function SubscribeCTA() {
               <FaYoutube className="w-16 h-16 text-red-600" />
             </motion.div>
             
-            <h3 className="font-display text-4xl md:text-5xl text-fire-orange mb-4 uppercase">
+            <h3 className="font-council text-4xl md:text-5xl text-fire-orange mb-4 uppercase font-bold">
               Don't Miss a Single Drop
             </h3>
             
@@ -46,7 +46,7 @@ export default function SubscribeCTA() {
                 href={LINKS.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-fire text-xl px-8 py-4 flex items-center gap-3"
+                className="btn-fire px-8 py-4 text-lg font-council font-bold uppercase tracking-wider inline-flex items-center gap-3 group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

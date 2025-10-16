@@ -86,10 +86,10 @@ const ChannelNetwork = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider">
+          <h2 className="font-council text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider font-bold">
             The Jesse Empire
           </h2>
-          <p className="text-xl text-ash-grey font-heading uppercase">
+          <p className="text-xl text-ash-grey font-council uppercase">
             Multiple Channels • One Voice • Unfiltered Truth
           </p>
         </motion.div>
@@ -213,7 +213,7 @@ const ChannelNetwork = () => {
               animate={{ scale: 1 }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
-              <div className="text-2xl font-display text-fire-orange">{stats.videoCount.toLocaleString()}</div>
+              <h3 className="text-2xl font-council text-white mb-2 group-hover:text-fire-orange transition-colors font-bold">{stats.videoCount.toLocaleString()}</h3>
               <div className="text-xs text-ash-grey uppercase">Videos</div>
             </motion.div>
             <motion.div 

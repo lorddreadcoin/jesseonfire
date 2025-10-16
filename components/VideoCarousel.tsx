@@ -41,10 +41,10 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider">
+          <h2 className="font-council text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider font-bold">
             🔥 Latest Drops 🔥
           </h2>
-          <p className="text-xl text-ash-grey font-heading uppercase">
+          <p className="text-xl text-ash-grey font-council uppercase">
             Most Recent Uploads
           </p>
         </motion.div>
@@ -114,12 +114,12 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
                   
                   {/* Category Badge */}
                   <div className="absolute bottom-32 left-6 bg-fire-orange px-5 py-2 rounded-lg">
-                    <span className="text-white font-bold uppercase">{topVideo.category}</span>
+                    <span className="text-white font-bold uppercase font-council">{topVideo.category}</span>
                   </div>
                   
                   {/* Video Info */}
                   <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black to-transparent">
-                    <h3 className="text-white text-3xl font-bold mb-3 line-clamp-2 group-hover:text-fire-orange transition-colors">
+                    <h3 className="text-white font-council font-bold text-2xl md:text-3xl line-clamp-2 group-hover:text-fire-orange transition-colors">
                       {topVideo.title}
                     </h3>
                     <div className="flex items-center gap-4 text-ash-grey text-lg">
@@ -187,7 +187,7 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
                   </div>
                   
                   {/* Title */}
-                  <h4 className="mt-2 text-white text-sm font-semibold line-clamp-2 group-hover:text-fire-orange transition-colors">
+                  <h4 className="mt-2 text-white text-sm font-council font-semibold line-clamp-2 group-hover:text-fire-orange transition-colors">
                     {video.title}
                   </h4>
                   

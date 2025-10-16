@@ -75,15 +75,15 @@ export default function Hero() {
       
       {/* Main content */}
       <div className="relative z-10 container-custom text-center px-4">
-        {/* Brand name with fire effect */}
+        {/* Main Title with fire animation */}
         <motion.h1 
-          className="relative mb-6"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, type: "spring" }}
+          className="text-[clamp(4rem,12vw,10rem)] font-council font-bold leading-none mb-6 relative"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, type: "spring" }}
         >
           <span 
-            className="relative inline-block text-[clamp(3rem,15vw,10rem)] font-black tracking-tighter"
+            className="relative inline-block text-[clamp(3rem,15vw,10rem)] font-council font-bold tracking-tighter"
             style={{
               background: 'linear-gradient(to bottom, #FFFFFF 0%, #FF4500 50%, #8B0000 100%)',
               WebkitBackgroundClip: 'text',
@@ -110,7 +110,7 @@ export default function Hero() {
 
         {/* Hero tagline - The GOAT */}
         <motion.p
-          className="text-[clamp(1.2rem,4vw,2rem)] font-bold mb-4 text-gray-300"
+          className="text-[clamp(1.2rem,4vw,2rem)] font-council font-bold mb-4 text-gray-300"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
@@ -120,7 +120,7 @@ export default function Hero() {
 
         {/* Tagline with pulsing effect */}
         <motion.div
-          className="relative text-[clamp(1.5rem,5vw,3rem)] font-bold mb-8"
+          className="relative text-[clamp(1.5rem,5vw,3rem)] font-council font-bold mb-8"
           initial={{ opacity: 0 }}
           animate={{ 
             opacity: 1,
@@ -164,7 +164,7 @@ export default function Hero() {
             href={LINKS.patreon}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative px-10 py-5 text-xl font-bold rounded-xl overflow-hidden"
+            className="group relative px-10 py-5 text-xl font-council font-bold rounded-xl overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -191,7 +191,7 @@ export default function Hero() {
             href={LINKS.youtube}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-10 py-5 text-xl font-bold text-gray-400 hover:text-white transition-colors"
+            className="px-10 py-5 text-xl font-council font-bold text-gray-400 hover:text-white transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >

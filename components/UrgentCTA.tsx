@@ -93,7 +93,7 @@ export default function UrgentCTA() {
                 ].map((item, index) => (
                   <div key={index} className="flex flex-col">
                     <motion.div
-                      className="bg-fire-gradient text-white font-display text-4xl md:text-5xl rounded-xl px-4 md:px-6 py-3 md:py-4 min-w-[80px] md:min-w-[100px] shadow-fire-glow"
+                      className="bg-fire-gradient text-white font-council text-4xl md:text-5xl rounded-xl px-4 md:px-6 py-3 md:py-4 min-w-[80px] md:min-w-[100px] shadow-fire-glow font-bold"
                       key={item.value}
                       initial={{ scale: 1 }}
                       animate={{ scale: [1, 1.05, 1] }}
@@ -109,7 +109,7 @@ export default function UrgentCTA() {
               </div>
 
               {/* Main Message */}
-              <h3 className="font-display text-3xl md:text-5xl text-fire-orange mb-4 uppercase">
+              <h3 className="font-council text-3xl md:text-5xl text-fire-orange mb-4 uppercase font-bold">
                 Don't Miss Today's Truth Bomb
               </h3>
               
