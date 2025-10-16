@@ -102,15 +102,24 @@ const ChannelNetwork = () => {
               href={channel.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block"
+              className="block group"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <div className={`card-cinematic hover:shadow-fire-glow-lg transition-all ${channel.isPrimary ? 'ring-2 ring-fire-orange' : ''}`}>
-                {/* Gradient Header */}
-                <div className={`h-2 bg-gradient-to-r ${channel.color} rounded-t-xl`} />
+              <div 
+                className="relative bg-gradient-to-br from-gray-900 to-black rounded-2xl overflow-hidden transition-all duration-300
+                  border-2 border-fire-orange/40 hover:border-fire-orange 
+                  shadow-[0_0_15px_rgba(255,69,0,0.3)] hover:shadow-[0_0_30px_rgba(255,69,0,0.8)]
+                  group-active:shadow-[0_0_40px_rgba(255,69,0,1),0_0_60px_rgba(255,69,0,0.6)]"
+              >
+                {/* Gradient Header with glow */}
+                <div className={`h-3 bg-gradient-to-r ${channel.color} relative overflow-hidden`}>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" 
+                       style={{ backgroundSize: '200% 100%', animation: 'shimmer 3s linear infinite' }} />
+                </div>
                 
                 {/* Content */}
                 <div className="p-6">
@@ -222,8 +231,8 @@ const ChannelNetwork = () => {
               animate={{ scale: 1 }}
               transition={{ duration: 0.3, delay: 0.3 }}
             >
-              <div className="text-2xl font-display text-fire-orange">18</div>
-              <div className="text-xs text-ash-grey uppercase">Years Strong</div>
+              <div className="text-2xl font-display text-fire-orange">🔥</div>
+              <div className="text-xs text-ash-grey uppercase">The GOAT</div>
             </motion.div>
           </div>
         </motion.div>

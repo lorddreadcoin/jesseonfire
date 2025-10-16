@@ -38,7 +38,7 @@ const Sponsors = () => {
           Official Partners
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {SPONSORS.map((sponsor) => (
             <div key={sponsor.name} className="card-cinematic hover:shadow-fire-glow-lg transition-all duration-300 hover:scale-105 flex flex-col space-y-6">
               {/* Logo - CINEMATIC */}
