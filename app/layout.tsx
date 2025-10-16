@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Bebas_Neue, Anton, Playfair_Display } from 'next/font/google'
+import { Inter, Bebas_Neue, Anton, Playfair_Display, Oswald } from 'next/font/google'
 import './globals.css'
 import FlameCursor from '@/components/FlameCursor'
 import FireScroll from '@/components/FireScroll'
@@ -31,6 +31,13 @@ const playfair = Playfair_Display({
   display: 'swap',
   variable: '--font-playfair',
   style: ['normal', 'italic'],
+})
+
+const oswald = Oswald({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-oswald',
+  weight: ['400', '500', '600', '700'],
 })
 
 export const metadata: Metadata = {
@@ -94,10 +101,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${bebasNeue.variable} ${anton.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${bebasNeue.variable} ${anton.variable} ${playfair.variable} ${oswald.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://db.onlinewebfonts.com/c/7bb6bf59a33b5be38c685d9c895cb4f0?family=Council" rel="stylesheet" type="text/css"/>
         <meta name="theme-color" content="#FF5A1F" />
       </head>
       <body className="min-h-screen font-sans bg-obsidian text-ash-grey">

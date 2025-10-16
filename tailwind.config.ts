@@ -28,11 +28,11 @@ const config: Config = {
         'text-secondary': '#C4C7CC',
       },
       fontFamily: {
-        'display': ['OT Council', 'Bebas Neue', 'Impact', 'sans-serif'],
-        'heading': ['OT Council', 'Anton', 'Oswald', 'sans-serif'],
-        'sans': ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
-        'quote': ['Playfair Display', 'Georgia', 'serif'],
-        'council': ['OT Council', 'Bebas Neue', 'Impact', 'sans-serif'], // Dedicated OT Council utility
+        'display': ['Council', 'OT Council', 'var(--font-oswald)', 'Impact', 'sans-serif'],
+        'heading': ['Council', 'OT Council', 'var(--font-oswald)', 'Anton', 'sans-serif'],
+        'sans': ['var(--font-inter)', 'Inter', 'Poppins', 'system-ui', 'sans-serif'],
+        'quote': ['var(--font-playfair)', 'Playfair Display', 'Georgia', 'serif'],
+        'council': ['Council', 'OT Council', 'var(--font-oswald)', 'Impact', 'sans-serif'], // Council OT exact font
       },
       backgroundImage: {
         'fire-gradient': 'linear-gradient(90deg, #E23E1D 0%, #FF5A1F 50%, #FFB86C 100%)',

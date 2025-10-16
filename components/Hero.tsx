@@ -77,14 +77,18 @@ export default function Hero() {
       <div className="relative z-10 container-custom text-center px-4">
         {/* Main Title with fire animation */}
         <motion.h1 
-          className="text-[clamp(4rem,12vw,10rem)] font-council font-bold leading-none mb-6 relative"
+          className="text-[clamp(4rem,12vw,10rem)] font-council leading-none mb-6 relative"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, type: "spring" }}
+          style={{ fontWeight: 700 }}
         >
           <span 
-            className="relative inline-block text-[clamp(3rem,15vw,10rem)] font-council font-bold tracking-tighter"
+            className="relative inline-block text-[clamp(3rem,15vw,10rem)] font-council"
             style={{
+              fontFamily: "'Council', 'OT Council', Impact, sans-serif",
+              fontWeight: 700,
+              letterSpacing: '0.15em',
               background: 'linear-gradient(to bottom, #FFFFFF 0%, #FF4500 50%, #8B0000 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -99,6 +103,7 @@ export default function Hero() {
             className="absolute inset-0 blur-2xl opacity-50 pointer-events-none"
             aria-hidden="true"
             style={{
+              letterSpacing: '0.15em',
               background: 'linear-gradient(to bottom, #FF4500, #8B0000)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
