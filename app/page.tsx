@@ -67,16 +67,6 @@ const realVideos: VideoData[] = [
     uploadDate: "4 days ago",
     url: "https://youtu.be/vjZzvEh4VJY",
     category: "POLITICS"
-  },
-  {
-    id: 6,
-    title: "NEW SUSPECTS in Charlie Kirk Assassination!! The SHOCKING VIDEO EVIDENCE!!",
-    thumbnail: "https://i.ytimg.com/vi/6q2CYqUPZ5c/maxresdefault.jpg",
-    views: "214K views",
-    duration: "24:18",
-    uploadDate: "1 day ago",
-    url: "https://youtu.be/6q2CYqUPZ5c",
-    category: "POLITICS"
   }
 ];
 
