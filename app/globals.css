@@ -131,7 +131,7 @@
     font-weight: 700;
   }
   
-  /* OT Council Impact Classes */
+  /* OT Council Impact Classes - MAXIMUM HEAT */
   .ot-council-hero {
     font-family: 'OT Council', Impact, sans-serif !important;
     font-size: clamp(4rem, 12vw, 10rem) !important;
@@ -139,6 +139,11 @@
     letter-spacing: 3px !important;
     text-transform: uppercase !important;
     line-height: 0.9 !important;
+    color: #FF6B35 !important; /* Brighter orange */
+    text-shadow: 
+      0 0 20px rgba(255, 107, 53, 0.8),
+      0 0 40px rgba(255, 69, 0, 0.6),
+      2px 2px 4px rgba(0,0,0,0.9) !important;
   }
   
   .ot-council-title {
@@ -147,7 +152,12 @@
     font-weight: 800 !important;
     letter-spacing: 2px !important;
     text-transform: uppercase !important;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.7) !important;
+    background: linear-gradient(135deg, #FFD700, #FF6B35, #FF4500) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: none !important;
+    filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.8)) drop-shadow(2px 2px 4px rgba(0,0,0,0.9)) !important;
   }
   
   .ot-council-heading {
@@ -156,6 +166,10 @@
     font-weight: 700 !important;
     letter-spacing: 1.5px !important;
     text-transform: uppercase !important;
+    color: #FFA500 !important; /* Bright orange */
+    text-shadow: 
+      0 0 15px rgba(255, 165, 0, 0.7),
+      2px 2px 4px rgba(0,0,0,0.8) !important;
   }
   
   .ot-council-text {
@@ -163,6 +177,8 @@
     font-size: clamp(1.2rem, 3vw, 2rem) !important;
     font-weight: 600 !important;
     text-transform: uppercase !important;
+    color: #FF8C00 !important; /* Dark orange */
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.5) !important;
   }
 
   /* Card with Cinematic Depth */

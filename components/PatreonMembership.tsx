@@ -15,10 +15,10 @@ const PatreonMembership = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-5xl lg:text-6xl text-fire-orange mb-4 uppercase tracking-wider">
+          <h2 className="ot-council-title mb-4">
             JOIN THE WARRIORS
           </h2>
-          <p className="text-xl text-ash-grey font-heading uppercase tracking-wide mb-2">
+          <p className="ot-council-text text-ash-grey mb-2">
             Support Jesse & Get Instant Discord Access
           </p>
           <p className="text-lg text-fire-orange/80 font-bold">
@@ -50,7 +50,7 @@ const PatreonMembership = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="mb-8"
         >
-          <h3 className="text-center text-white font-display text-4xl uppercase mb-8">
+          <h3 className="ot-council-heading text-center text-white mb-8">
             Patreon Membership Tiers
           </h3>
         </motion.div>
@@ -95,13 +95,13 @@ const PatreonMembership = () => {
                 {/* Content */}
                 <div className="p-8">
                   {/* Title */}
-                  <h3 className="font-heading text-2xl text-white mb-4">
+                  <h3 className="ot-council-text text-white mb-4">
                     {tier.name}
                   </h3>
 
                   {/* Price */}
                   <div className="flex items-baseline gap-1 mb-6">
-                    <span className="font-display text-5xl text-fire-orange">
+                    <span className="ot-council-heading text-fire-orange">
                       ${tier.price}
                     </span>
                     <span className="text-ash-grey">/ month</span>

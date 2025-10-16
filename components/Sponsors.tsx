@@ -34,7 +34,7 @@ const Sponsors = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-charcoal">
       <div className="max-w-7xl mx-auto">
-        <h2 className="font-display text-5xl lg:text-6xl text-center text-fire-orange mb-12 uppercase tracking-wider">
+        <h2 className="ot-council-title text-center mb-12">
           Official Partners
         </h2>
 
@@ -57,7 +57,7 @@ const Sponsors = () => {
                   </div>
                 ) : (
                   <div className={`${sponsor.fallbackColor} w-full max-w-[200px] h-20 rounded-lg flex items-center justify-center relative overflow-hidden shadow-fire-glow`}>
-                    <span className="text-3xl font-display text-white z-10">{sponsor.fallbackText}</span>
+                    <span className="ot-council-heading text-white z-10">{sponsor.fallbackText}</span>
                     <span className="absolute bottom-1 right-2 text-xs font-heading text-white/70">{sponsor.name}</span>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>
@@ -73,7 +73,7 @@ const Sponsors = () => {
               <div className="space-y-2">
                 <p className="text-sm font-heading uppercase text-ash-grey/70 tracking-wide">Promo Code:</p>
                 <div className="flex items-center gap-4">
-                  <code className="font-display text-3xl text-fire-orange">
+                  <code className="ot-council-text">
                     {sponsor.code}
                   </code>
                   <CopyButton text={sponsor.code} />
