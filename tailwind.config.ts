@@ -28,10 +28,11 @@ const config: Config = {
         'text-secondary': '#C4C7CC',
       },
       fontFamily: {
-        'display': ['Bebas Neue', 'Impact', 'sans-serif'],
-        'heading': ['Anton', 'Oswald', 'sans-serif'],
+        'display': ['OT Council', 'Bebas Neue', 'Impact', 'sans-serif'],
+        'heading': ['OT Council', 'Anton', 'Oswald', 'sans-serif'],
         'sans': ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
         'quote': ['Playfair Display', 'Georgia', 'serif'],
+        'council': ['OT Council', 'Bebas Neue', 'Impact', 'sans-serif'], // Dedicated OT Council utility
       },
       backgroundImage: {
         'fire-gradient': 'linear-gradient(90deg, #E23E1D 0%, #FF5A1F 50%, #FFB86C 100%)',
